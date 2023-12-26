@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-class TDeviceUtils {
+class DeviceUtils {
   static void hideKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(FocusNode());
   }
@@ -32,11 +32,11 @@ class TDeviceUtils {
     );
   }
 
-  static double getScreenHeight(BuildContext context) {
+  static double screenHeight(BuildContext context) {
     return MediaQuery.of(context).size.height;
   }
 
-  static double getScreenWidth(BuildContext context) {
+  static double screenWidth(BuildContext context) {
     return MediaQuery.of(context).size.width;
   }
 
@@ -44,17 +44,13 @@ class TDeviceUtils {
     return MediaQuery.of(context).devicePixelRatio;
   }
 
-  static double getStatusBarHeight(BuildContext context) {
+  static double statusBarHeight(BuildContext context) {
     return MediaQuery.of(context).padding.top;
   }
 
-  static double getBottomNavigationBarHeight() {
-    return kBottomNavigationBarHeight;
-  }
+  static double get bottomNavigationBarHeight => kBottomNavigationBarHeight;
 
-  static double getAppBarHeight() {
-    return kToolbarHeight;
-  }
+  static double get appBarHeight => kToolbarHeight;
 
   static double getKeyboardHeight(BuildContext context) {
     final viewInsets = MediaQuery.of(context).viewInsets;
