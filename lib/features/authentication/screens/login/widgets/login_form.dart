@@ -21,20 +21,19 @@ class LoginForm extends StatelessWidget {
             TextFormField(
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
-                labelText: ECTexts.email,
+                labelText: AppTexts.email,
               ),
             ),
-            const SizedBox(height: ECSizes.spaceBtwInputFields),
+            const SizedBox(height: AppSizes.spaceBtwInputFields),
             // Password
             TextFormField(
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.password_check),
-                labelText: ECTexts.password,
+                labelText: AppTexts.password,
                 suffixIcon: Icon(Iconsax.eye_slash),
-                suffixIconConstraints: BoxConstraints(minWidth: 0),
               ),
             ),
-            const SizedBox(height: ECSizes.spaceBtwInputFields / 2.0),
+            const SizedBox(height: AppSizes.spaceBtwInputFields / 2.0),
 
             // Remember Me Checkbox & Forget Password
             Row(
@@ -45,7 +44,7 @@ class LoginForm extends StatelessWidget {
                     Checkbox(value: true, onChanged: ((value) {})),
                     TextButton(
                       onPressed: () {},
-                      child: const Text(ECTexts.rememberMe),
+                      child: const Text(AppTexts.rememberMe),
                     ),
                   ],
                 ),
@@ -53,29 +52,34 @@ class LoginForm extends StatelessWidget {
                 TextButton(
                   onPressed: () =>
                       context.pushNamedRoute(Routes.forgetPassword),
-                  child: const Text(ECTexts.forgetPassword),
+                  child: const Text(AppTexts.forgetPassword),
                 ),
               ],
             ),
-            const SizedBox(height: ECSizes.spaceBtwSections),
+            const SizedBox(height: AppSizes.spaceBtwSections),
 
             // Login Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
-                child: const Text(ECTexts.signIn),
+                onPressed: () {
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    Routes.navigationMenu,
+                    (Route<dynamic> route) => route.isFirst,
+                  );
+                },
+                child: const Text(AppTexts.signIn),
               ),
             ),
 
-            const SizedBox(height: ECSizes.spaceBtwSections),
+            const SizedBox(height: AppSizes.spaceBtwSections),
 
             // Register Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => context.pushNamedRoute(Routes.signUp),
-                child: const Text(ECTexts.createAccount),
+                child: const Text(AppTexts.createAccount),
               ),
             ),
           ],

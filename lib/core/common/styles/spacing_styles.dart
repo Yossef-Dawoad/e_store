@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class SpacingStyles {
   static const EdgeInsetsGeometry padwAppBar = EdgeInsets.only(
-    top: ECSizes.appBarHeight,
-    left: ECSizes.defaultSpace,
-    bottom: ECSizes.defaultSpace,
-    right: ECSizes.defaultSpace,
+    top: AppSizes.appBarHeight,
+    left: AppSizes.defaultSpace,
+    bottom: AppSizes.defaultSpace,
+    right: AppSizes.defaultSpace,
   );
 }

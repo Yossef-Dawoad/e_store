@@ -15,7 +15,7 @@ class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(ECSizes.defaultSpace),
+      padding: const EdgeInsets.all(AppSizes.defaultSpace),
       child: Column(
         children: [
           Image(
@@ -28,7 +28,7 @@ class OnBoardingPage extends StatelessWidget {
             style: context.textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: ECSizes.spaceBtwItems),
+          const SizedBox(height: AppSizes.spaceBtwItems),
           Text(
             subTitle,
             style: context.textTheme.bodyMedium,

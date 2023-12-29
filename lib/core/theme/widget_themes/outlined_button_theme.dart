@@ -16,9 +16,9 @@ class ECOutlinedButtonTheme {
       textStyle: const TextStyle(
           fontSize: 16, color: ColorPalette.black, fontWeight: FontWeight.w600),
       padding: const EdgeInsets.symmetric(
-          vertical: ECSizes.buttonHeight, horizontal: 20),
+          vertical: AppSizes.buttonHeight, horizontal: 20),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(ECSizes.buttonRadius)),
+          borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
     ),
   );
 
@@ -32,9 +32,9 @@ class ECOutlinedButtonTheme {
           color: ColorPalette.textWhite,
           fontWeight: FontWeight.w600),
       padding: const EdgeInsets.symmetric(
-          vertical: ECSizes.buttonHeight, horizontal: 20),
+          vertical: AppSizes.buttonHeight, horizontal: 20),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(ECSizes.buttonRadius)),
+          borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
     ),
   );
 }

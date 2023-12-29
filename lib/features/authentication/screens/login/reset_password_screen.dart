@@ -23,7 +23,7 @@ class ResetPasswordScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(ECSizes.defaultSpace),
+          padding: const EdgeInsets.all(AppSizes.defaultSpace),
           child: Column(
             children: [
               ///image with 60% of screen width
@@ -33,36 +33,36 @@ class ResetPasswordScreen extends StatelessWidget {
                 image: const AssetImage(ECImages.deliveredEmailIllustration),
                 width: ECHelperFunctions.screenWidth(context) * 0.6,
               ),
-              const SizedBox(height: ECSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               ///Title & Description
               Text(
-                ECTexts.changeYourPasswordTitle,
+                AppTexts.changeYourPasswordTitle,
                 style: context.textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: ECSizes.spaceBtwItems),
+              const SizedBox(height: AppSizes.spaceBtwItems),
               Text(
-                ECTexts.changeYourPasswordSubTitle,
+                AppTexts.changeYourPasswordSubTitle,
                 style: context.textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: ECSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               ///Action Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text(ECTexts.done),
+                  child: const Text(AppTexts.done),
                 ),
               ),
-              const SizedBox(height: ECSizes.spaceBtwItems),
+              const SizedBox(height: AppSizes.spaceBtwItems),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: const Text(ECTexts.resendEmail),
+                  child: const Text(AppTexts.resendEmail),
                 ),
               )
             ],

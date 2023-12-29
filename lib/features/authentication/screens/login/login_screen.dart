@@ -25,24 +25,25 @@ class LoginScreen extends StatelessWidget {
             children: [
               // Title & SubTitle
               Text(
-                ECTexts.loginTitle,
+                AppTexts.loginTitle,
                 style: context.textTheme.headlineMedium,
               ),
-              const SizedBox(height: ECSizes.fontSizeSm),
+              const SizedBox(height: AppSizes.fontSizeSm),
               Text(
-                ECTexts.loginSubTitle,
+                AppTexts.loginSubTitle,
                 style: context.textTheme.bodyMedium,
               ),
-
+              const SizedBox(height: AppSizes.spaceBtwSections),
               // Form Section
               const LoginForm(),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               // Divider
               TextBtwDivider(
-                text: ECTexts.orSignInWith,
+                text: AppTexts.orSignInWith,
                 isDarkMode: isDarkMode,
               ),
-
+              const SizedBox(height: AppSizes.spaceBtwSections),
               // Footer
               const GoogleFaceBookButton(),
             ],

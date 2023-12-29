@@ -8,8 +8,8 @@ class ECCheckboxTheme {
 
   /// Customizable Light Text Theme
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(
-    shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(ECSizes.xs)),
+    shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppSizes.xs)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
         return ColorPalette.white;
@@ -28,8 +28,8 @@ class ECCheckboxTheme {
 
   /// Customizable Dark Text Theme
   static CheckboxThemeData darkCheckboxTheme = CheckboxThemeData(
-    shape:
-        RoundedRectangleBorder(borderRadius: BorderRadius.circular(ECSizes.xs)),
+    shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(AppSizes.xs)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
         return ColorPalette.white;

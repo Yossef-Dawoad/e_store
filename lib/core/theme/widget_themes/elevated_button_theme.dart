@@ -15,13 +15,14 @@ class ECElevatedButtonTheme {
       disabledForegroundColor: ColorPalette.darkGrey,
       disabledBackgroundColor: ColorPalette.buttonDisabled,
       side: const BorderSide(color: ColorPalette.primary),
-      padding: const EdgeInsets.symmetric(vertical: ECSizes.buttonHeight),
+      padding: const EdgeInsets.symmetric(
+          vertical: AppSizes.buttonHeight, horizontal: 15.0),
       textStyle: const TextStyle(
           fontSize: 16,
           color: ColorPalette.textWhite,
           fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(ECSizes.buttonRadius)),
+          borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
     ),
   );
 
@@ -34,13 +35,13 @@ class ECElevatedButtonTheme {
       disabledForegroundColor: ColorPalette.darkGrey,
       disabledBackgroundColor: ColorPalette.darkerGrey,
       side: const BorderSide(color: ColorPalette.primary),
-      padding: const EdgeInsets.symmetric(vertical: ECSizes.buttonHeight),
+      padding: const EdgeInsets.symmetric(vertical: AppSizes.buttonHeight),
       textStyle: const TextStyle(
           fontSize: 16,
           color: ColorPalette.textWhite,
           fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(ECSizes.buttonRadius)),
+          borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
     ),
   );
 }

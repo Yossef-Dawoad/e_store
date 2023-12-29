@@ -16,17 +16,17 @@ class OnBoardingPageContent {
 const List<OnBoardingPageContent> onBoardingPages = [
   OnBoardingPageContent(
     image: ECImages.onBoardingImage1,
-    title: ECTexts.onBoardingTitle1,
-    subTitle: ECTexts.onBoardingSubTitle1,
+    title: AppTexts.onBoardingTitle1,
+    subTitle: AppTexts.onBoardingSubTitle1,
   ),
   OnBoardingPageContent(
     image: ECImages.onBoardingImage2,
-    title: ECTexts.onBoardingTitle2,
-    subTitle: ECTexts.onBoardingSubTitle2,
+    title: AppTexts.onBoardingTitle2,
+    subTitle: AppTexts.onBoardingSubTitle2,
   ),
   OnBoardingPageContent(
     image: ECImages.onBoardingImage3,
-    title: ECTexts.onBoardingTitle3,
-    subTitle: ECTexts.onBoardingSubTitle3,
+    title: AppTexts.onBoardingTitle3,
+    subTitle: AppTexts.onBoardingSubTitle3,
   ),
 ];

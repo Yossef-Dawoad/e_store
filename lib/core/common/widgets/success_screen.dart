@@ -22,28 +22,28 @@ class VerifySuccessScreen extends StatelessWidget {
               image: const AssetImage(ECImages.staticSuccessIllustration),
               width: ECHelperFunctions.screenWidth(context) * 0.6,
             ),
-            const SizedBox(height: ECSizes.spaceBtwSections),
+            const SizedBox(height: AppSizes.spaceBtwSections),
 
             ///Title & Description
             Text(
-              ECTexts.yourAccountCreatedTitle,
+              AppTexts.yourAccountCreatedTitle,
               style: context.textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: ECSizes.spaceBtwItems),
+            const SizedBox(height: AppSizes.spaceBtwItems),
             Text(
-              ECTexts.yourAccountCreatedSubTitle,
+              AppTexts.yourAccountCreatedSubTitle,
               style: context.textTheme.labelMedium,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: ECSizes.spaceBtwSections),
+            const SizedBox(height: AppSizes.spaceBtwSections),
 
             ///Action Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => context.pushNamedRoute(Routes.signIn),
-                child: const Text(ECTexts.tContinue),
+                child: const Text(AppTexts.tContinue),
               ),
             ),
           ],

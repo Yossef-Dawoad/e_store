@@ -1,5 +1,6 @@
+import 'package:e_store/core/constants/colors.dart';
+import 'package:e_store/core/routes/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 import 'models/page_content.dart';
 import 'widgets/indicator.dart';
@@ -24,6 +25,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: Stack(
         children: [
@@ -47,7 +49,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             top: kToolbarHeight,
             right: 24,
             child: TextButton(
-              onPressed: () => _skiptoLastPage(exitRouteName: '/'),
+              onPressed: () => _skiptoLastPage(exitRouteName: Routes.signIn),
               child: const Text('skip'),
             ),
           ),
@@ -64,15 +66,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             right: 24,
             bottom: kBottomNavigationBarHeight + 20.0,
             child: ElevatedButton(
-              onPressed: _navigateToNextPage,
+              onPressed: () => _navigateToNextPage(
+                exitsRouteName: Routes.signIn,
+              ),
               child: Row(
                 children: [
                   if (currentPageIndex == onBoardingPages.length - 1)
                     const Padding(
-                      padding: EdgeInsets.only(right: 12.0),
+                      padding: EdgeInsets.symmetric(horizontal: 12.0),
                       child: Text("continue"),
                     ),
-                  const Icon(Iconsax.arrow_right3),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color:
+                        isDarkMode ? ColorPalette.white : ColorPalette.primary,
+                  )
                 ],
               ),
             ),
@@ -88,6 +96,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   void _skiptoLastPage({String exitRouteName = '/'}) {
     final lastPageIndex = onBoardingPages.length - 1;
+    print(lastPageIndex);
+    print(currentPageIndex);
     if (currentPageIndex != lastPageIndex) {
       _pageController.jumpToPage(lastPageIndex);
       return;
@@ -99,9 +109,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     );
   }
 
-  void _navigateToNextPage() {
+  void _navigateToNextPage({String exitsRouteName = '/'}) {
     if (currentPageIndex == onBoardingPages.length - 1) {
-      _skiptoLastPage(exitRouteName: '/');
+      _skiptoLastPage(exitRouteName: exitsRouteName);
       return;
     }
     _pageController.nextPage(

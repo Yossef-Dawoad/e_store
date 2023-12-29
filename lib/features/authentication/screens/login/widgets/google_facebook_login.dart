@@ -11,6 +11,7 @@ class GoogleFaceBookButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           decoration: BoxDecoration(
@@ -20,13 +21,13 @@ class GoogleFaceBookButton extends StatelessWidget {
           child: IconButton(
             onPressed: () {},
             icon: const Image(
-              width: ECSizes.iconMd,
-              height: ECSizes.iconMd,
+              width: AppSizes.iconMd,
+              height: AppSizes.iconMd,
               image: AssetImage(ECImages.google),
             ),
           ),
         ),
-        const SizedBox(width: ECSizes.spaceBtwItems),
+        const SizedBox(width: AppSizes.spaceBtwItems),
         Container(
           decoration: BoxDecoration(
             border: Border.all(color: ColorPalette.grey),
@@ -35,8 +36,8 @@ class GoogleFaceBookButton extends StatelessWidget {
           child: IconButton(
             onPressed: () {},
             icon: const Image(
-              width: ECSizes.iconMd,
-              height: ECSizes.iconMd,
+              width: AppSizes.iconMd,
+              height: AppSizes.iconMd,
               image: AssetImage(ECImages.facebook),
             ),
           ),

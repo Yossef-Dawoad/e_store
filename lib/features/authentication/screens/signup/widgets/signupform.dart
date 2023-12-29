@@ -27,30 +27,30 @@ class SignUpForm extends StatelessWidget {
                   expands: false,
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.user),
-                    labelText: ECTexts.firstName,
+                    labelText: AppTexts.firstName,
                   ),
                 ),
               ),
-              const SizedBox(height: ECSizes.spaceBtwInputFields),
+              const SizedBox(height: AppSizes.spaceBtwInputFields),
               Expanded(
                 child: TextFormField(
                   expands: false,
                   decoration: const InputDecoration(
                     prefixIcon: Icon(Iconsax.user),
-                    labelText: ECTexts.lastName,
+                    labelText: AppTexts.lastName,
                   ),
                 ),
               )
             ],
           ),
-          const SizedBox(height: ECSizes.spaceBtwSections),
+          const SizedBox(height: AppSizes.spaceBtwSections),
           // email
           Expanded(
             child: TextFormField(
               expands: false,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct),
-                labelText: ECTexts.email,
+                labelText: AppTexts.email,
               ),
             ),
           ),
@@ -59,13 +59,13 @@ class SignUpForm extends StatelessWidget {
             child: TextFormField(
               expands: false,
               decoration: const InputDecoration(
-                labelText: ECTexts.password,
+                labelText: AppTexts.password,
                 prefixIcon: Icon(Iconsax.password_check),
                 suffixIcon: Icon(Iconsax.eye_slash),
               ),
             ),
           ),
-          const SizedBox(height: ECSizes.spaceBtwSections),
+          const SizedBox(height: AppSizes.spaceBtwSections),
           //Terms & Conditions
           Row(
             children: <Widget>[
@@ -74,17 +74,17 @@ class SignUpForm extends StatelessWidget {
                 height: 24,
                 child: Checkbox(value: true, onChanged: (val) {}),
               ),
-              const SizedBox(width: ECSizes.defaultSpace),
+              const SizedBox(width: AppSizes.defaultSpace),
               const TermsAndConditionCheckBox(),
             ],
           ),
-          const SizedBox(height: ECSizes.spaceBtwSections),
+          const SizedBox(height: AppSizes.spaceBtwSections),
           // Sign Up Button
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () => context.pushNamedRoute(Routes.verifyEmail),
-              child: const Text(ECTexts.createAccount),
+              child: const Text(AppTexts.createAccount),
             ),
           )
         ],

@@ -24,7 +24,7 @@ class VerifyEmailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(ECSizes.defaultSpace),
+          padding: const EdgeInsets.all(AppSizes.defaultSpace),
           child: Column(
             children: [
               ///image
@@ -32,42 +32,42 @@ class VerifyEmailScreen extends StatelessWidget {
                 image: const AssetImage(ECImages.deliveredEmailIllustration),
                 width: ECHelperFunctions.screenWidth(context) * 0.6,
               ),
-              const SizedBox(height: ECSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               ///Title & Description
               Text(
-                ECTexts.confirmEmail,
+                AppTexts.confirmEmail,
                 style: context.textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: ECSizes.spaceBtwItems),
+              const SizedBox(height: AppSizes.spaceBtwItems),
               Text(
                 'support@dawoud.com',
                 style: context.textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: ECSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
               Text(
-                ECTexts.confirmEmailSubTitle,
+                AppTexts.confirmEmailSubTitle,
                 style: context.textTheme.labelMedium,
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: ECSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               ///Action Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () => context.pushNamedRoute(Routes.verifySuccess),
-                  child: const Text(ECTexts.tContinue),
+                  child: const Text(AppTexts.tContinue),
                 ),
               ),
-              const SizedBox(height: ECSizes.spaceBtwItems),
+              const SizedBox(height: AppSizes.spaceBtwItems),
               SizedBox(
                 width: double.infinity,
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text(ECTexts.resendEmail),
+                  child: const Text(AppTexts.resendEmail),
                 ),
               )
             ],

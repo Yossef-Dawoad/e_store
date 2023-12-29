@@ -14,22 +14,22 @@ class TermsAndConditionCheckBox extends StatelessWidget {
       TextSpan(
         children: [
           TextSpan(
-            text: '${ECTexts.iAgreeTo} ',
+            text: '${AppTexts.iAgreeTo} ',
             style: context.textTheme.bodySmall,
           ),
           TextSpan(
-            text: ECTexts.privacyPolicy,
+            text: AppTexts.privacyPolicy,
             style: context.textTheme.bodyMedium?.apply(
               decoration: TextDecoration.underline,
               color: isDark ? ColorPalette.white : ColorPalette.primary,
             ),
           ),
           TextSpan(
-            text: ' ${ECTexts.and} ',
+            text: ' ${AppTexts.and} ',
             style: context.textTheme.bodySmall,
           ),
           TextSpan(
-            text: ECTexts.termsOfUse,
+            text: AppTexts.termsOfUse,
             style: context.textTheme.bodyMedium?.apply(
               decoration: TextDecoration.underline,
               color: isDark ? ColorPalette.white : ColorPalette.primary,

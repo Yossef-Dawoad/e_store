@@ -17,10 +17,10 @@ class AppTheme {
     useMaterial3: true,
     fontFamily: 'Poppins',
     disabledColor: ColorPalette.grey,
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: ColorPalette.primary,
-      brightness: Brightness.light,
-    ),
+    // colorScheme: ColorScheme.fromSeed(
+    //   seedColor: ColorPalette.primary,
+    //   brightness: Brightness.light,
+    // ),
     primaryColor: ColorPalette.primary,
     textTheme: ECTextTheme.lightTextTheme,
     chipTheme: ECChipTheme.lightChipTheme,

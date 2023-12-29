@@ -18,27 +18,27 @@ class SignUpScreen extends StatelessWidget {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(ECSizes.defaultSpace),
+          padding: const EdgeInsets.all(AppSizes.defaultSpace),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               // Title Create account
               Text(
-                ECTexts.signupTitle,
+                AppTexts.signupTitle,
                 style: context.textTheme.headlineMedium,
               ),
-              const SizedBox(height: ECSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               // Form
               SignUpForm(isDark: isDark),
-              const SizedBox(height: ECSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               // Divider
               TextBtwDivider(
-                text: ECTexts.orSignUpWith,
+                text: AppTexts.orSignUpWith,
                 isDarkMode: isDark,
               ),
-              const SizedBox(height: ECSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               // Footer
               const GoogleFaceBookButton(),
