@@ -10,14 +10,16 @@ class ECElevatedButtonTheme {
   static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: ECColors.light,
-      backgroundColor: ECColors.primary,
-      disabledForegroundColor: ECColors.darkGrey,
-      disabledBackgroundColor: ECColors.buttonDisabled,
-      side: const BorderSide(color: ECColors.primary),
+      foregroundColor: ColorPalette.light,
+      backgroundColor: ColorPalette.primary,
+      disabledForegroundColor: ColorPalette.darkGrey,
+      disabledBackgroundColor: ColorPalette.buttonDisabled,
+      side: const BorderSide(color: ColorPalette.primary),
       padding: const EdgeInsets.symmetric(vertical: ECSizes.buttonHeight),
       textStyle: const TextStyle(
-          fontSize: 16, color: ECColors.textWhite, fontWeight: FontWeight.w600),
+          fontSize: 16,
+          color: ColorPalette.textWhite,
+          fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(ECSizes.buttonRadius)),
     ),
@@ -27,14 +29,16 @@ class ECElevatedButtonTheme {
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: ECColors.light,
-      backgroundColor: ECColors.primary,
-      disabledForegroundColor: ECColors.darkGrey,
-      disabledBackgroundColor: ECColors.darkerGrey,
-      side: const BorderSide(color: ECColors.primary),
+      foregroundColor: ColorPalette.light,
+      backgroundColor: ColorPalette.primary,
+      disabledForegroundColor: ColorPalette.darkGrey,
+      disabledBackgroundColor: ColorPalette.darkerGrey,
+      side: const BorderSide(color: ColorPalette.primary),
       padding: const EdgeInsets.symmetric(vertical: ECSizes.buttonHeight),
       textStyle: const TextStyle(
-          fontSize: 16, color: ECColors.textWhite, fontWeight: FontWeight.w600),
+          fontSize: 16,
+          color: ColorPalette.textWhite,
+          fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(ECSizes.buttonRadius)),
     ),

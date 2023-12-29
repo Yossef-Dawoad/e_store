@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:e_store/utils/theme/widget_themes/appbar_theme.dart';
-import 'package:e_store/utils/theme/widget_themes/bottom_sheet_theme.dart';
-import 'package:e_store/utils/theme/widget_themes/checkbox_theme.dart';
-import 'package:e_store/utils/theme/widget_themes/chip_theme.dart';
-import 'package:e_store/utils/theme/widget_themes/elevated_button_theme.dart';
-import 'package:e_store/utils/theme/widget_themes/outlined_button_theme.dart';
-import 'package:e_store/utils/theme/widget_themes/text_field_theme.dart';
-import 'package:e_store/utils/theme/widget_themes/text_theme.dart';
+import 'widget_themes/appbar_theme.dart';
+import 'widget_themes/bottom_sheet_theme.dart';
+import 'widget_themes/checkbox_theme.dart';
+import 'widget_themes/chip_theme.dart';
+import 'widget_themes/elevated_button_theme.dart';
+import 'widget_themes/outlined_button_theme.dart';
+import 'widget_themes/text_field_theme.dart';
+import 'widget_themes/text_theme.dart';
 
 import '../constants/colors.dart';
 
@@ -16,12 +16,15 @@ class ECAppTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    disabledColor: ECColors.grey,
-    brightness: Brightness.light,
-    primaryColor: ECColors.primary,
+    disabledColor: ColorPalette.grey,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: ColorPalette.primary,
+      brightness: Brightness.light,
+    ),
+    primaryColor: ColorPalette.primary,
     textTheme: ECTextTheme.lightTextTheme,
     chipTheme: ECChipTheme.lightChipTheme,
-    scaffoldBackgroundColor: ECColors.white,
+    scaffoldBackgroundColor: ColorPalette.white,
     appBarTheme: ECAppBarTheme.lightAppBarTheme,
     checkboxTheme: ECCheckboxTheme.lightCheckboxTheme,
     bottomSheetTheme: ECBottomSheetTheme.lightBottomSheetTheme,
@@ -33,12 +36,12 @@ class ECAppTheme {
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    disabledColor: ECColors.grey,
+    disabledColor: ColorPalette.grey,
     brightness: Brightness.dark,
-    primaryColor: ECColors.primary,
+    primaryColor: ColorPalette.primary,
     textTheme: ECTextTheme.darkTextTheme,
     chipTheme: ECChipTheme.darkChipTheme,
-    scaffoldBackgroundColor: ECColors.black,
+    scaffoldBackgroundColor: ColorPalette.black,
     appBarTheme: ECAppBarTheme.darkAppBarTheme,
     checkboxTheme: ECCheckboxTheme.darkCheckboxTheme,
     bottomSheetTheme: ECBottomSheetTheme.darkBottomSheetTheme,

@@ -11,10 +11,10 @@ class ECOutlinedButtonTheme {
   static final lightOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: 0,
-      foregroundColor: ECColors.dark,
-      side: const BorderSide(color: ECColors.borderPrimary),
+      foregroundColor: ColorPalette.dark,
+      side: const BorderSide(color: ColorPalette.borderPrimary),
       textStyle: const TextStyle(
-          fontSize: 16, color: ECColors.black, fontWeight: FontWeight.w600),
+          fontSize: 16, color: ColorPalette.black, fontWeight: FontWeight.w600),
       padding: const EdgeInsets.symmetric(
           vertical: ECSizes.buttonHeight, horizontal: 20),
       shape: RoundedRectangleBorder(
@@ -25,10 +25,12 @@ class ECOutlinedButtonTheme {
   /* -- Dark Theme -- */
   static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      foregroundColor: ECColors.light,
-      side: const BorderSide(color: ECColors.borderPrimary),
+      foregroundColor: ColorPalette.light,
+      side: const BorderSide(color: ColorPalette.borderPrimary),
       textStyle: const TextStyle(
-          fontSize: 16, color: ECColors.textWhite, fontWeight: FontWeight.w600),
+          fontSize: 16,
+          color: ColorPalette.textWhite,
+          fontWeight: FontWeight.w600),
       padding: const EdgeInsets.symmetric(
           vertical: ECSizes.buttonHeight, horizontal: 20),
       shape: RoundedRectangleBorder(

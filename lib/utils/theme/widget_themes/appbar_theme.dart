@@ -11,11 +11,11 @@ class ECAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: ECColors.black, size: ECSizes.iconMd),
+    iconTheme: IconThemeData(color: ColorPalette.black, size: ECSizes.iconMd),
     actionsIconTheme:
-        IconThemeData(color: ECColors.black, size: ECSizes.iconMd),
+        IconThemeData(color: ColorPalette.black, size: ECSizes.iconMd),
     titleTextStyle: TextStyle(
-        fontSize: 18.0, fontWeight: FontWeight.w600, color: ECColors.black),
+        fontSize: 18.0, fontWeight: FontWeight.w600, color: ColorPalette.black),
   );
   static const darkAppBarTheme = AppBarTheme(
     elevation: 0,
@@ -23,10 +23,10 @@ class ECAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: ECColors.black, size: ECSizes.iconMd),
+    iconTheme: IconThemeData(color: ColorPalette.black, size: ECSizes.iconMd),
     actionsIconTheme:
-        IconThemeData(color: ECColors.white, size: ECSizes.iconMd),
+        IconThemeData(color: ColorPalette.white, size: ECSizes.iconMd),
     titleTextStyle: TextStyle(
-        fontSize: 18.0, fontWeight: FontWeight.w600, color: ECColors.white),
+        fontSize: 18.0, fontWeight: FontWeight.w600, color: ColorPalette.white),
   );
 }

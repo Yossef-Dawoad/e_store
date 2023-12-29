@@ -12,14 +12,14 @@ class ECCheckboxTheme {
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(ECSizes.xs)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return ECColors.white;
+        return ColorPalette.white;
       } else {
-        return ECColors.black;
+        return ColorPalette.black;
       }
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return ECColors.primary;
+        return ColorPalette.primary;
       } else {
         return Colors.transparent;
       }
@@ -32,14 +32,14 @@ class ECCheckboxTheme {
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(ECSizes.xs)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return ECColors.white;
+        return ColorPalette.white;
       } else {
-        return ECColors.black;
+        return ColorPalette.black;
       }
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return ECColors.primary;
+        return ColorPalette.primary;
       } else {
         return Colors.transparent;
       }

@@ -34,8 +34,9 @@ class Indicator extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 6.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.0),
-              color:
-                  index == currentIndex ? ECColors.primary : ECColors.lightGrey,
+              color: index == currentIndex
+                  ? ColorPalette.primary
+                  : ColorPalette.lightGrey,
             ),
           ),
         ),
