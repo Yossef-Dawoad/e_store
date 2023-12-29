@@ -3,7 +3,6 @@ import 'package:e_store/utils/constants/sizes.dart';
 import 'package:e_store/utils/constants/text_strings.dart';
 import 'package:e_store/utils/extensions/context_ext.dart';
 import 'package:e_store/utils/helpers/helper_functions.dart';
-import 'package:e_store/utils/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
