@@ -16,6 +16,7 @@ class NetworkManager {
 
   final Connectivity _connectivity = Connectivity();
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  // ignore: unused_field
   ConnectivityResult _connectionStatus = ConnectivityResult.none;
 
   /// Initialize the network manager and set up a stream to continually check the connection status.

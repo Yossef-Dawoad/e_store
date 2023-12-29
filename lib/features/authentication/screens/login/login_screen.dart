@@ -1,11 +1,11 @@
 import 'package:e_store/core/common/styles/spacing_styles.dart';
+import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/helpers/helper_functions.dart';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'widgets/google_facebook_login.dart';
 import 'widgets/or_signin_div.dart';

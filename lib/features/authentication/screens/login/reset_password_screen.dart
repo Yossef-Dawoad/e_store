@@ -23,7 +23,7 @@ class ResetPasswordScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(ECSizes.defaultSpace),
+          padding: const EdgeInsets.all(ECSizes.defaultSpace),
           child: Column(
             children: [
               ///image with 60% of screen width
