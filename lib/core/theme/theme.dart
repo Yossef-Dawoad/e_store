@@ -10,8 +10,8 @@ import 'widget_themes/text_theme.dart';
 
 import '../constants/colors.dart';
 
-class ECAppTheme {
-  ECAppTheme._();
+class AppTheme {
+  AppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,

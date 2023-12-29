@@ -1,6 +1,6 @@
-import 'package:e_store/utils/constants/colors.dart';
-import 'package:e_store/utils/constants/image_strings.dart';
-import 'package:e_store/utils/constants/sizes.dart';
+import 'package:e_store/core/constants/colors.dart';
+import 'package:e_store/core/constants/image_strings.dart';
+import 'package:e_store/core/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class GoogleFaceBookButton extends StatelessWidget {

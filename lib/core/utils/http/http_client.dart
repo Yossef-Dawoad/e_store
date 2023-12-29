@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:e_store/utils/constants/api_constants.dart';
+import 'package:e_store/core/constants/api_constants.dart';
 import 'package:http/http.dart' as http;
 
 class ECHttpHelper {

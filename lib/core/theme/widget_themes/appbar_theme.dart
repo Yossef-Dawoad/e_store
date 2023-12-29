@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:e_store/utils/constants/sizes.dart';
+import 'package:e_store/core/constants/sizes.dart';
 import '../../constants/colors.dart';
 
 class ECAppBarTheme {

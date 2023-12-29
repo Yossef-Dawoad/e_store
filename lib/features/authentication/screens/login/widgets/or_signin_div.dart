@@ -1,5 +1,5 @@
-import 'package:e_store/utils/constants/colors.dart';
-import 'package:e_store/utils/extensions/context_ext.dart';
+import 'package:e_store/core/constants/colors.dart';
+import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:flutter/material.dart';
 
 class TextBtwDivider extends StatelessWidget {

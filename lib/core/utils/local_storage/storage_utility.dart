@@ -1,11 +1,11 @@
 import 'package:get_storage/get_storage.dart';
 
-class ECLocalStorage {
-  static final ECLocalStorage _instance = ECLocalStorage._internal();
+class LocalStorageManager {
+  static final LocalStorageManager _instance = LocalStorageManager._internal();
 
-  factory ECLocalStorage() => _instance;
+  factory LocalStorageManager() => _instance;
 
-  ECLocalStorage._internal();
+  LocalStorageManager._internal();
 
   final _storage = GetStorage();
 

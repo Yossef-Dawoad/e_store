@@ -1,7 +1,7 @@
-import 'package:e_store/utils/constants/sizes.dart';
-import 'package:e_store/utils/constants/text_strings.dart';
-import 'package:e_store/utils/extensions/context_ext.dart';
-import 'package:e_store/utils/routes/routes.dart';
+import 'package:e_store/core/constants/sizes.dart';
+import 'package:e_store/core/constants/text_strings.dart';
+import 'package:e_store/core/utils/extensions/context_ext.dart';
+import 'package:e_store/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

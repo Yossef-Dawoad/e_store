@@ -1,5 +1,5 @@
-import 'package:e_store/utils/constants/image_strings.dart';
-import 'package:e_store/utils/constants/text_strings.dart';
+import 'package:e_store/core/constants/image_strings.dart';
+import 'package:e_store/core/constants/text_strings.dart';
 
 class OnBoardingPageContent {
   final String title;
