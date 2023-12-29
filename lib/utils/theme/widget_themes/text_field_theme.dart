@@ -44,8 +44,10 @@ class ECTextFormFieldTheme {
     prefixIconColor: ColorPalette.darkGrey,
     suffixIconColor: ColorPalette.darkGrey,
     // constraints: const BoxConstraints.expand(height: TSizes.inputFieldHeight),
-    labelStyle: const TextStyle()
-        .copyWith(fontSize: ECSizes.fontSizeMd, color: ColorPalette.white),
+    labelStyle: const TextStyle().copyWith(
+      fontSize: ECSizes.fontSizeMd,
+      color: ColorPalette.grey,
+    ),
     hintStyle: const TextStyle()
         .copyWith(fontSize: ECSizes.fontSizeSm, color: ColorPalette.white),
     floatingLabelStyle:

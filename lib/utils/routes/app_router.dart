@@ -1,4 +1,5 @@
 import 'package:e_store/common/widgets/success_screen.dart';
+import 'package:e_store/features/authentication/screens/login/forget_screen.dart';
 import 'package:e_store/features/authentication/screens/login/login_screen.dart';
 import 'package:e_store/features/authentication/screens/signup/signup_screen.dart';
 import 'package:e_store/features/authentication/screens/signup/verify_email.dart';
@@ -15,6 +16,8 @@ class AppRouter {
         MaterialPageRoute(builder: (_) => const VerifyEmailScreen()),
       Routes.verifySuccess =>
         MaterialPageRoute(builder: (_) => const VerifySuccessScreen()),
+      Routes.forgetPassword =>
+        MaterialPageRoute(builder: (_) => const ForgetPasswordScreen()),
       _ => _errorRoute(settings.name),
     };
   }
