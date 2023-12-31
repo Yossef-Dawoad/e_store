@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'features/shop/screens/home/home_screen.dart';
+
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({super.key});
 
@@ -27,7 +29,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
         ],
       ),
       body: switch (currentIndex) {
-        0 => const Center(child: Text('Home')),
+        0 => const HomeScreen(),
         1 => const Center(child: Text('store')),
         2 => const Center(child: Text('wishlist')),
         _ => const Center(child: Text('Profile')),
