@@ -1,7 +1,7 @@
 import 'package:e_store/core/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/header_shape.dart';
+import 'widgets/home_custom_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,18 +9,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = ECHelperFunctions.screenHeight(context);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Header
-            ClipReverseBottomSheetShape(
-              height: screenHeight * 0.4,
-              width: double.maxFinite,
-              child: const Column(
-                children: [],
-              ),
-            ),
+            HomeCustomAppBar(height: screenHeight * 0.4),
           ],
         ),
       ),
