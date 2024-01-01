@@ -58,7 +58,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Positioned(
             bottom: kBottomNavigationBarHeight + 20.0,
             left: 24,
-            child: Indicator(count: 3, controller: _pageController),
+            child: Indicator(
+              count: onBoardingPages.length,
+              controller: _pageController,
+              dotHeight: 16.0,
+            ),
           ),
 
           /// Circluar Navigation Button
