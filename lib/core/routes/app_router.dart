@@ -4,7 +4,7 @@ import 'package:e_store/features/authentication/screens/login/login_screen.dart'
 import 'package:e_store/features/authentication/screens/signup/signup_screen.dart';
 import 'package:e_store/features/authentication/screens/signup/verify_email.dart';
 import 'package:e_store/features/onboarding/onboarding.dart';
-import 'package:e_store/navigation_menu.dart';
+import 'package:e_store/features/shop/screens/home/navigation_menu.dart';
 import 'package:flutter/material.dart';
 
 import 'routes.dart';

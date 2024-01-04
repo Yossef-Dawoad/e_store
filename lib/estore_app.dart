@@ -10,6 +10,7 @@ class EStoreApp extends StatelessWidget {
     required this.router,
   });
   final AppRouter router;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +19,7 @@ class EStoreApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      initialRoute: Routes.onBoarding,
+      initialRoute: Routes.initialRoute,
       onGenerateRoute: router.onGenerateRoute,
     );
   }

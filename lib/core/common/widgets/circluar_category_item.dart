@@ -21,7 +21,7 @@ class CircluarCategoryItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(top: 16.0, right: 12.0),
+        padding: const EdgeInsets.only(right: 16.0),
         child: Column(
           children: [
             Container(

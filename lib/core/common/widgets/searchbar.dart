@@ -33,7 +33,7 @@ class CustomSearchBar extends StatelessWidget {
         child: Row(
           children: <Widget>[
             const Icon(Iconsax.search_normal, color: ColorPalette.darkGrey),
-            const SizedBox(height: AppSizes.spaceBtwSections),
+            const SizedBox(width: AppSizes.spaceBtwSections),
             Text(
               'Search in Store',
               style: context.textTheme.bodySmall?.apply(

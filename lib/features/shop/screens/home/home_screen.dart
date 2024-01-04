@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             /// Header
-            HomeCustomAppBar(height: screenHeight * 0.4),
+            HomeCustomAppBar(height: screenHeight * 0.42),
 
             /// body
             /// Carousel

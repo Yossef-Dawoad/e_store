@@ -38,7 +38,7 @@ class Indicator extends StatelessWidget {
               borderRadius: BorderRadius.circular(20.0),
               color: index == currentIndex
                   ? ColorPalette.primary
-                  : ColorPalette.lightGrey,
+                  : ColorPalette.grey,
             ),
           ),
         ),

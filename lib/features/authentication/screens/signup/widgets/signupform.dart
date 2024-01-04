@@ -20,24 +20,29 @@ class SignUpForm extends StatelessWidget {
     return Form(
       child: Column(
         children: <Widget>[
+          //user name first & last name
           Row(
             children: <Widget>[
+              // first name
               Expanded(
                 child: TextFormField(
                   expands: false,
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(Iconsax.user),
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Iconsax.user),
                     labelText: AppTexts.firstName,
+                    labelStyle: context.textTheme.labelLarge,
                   ),
                 ),
               ),
-              const SizedBox(height: AppSizes.spaceBtwInputFields),
+              const SizedBox(width: AppSizes.spaceBtwInputFields),
+              // last name
               Expanded(
                 child: TextFormField(
                   expands: false,
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(Iconsax.user),
+                  decoration: InputDecoration(
+                    prefixIcon: const Icon(Iconsax.user),
                     labelText: AppTexts.lastName,
+                    labelStyle: context.textTheme.labelLarge,
                   ),
                 ),
               )
@@ -45,39 +50,39 @@ class SignUpForm extends StatelessWidget {
           ),
           const SizedBox(height: AppSizes.spaceBtwSections),
           // email
-          Expanded(
-            child: TextFormField(
-              expands: false,
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.direct),
-                labelText: AppTexts.email,
-              ),
-            ),
-          ),
-          // password
-          Expanded(
-            child: TextFormField(
-              expands: false,
-              decoration: const InputDecoration(
-                labelText: AppTexts.password,
-                prefixIcon: Icon(Iconsax.password_check),
-                suffixIcon: Icon(Iconsax.eye_slash),
-              ),
+          TextFormField(
+            expands: false,
+            decoration: InputDecoration(
+              prefixIcon: const Icon(Iconsax.direct),
+              labelText: AppTexts.email,
+              labelStyle: context.textTheme.labelLarge,
             ),
           ),
           const SizedBox(height: AppSizes.spaceBtwSections),
-          //Terms & Conditions
+          // // password
+          TextFormField(
+            expands: false,
+            decoration: InputDecoration(
+              labelText: AppTexts.password,
+              labelStyle: context.textTheme.labelLarge,
+              prefixIcon: const Icon(Iconsax.password_check),
+              suffixIcon: const Icon(Iconsax.eye_slash),
+            ),
+          ),
+          const SizedBox(height: AppSizes.spaceBtwSections),
+          // //Terms & Conditions
           Row(
-            children: <Widget>[
+            children: [
               SizedBox(
-                width: 24,
-                height: 24,
+                width: 25,
+                height: 25,
                 child: Checkbox(value: true, onChanged: (val) {}),
               ),
               const SizedBox(width: AppSizes.defaultSpace),
               const TermsAndConditionCheckBox(),
             ],
           ),
+
           const SizedBox(height: AppSizes.spaceBtwSections),
           // Sign Up Button
           SizedBox(

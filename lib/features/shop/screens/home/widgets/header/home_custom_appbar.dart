@@ -76,9 +76,9 @@ class HomeCustomAppBar extends StatelessWidget {
                 SizedBox(
                   height: 120,
                   child: ListView.builder(
+                    padding: const EdgeInsets.symmetric(vertical: 14.0),
                     itemCount: 8,
                     scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
                     itemBuilder: (_, idx) => CircluarCategoryItem(
                       image: ECImages.shoeIcon,
                       title: 'Shoes',

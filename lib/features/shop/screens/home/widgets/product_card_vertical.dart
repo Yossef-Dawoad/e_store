@@ -23,7 +23,7 @@ class ProducCardVertical extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 190,
+            height: 170,
             padding: const EdgeInsets.all(AppSizes.sm),
             decoration: BoxDecoration(
               color: isDark ? ColorPalette.dark : ColorPalette.light,
@@ -116,7 +116,10 @@ class ProducCardVertical extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: AppSizes.sm),
+                padding: const EdgeInsets.symmetric(
+                  vertical: AppSizes.sm,
+                  horizontal: AppSizes.sm,
+                ),
                 child: Text(
                   '\$35.9',
                   maxLines: 1,
@@ -124,14 +127,21 @@ class ProducCardVertical extends StatelessWidget {
                   style: context.textTheme.headlineMedium,
                 ),
               ),
-              Container(
-                width: AppSizes.iconLg * 1.2,
-                height: AppSizes.iconLg * 1.2,
-                decoration: BoxDecoration(
-                  color: ColorPalette.dark,
-                  borderRadius: BorderRadius.circular(8.0),
+              Padding(
+                padding: const EdgeInsets.only(right: 5.0),
+                child: Container(
+                  width: AppSizes.iconLg * 1.3,
+                  height: AppSizes.iconLg * 1.3,
+                  decoration: BoxDecoration(
+                    color: isDark ? ColorPalette.dark : ColorPalette.light,
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Icon(
+                    Iconsax.add,
+                    size: AppSizes.iconLg,
+                    color: isDark ? ColorPalette.light : ColorPalette.dark,
+                  ),
                 ),
-                child: const Icon(Iconsax.add),
               ),
             ],
           )

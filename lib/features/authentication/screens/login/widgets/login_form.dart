@@ -62,12 +62,8 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamedAndRemoveUntil(
-                    Routes.navigationMenu,
-                    (Route<dynamic> route) => route.isFirst,
-                  );
-                },
+                onPressed: () =>
+                    context.pushReplacementNamedRoute(Routes.navigationMenu),
                 child: const Text(AppTexts.signIn),
               ),
             ),

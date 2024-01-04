@@ -1,5 +1,6 @@
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/routes/routes.dart';
+import 'package:e_store/core/utils/local_storage/storage_utility.dart';
 import 'package:flutter/material.dart';
 
 import 'models/page_content.dart';
@@ -75,16 +76,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
               child: Row(
                 children: [
-                  if (currentPageIndex == onBoardingPages.length - 1)
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 12.0),
-                      child: Text("continue"),
-                    ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color:
-                        isDarkMode ? ColorPalette.white : ColorPalette.primary,
-                  )
+                  (currentPageIndex == onBoardingPages.length - 1)
+                      ? const Padding(
+                          padding: EdgeInsets.all(12.0),
+                          child: Text("continue"),
+                        )
+                      : Icon(
+                          Icons.arrow_forward_ios,
+                          color: isDarkMode
+                              ? ColorPalette.white
+                              : ColorPalette.primary,
+                        )
                 ],
               ),
             ),
@@ -98,19 +100,23 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     setState(() => currentPageIndex = index);
   }
 
-  void _skiptoLastPage({String exitRouteName = '/'}) {
+  void _skiptoLastPage({String exitRouteName = '/'}) async {
     final lastPageIndex = onBoardingPages.length - 1;
-    print(lastPageIndex);
-    print(currentPageIndex);
+
     if (currentPageIndex != lastPageIndex) {
       _pageController.jumpToPage(lastPageIndex);
       return;
     }
-    //TODO: SAVE THAT USER ALREADY SEE ONBOARDING PAGE
-    Navigator.of(context).pushNamedAndRemoveUntil(
-      exitRouteName,
-      (Route<dynamic> route) => route.isFirst,
-    );
+
+    final storage = LocalStorageManager.instance;
+    await storage.saveData('initial_route', 1);
+
+    if (context.mounted) {
+      Navigator.of(context).pushNamedAndRemoveUntil(
+        exitRouteName,
+        (Route<dynamic> route) => route.isFirst,
+      );
+    }
   }
 
   void _navigateToNextPage({String exitsRouteName = '/'}) {
