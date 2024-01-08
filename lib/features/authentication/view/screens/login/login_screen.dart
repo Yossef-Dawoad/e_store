@@ -1,6 +1,6 @@
 import 'package:e_store/core/common/styles/spacing_styles.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/features/authentication/screens/login/widgets/login_form.dart';
+import 'package:e_store/features/authentication/view/screens/login/widgets/login_form.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/helpers/helper_functions.dart';

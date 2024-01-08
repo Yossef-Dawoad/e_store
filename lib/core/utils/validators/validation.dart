@@ -42,6 +42,12 @@ class FieldValidator {
     return null;
   }
 
+  static String? validateConfirmPassword(String? value, String? password) {
+    if (value == null || value.isEmpty) return 'Confirm password is required.';
+    if (value != password) return 'Passwords do not match.';
+    return null;
+  }
+
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
       return 'Phone number is required.';
@@ -58,4 +64,9 @@ class FieldValidator {
   }
 
 // Add more custom validators as needed for your specific requirements.
+
+  static String? validateEmptyField(String? value) {
+    if (value == null || value.isEmpty) return 'Field is required.';
+    return null;
+  }
 }
