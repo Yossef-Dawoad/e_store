@@ -21,7 +21,11 @@ class AuthenticationRemoteDataSourceImpl
   final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
 
   /// return true if the user is logged in
-  bool get isUserLoggedIn => _auth.currentUser != null;
+  bool get isUserLoggedIn {
+    _auth.currentUser?.reload();
+    if (_auth.currentUser?.emailVerified ?? false) return true;
+    return false;
+  }
 
   @override
   Future<models.UserAccount> signInWithEmailPassword(

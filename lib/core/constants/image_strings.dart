@@ -1,7 +1,7 @@
 /* -- App Image Strings -- */
 
 /// This class contains all the App Images in String formats.
-class ECImages {
+class AppImages {
   // -- App Logos
   static const String darkAppLogo =
       "assets/logos/t-store-splash-logo-black.png";

@@ -19,4 +19,5 @@ abstract class AuthenticationRepository {
   FutureResult<void, BaseException> signOut();
 
   FutureResult<void, BaseException> verifyEmail();
+  bool get isSignedIn;
 }

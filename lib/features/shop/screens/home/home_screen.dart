@@ -25,10 +25,10 @@ class HomeScreen extends StatelessWidget {
             /// body
             /// Carousel
             CarouselSlider(items: [
-              CarouselSlideData(image: ECImages.banner1),
-              CarouselSlideData(image: ECImages.banner2),
-              CarouselSlideData(image: ECImages.banner3),
-              CarouselSlideData(image: ECImages.banner4),
+              CarouselSlideData(image: AppImages.banner1),
+              CarouselSlideData(image: AppImages.banner2),
+              CarouselSlideData(image: AppImages.banner3),
+              CarouselSlideData(image: AppImages.banner4),
             ]),
             const SizedBox(height: AppSizes.spaceBtwSections),
 

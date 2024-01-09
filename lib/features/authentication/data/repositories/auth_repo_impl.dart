@@ -72,4 +72,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       return Result.failure(BaseException(msg: err.toString()));
     }
   }
+
+  @override
+  bool get isSignedIn => _remoteDataSource.isUserLoggedIn;
 }

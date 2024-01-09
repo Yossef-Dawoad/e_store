@@ -37,7 +37,7 @@ class ProducCardVertical extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(AppSizes.md),
                     image: const DecorationImage(
-                      image: AssetImage(ECImages.productImage1),
+                      image: AssetImage(AppImages.productImage1),
                       fit: BoxFit.fitWidth,
                     ),
                   ),

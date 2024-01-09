@@ -30,7 +30,7 @@ class VerifyEmailScreen extends StatelessWidget {
             children: [
               ///image
               Image(
-                image: const AssetImage(ECImages.deliveredEmailIllustration),
+                image: const AssetImage(AppImages.deliveredEmailIllustration),
                 width: HelperFunctions.screenWidth(context) * 0.6,
               ),
               const SizedBox(height: AppSizes.spaceBtwSections),
@@ -61,7 +61,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => context.pushRoute(
                     const SuccessScreen(
-                        image: ECImages.staticSuccessIllustration,
+                        image: AppImages.staticSuccessIllustration,
                         title: AppTexts.yourAccountCreatedTitle,
                         subTitle: AppTexts.yourAccountCreatedSubTitle,
                         routeTo: Routes.signIn),

@@ -23,7 +23,7 @@ class GoogleFaceBookButton extends StatelessWidget {
             icon: const Image(
               width: AppSizes.iconMd,
               height: AppSizes.iconMd,
-              image: AssetImage(ECImages.google),
+              image: AssetImage(AppImages.google),
             ),
           ),
         ),
@@ -38,7 +38,7 @@ class GoogleFaceBookButton extends StatelessWidget {
             icon: const Image(
               width: AppSizes.iconMd,
               height: AppSizes.iconMd,
-              image: AssetImage(ECImages.facebook),
+              image: AssetImage(AppImages.facebook),
             ),
           ),
         ),

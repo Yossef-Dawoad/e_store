@@ -15,17 +15,17 @@ class OnBoardingPageContent {
 
 const List<OnBoardingPageContent> onBoardingPages = [
   OnBoardingPageContent(
-    image: ECImages.onBoardingImage1,
+    image: AppImages.onBoardingImage1,
     title: AppTexts.onBoardingTitle1,
     subTitle: AppTexts.onBoardingSubTitle1,
   ),
   OnBoardingPageContent(
-    image: ECImages.onBoardingImage2,
+    image: AppImages.onBoardingImage2,
     title: AppTexts.onBoardingTitle2,
     subTitle: AppTexts.onBoardingSubTitle2,
   ),
   OnBoardingPageContent(
-    image: ECImages.onBoardingImage3,
+    image: AppImages.onBoardingImage3,
     title: AppTexts.onBoardingTitle3,
     subTitle: AppTexts.onBoardingSubTitle3,
   ),

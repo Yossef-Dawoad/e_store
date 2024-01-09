@@ -80,7 +80,7 @@ class HomeCustomAppBar extends StatelessWidget {
                     itemCount: 8,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (_, idx) => CircluarCategoryItem(
-                      image: ECImages.shoeIcon,
+                      image: AppImages.shoeIcon,
                       title: 'Shoes',
                       onTap: () {},
                     ),

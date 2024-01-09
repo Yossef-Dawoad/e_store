@@ -30,7 +30,7 @@ class ResetPasswordScreen extends StatelessWidget {
 
               ///image
               Image(
-                image: const AssetImage(ECImages.deliveredEmailIllustration),
+                image: const AssetImage(AppImages.deliveredEmailIllustration),
                 width: HelperFunctions.screenWidth(context) * 0.6,
               ),
               const SizedBox(height: AppSizes.spaceBtwSections),
