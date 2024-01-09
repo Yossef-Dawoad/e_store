@@ -4,6 +4,7 @@ import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SuccessScreen extends StatelessWidget {
   const SuccessScreen({
@@ -27,8 +28,8 @@ class SuccessScreen extends StatelessWidget {
         child: Column(
           children: [
             ///image
-            Image(
-              image: AssetImage(image),
+            Lottie.asset(
+              image,
               width: HelperFunctions.screenWidth(context) * 0.6,
             ),
             const SizedBox(height: AppSizes.spaceBtwSections),
