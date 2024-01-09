@@ -9,7 +9,7 @@ class TermsAndConditionCheckBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = ECHelperFunctions.isDarkMode(context);
+    final isDark = HelperFunctions.isDarkMode(context);
     return Text.rich(
       TextSpan(
         children: [

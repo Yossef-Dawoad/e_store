@@ -17,7 +17,7 @@ class CircluarCategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = ECHelperFunctions.isDarkMode(context);
+    final isDark = HelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: Padding(

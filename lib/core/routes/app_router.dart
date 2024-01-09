@@ -1,5 +1,4 @@
 import 'package:e_store/core/bindings/dependency_inject.dart';
-import 'package:e_store/core/common/widgets/success_screen.dart';
 import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
@@ -36,8 +35,6 @@ class AppRouter {
             child: const VerifyEmailScreen(),
           ),
         ),
-      Routes.verifySuccess =>
-        MaterialPageRoute(builder: (_) => const VerifySuccessScreen()),
       Routes.forgetPassword =>
         MaterialPageRoute(builder: (_) => const ForgetPasswordScreen()),
       Routes.navigationMenu =>

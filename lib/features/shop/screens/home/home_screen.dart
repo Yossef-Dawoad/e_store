@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = ECHelperFunctions.screenHeight(context);
+    final screenHeight = HelperFunctions.screenHeight(context);
 
     return Scaffold(
       body: SingleChildScrollView(

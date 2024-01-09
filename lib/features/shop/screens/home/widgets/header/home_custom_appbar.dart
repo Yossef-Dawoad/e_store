@@ -24,8 +24,8 @@ class HomeCustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = ECHelperFunctions.screenWidth(context);
-    final isDark = ECHelperFunctions.isDarkMode(context);
+    final screenWidth = HelperFunctions.screenWidth(context);
+    final isDark = HelperFunctions.isDarkMode(context);
     return ClipReverseBottomSheetShape(
       height: height,
       width: double.maxFinite,

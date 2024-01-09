@@ -1,14 +1,23 @@
 import 'package:e_store/core/common/styles/spacing_styles.dart';
-import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/utils/helpers/helper_functions.dart';
-import 'package:e_store/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 
-class VerifySuccessScreen extends StatelessWidget {
-  const VerifySuccessScreen({super.key});
+class SuccessScreen extends StatelessWidget {
+  const SuccessScreen({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.subTitle,
+    required this.routeTo,
+  });
+
+  final String image;
+  final String title;
+  final String subTitle;
+  final String routeTo;
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +28,20 @@ class VerifySuccessScreen extends StatelessWidget {
           children: [
             ///image
             Image(
-              image: const AssetImage(ECImages.staticSuccessIllustration),
-              width: ECHelperFunctions.screenWidth(context) * 0.6,
+              image: AssetImage(image),
+              width: HelperFunctions.screenWidth(context) * 0.6,
             ),
             const SizedBox(height: AppSizes.spaceBtwSections),
 
             ///Title & Description
             Text(
-              AppTexts.yourAccountCreatedTitle,
+              title,
               style: context.textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: AppSizes.spaceBtwItems),
             Text(
-              AppTexts.yourAccountCreatedSubTitle,
+              subTitle,
               style: context.textTheme.labelMedium,
               textAlign: TextAlign.center,
             ),
@@ -42,7 +51,7 @@ class VerifySuccessScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => context.pushNamedRoute(Routes.signIn),
+                onPressed: () => context.pushNamedRoute(routeTo),
                 child: const Text(AppTexts.tContinue),
               ),
             ),

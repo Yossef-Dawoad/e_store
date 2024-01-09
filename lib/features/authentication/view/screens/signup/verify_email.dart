@@ -1,3 +1,4 @@
+import 'package:e_store/core/common/widgets/success_screen.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
@@ -30,7 +31,7 @@ class VerifyEmailScreen extends StatelessWidget {
               ///image
               Image(
                 image: const AssetImage(ECImages.deliveredEmailIllustration),
-                width: ECHelperFunctions.screenWidth(context) * 0.6,
+                width: HelperFunctions.screenWidth(context) * 0.6,
               ),
               const SizedBox(height: AppSizes.spaceBtwSections),
 
@@ -58,7 +59,13 @@ class VerifyEmailScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => context.pushNamedRoute(Routes.verifySuccess),
+                  onPressed: () => context.pushRoute(
+                    const SuccessScreen(
+                        image: ECImages.staticSuccessIllustration,
+                        title: AppTexts.yourAccountCreatedTitle,
+                        subTitle: AppTexts.yourAccountCreatedSubTitle,
+                        routeTo: Routes.signIn),
+                  ),
                   child: const Text(AppTexts.tContinue),
                 ),
               ),
