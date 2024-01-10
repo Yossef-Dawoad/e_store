@@ -40,6 +40,7 @@ class _LoginFormState extends State<LoginForm> {
           children: [
             // Email
             TextFormField(
+              controller: _emailController,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
                 labelText: AppTexts.email,
@@ -47,14 +48,6 @@ class _LoginFormState extends State<LoginForm> {
             ),
             const SizedBox(height: AppSizes.spaceBtwInputFields),
             // Password
-            TextFormField(
-              controller: _emailController,
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.password_check),
-                labelText: AppTexts.password,
-                suffixIcon: Icon(Iconsax.eye_slash),
-              ),
-            ),
             PassWordInputField(
               controller: _passwordController,
               validator: (val) => FieldValidator.validatePassword(val),
@@ -88,8 +81,7 @@ class _LoginFormState extends State<LoginForm> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () =>
-                    context.pushReplacementNamedRoute(Routes.navigationMenu),
+                onPressed: () => _validateThenPerfromSignIn(context),
                 child: const Text(AppTexts.signIn),
               ),
             ),
@@ -112,18 +104,16 @@ class _LoginFormState extends State<LoginForm> {
 
   // ignore: unused_element
   void _validateThenPerfromSignIn(BuildContext context) {
+    final email = _emailController.text.trim();
     final signInCubit = context.read<LoginCubit>();
 
-    // using a golbal key to access the agreement checkbox
-    // else snackbar should be placed
-    final email = _emailController.text.trim();
     if (_formKey.currentState!.validate()) {
       signInCubit.logIn(
         email: email,
         password: _passwordController.text.trim(),
       );
-      // BUG arguments doesn't passed correctly
-      context.pushNamedRoute(Routes.navigationMenu);
+      context.pushReplacementNamedRoute(Routes.navigationMenu);
     }
+    // should display snackbar if validation fails??
   }
 }
