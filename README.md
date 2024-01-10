@@ -1,16 +1,26 @@
-# e_store
+# e_lstore
 
-A new Flutter project.
+An Ecommerce Flutter project.
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This an e_store with Flutter that represent a lot of concepts and practices that I have learned in the past years.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
+- [ ] native Splash Screen (no-dependency)
+- [X] Animated OnBoarding Screen (no-dependency)
+- [X] Login Screen & SignUp Screen UI  
+- [X] Full authentication feature with clean archticture (firebase)
+- [X] Home Screen
+- [ ] Store Screen
+- [ ] profile Screen
+- [ ] Settings Screen
+- [ ] ability to checkout with payment gateway
+- [ ] BLOC state management with getIt dependency injection
+- [X] Good & Robust Routig system
+- [X] themeing configured with (dark & light)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+This is a very beta version and highly customized to follow best practices as much as possible and will go through a lot of changes, refactors and updates.
