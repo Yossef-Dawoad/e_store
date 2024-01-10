@@ -99,10 +99,11 @@ class _SignUpFormState extends State<SignUpForm> {
           const SizedBox(height: AppSizes.spaceBtwSections),
           // //Terms & Conditions
           const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TermsAgreementCheckBox(),
               SizedBox(width: AppSizes.defaultSpace),
-              TermsAndConditionCheckBox(),
+              Expanded(child: TermsAndConditionCheckBox()),
             ],
           ),
 
@@ -121,17 +122,21 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 
   void _validateThenPerfromSignUp(BuildContext context) {
-    final loginCubit = context.read<SignUpCubit>();
+    final signUpCubit = context.read<SignUpCubit>();
 
     // using a golbal key to access the agreement checkbox
     // else snackbar should be placed
-
+    final email = _emailController.text.trim();
     if (formKey.currentState!.validate()) {
-      loginCubit.signUp(
-        email: _emailController.text.trim(),
+      signUpCubit.signUp(
+        email: email,
         password: _passwordController.text.trim(),
       );
-      context.pushNamedRoute(Routes.verifyEmail);
+      // BUG arguments doesn't passed correctly
+      context.pushNamedRoute(
+        Routes.verifyEmail,
+        arguments: email,
+      );
     }
   }
 }
@@ -144,7 +149,7 @@ class TermsAgreementCheckBox extends StatefulWidget {
 }
 
 class _TermsAgreementCheckBoxState extends State<TermsAgreementCheckBox> {
-  final isAgreed = true;
+  bool isAgreed = true;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -152,7 +157,7 @@ class _TermsAgreementCheckBoxState extends State<TermsAgreementCheckBox> {
       height: 25,
       child: Checkbox(
         value: isAgreed,
-        onChanged: (val) => setState(() => isAgreed != isAgreed),
+        onChanged: (val) => setState(() => isAgreed = !isAgreed),
       ),
     );
   }
@@ -173,7 +178,7 @@ class PassWordInputField extends StatefulWidget {
 }
 
 class _PassWordInputFieldState extends State<PassWordInputField> {
-  final obscureText = true;
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -184,8 +189,8 @@ class _PassWordInputFieldState extends State<PassWordInputField> {
         labelStyle: context.textTheme.labelLarge,
         prefixIcon: const Icon(Iconsax.password_check),
         suffixIcon: IconButton(
+          onPressed: () => setState(() => obscureText = !obscureText),
           icon: Icon(obscureText ? Iconsax.eye_slash : Iconsax.eye),
-          onPressed: () => setState(() => obscureText != obscureText),
         ),
       ),
       obscureText: obscureText,

@@ -26,12 +26,13 @@ class AppRouter {
         ),
       Routes.signUp => MaterialPageRoute(
           builder: (_) => BlocProvider(
-                create: (context) => sl<SignUpCubit>(),
-                child: const SignUpScreen(),
-              )),
+            create: (context) => sl<SignUpCubit>(),
+            child: const SignUpScreen(),
+          ),
+        ),
       Routes.verifyEmail => MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => sl<VerifyEmailCubitCubit>(),
+            create: (context) => sl<VerifyEmailCubit>(),
             child: const VerifyEmailScreen(),
           ),
         ),

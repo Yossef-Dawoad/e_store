@@ -5,15 +5,15 @@ import 'package:e_store/features/authentication/data/models/user_auth_params.dar
 
 import '../repositories/auth_repo.dart';
 
-typedef VoidResult = Result<void, BaseException>;
+typedef BoolResult = Result<bool, BaseException>;
 
-class VerifyEmailUseCase implements UseCase<void, VoidParams> {
+class VerifyEmailUseCase implements UseCase<BoolResult, VoidParams> {
   final AuthenticationRepository _authenticationRepository;
 
   VerifyEmailUseCase(this._authenticationRepository);
 
   @override
-  Future<VoidResult> call({required VoidParams params}) async {
+  Future<BoolResult> call({required VoidParams params}) async {
     return await _authenticationRepository.verifyEmail();
   }
 }

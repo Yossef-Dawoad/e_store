@@ -22,9 +22,10 @@ dependencies:
   http: ^1.1.2
   intl: ^0.19.0
   logger: ^2.0.2+1
-  url_launcher: ^6.2.2
+  url_launcher: ^6.2.3
   connectivity_plus: ^5.0.2
   get_storage: ^2.1.1
+  lottie: ^2.7.0
 
   ## State management
   
@@ -35,11 +36,12 @@ dependencies:
   firebase_core: ^2.24.2
   firebase_storage: ^11.6.0
   firebase_auth: ^4.16.0
-  google_sign_in: ^6.2.1
   cloud_firestore: ^4.14.0
+  google_sign_in: ^6.2.1
+
+  #Generator Packages 
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
-  lottie: ^2.7.0
 
   ## Product Specific
 

@@ -12,13 +12,13 @@ class SuccessScreen extends StatelessWidget {
     required this.image,
     required this.title,
     required this.subTitle,
-    required this.routeTo,
+    required this.onPressed,
   });
 
   final String image;
   final String title;
   final String subTitle;
-  final String routeTo;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class SuccessScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => context.pushNamedRoute(routeTo),
+                onPressed: onPressed,
                 child: const Text(AppTexts.tContinue),
               ),
             ),

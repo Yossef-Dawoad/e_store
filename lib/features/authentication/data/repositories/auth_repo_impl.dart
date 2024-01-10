@@ -1,7 +1,7 @@
 import 'package:e_store/core/utils/errors/server_errors.dart';
 
 import 'package:e_store/core/utils/types/result_type.dart';
-import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication_impl.dart';
+import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication.dart';
 import 'package:e_store/features/authentication/domain/entities/user_entity.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,10 +9,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../../domain/repositories/auth_repo.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
-  final AuthenticationRemoteDataSourceImpl _remoteDataSource;
+  final AuthenticationRemoteDataSource _remoteDataSource;
 
   AuthenticationRepositoryImpl({
-    required AuthenticationRemoteDataSourceImpl remoteDataSource,
+    required AuthenticationRemoteDataSource remoteDataSource,
   }) : _remoteDataSource = remoteDataSource;
 
   @override
@@ -64,12 +64,12 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  FutureResult<void, BaseException> verifyEmail() async {
+  FutureResult<bool, BaseException> verifyEmail() async {
     try {
       await _remoteDataSource.verifyEmail();
-      return const Result.success(null);
-    } catch (err) {
-      return Result.failure(BaseException(msg: err.toString()));
+      return Result.success(isSignedIn);
+    } catch (err, st) {
+      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 

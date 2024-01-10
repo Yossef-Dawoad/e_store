@@ -21,6 +21,7 @@ class AuthenticationRemoteDataSourceImpl
   final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
 
   /// return true if the user is logged in
+  @override
   bool get isUserLoggedIn {
     _auth.currentUser?.reload();
     if (_auth.currentUser?.emailVerified ?? false) return true;
@@ -99,8 +100,8 @@ class AuthenticationRemoteDataSourceImpl
   /// Throws an [FirebaseAuthException] if sending the verification email fails.
   @override
   Future<void> verifyEmail() async {
-    //TODO Exception Handling at MIN 6:40 VIDEO 5
     try {
+      await _auth.currentUser?.reload();
       await _auth.currentUser?.sendEmailVerification();
       final user = await userCloudService.readUser(_auth.currentUser!.uid);
       await userCloudService.writeUser(user.copyWith(isEmailVerified: true));

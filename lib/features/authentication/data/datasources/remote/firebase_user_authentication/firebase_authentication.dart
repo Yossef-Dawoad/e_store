@@ -6,4 +6,5 @@ abstract class AuthenticationRemoteDataSource {
   Future<void> verifyEmail();
   Future<UserAccount> signInWithGoogle();
   void signOut();
+  bool get isUserLoggedIn;
 }

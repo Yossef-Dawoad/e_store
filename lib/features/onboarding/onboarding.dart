@@ -1,6 +1,7 @@
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/local_storage/storage_utility.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'models/page_content.dart';
@@ -71,25 +72,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             right: 24,
             bottom: kBottomNavigationBarHeight + 20.0,
             child: ElevatedButton(
-              onPressed: () => _navigateToNextPage(
-                exitsRouteName: Routes.signIn,
-              ),
-              child: Row(
-                children: [
-                  (currentPageIndex == onBoardingPages.length - 1)
-                      ? const Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text("continue"),
-                        )
-                      : Icon(
-                          Icons.arrow_forward_ios,
-                          color: isDarkMode
-                              ? ColorPalette.white
-                              : ColorPalette.primary,
-                        )
-                ],
-              ),
-            ),
+                onPressed: () => _navigateToNextPage(
+                      exitsRouteName: Routes.signIn,
+                    ),
+                child: (currentPageIndex == onBoardingPages.length - 1)
+                    ? const Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 16.0, vertical: 2.0),
+                        child: Text("continue"),
+                      )
+                    : Icon(
+                        Icons.arrow_forward_ios,
+                        color: isDarkMode
+                            ? ColorPalette.white
+                            : ColorPalette.primary,
+                      )),
           )
         ],
       ),
@@ -109,14 +106,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     }
 
     final storage = LocalStorageManager.instance;
-    await storage.saveData('initial_route', 1);
-
-    if (context.mounted) {
-      Navigator.of(context).pushNamedAndRemoveUntil(
-        exitRouteName,
-        (Route<dynamic> route) => route.isFirst,
-      );
-    }
+    await storage.saveData('initial_route', 1).then(
+          (value) => Navigator.of(context).pushNamedAndRemoveUntil(
+            exitRouteName,
+            (Route<dynamic> route) => route.isFirst,
+          ),
+        );
+    if (kDebugMode) print('initial_route saved');
   }
 
   void _navigateToNextPage({String exitsRouteName = '/'}) {

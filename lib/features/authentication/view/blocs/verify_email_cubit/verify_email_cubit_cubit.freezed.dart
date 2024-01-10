@@ -20,49 +20,49 @@ mixin _$VerifyEmailCubitState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function(bool isSignedIn) success,
+    required TResult Function(String message, StackTrace? stackTrace) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(bool isSignedIn)? success,
+    TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function(bool isSignedIn)? success,
+    TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(VerifyEmailLoading value) loading,
+    required TResult Function(VerifyEmailSuccess value) success,
+    required TResult Function(VerifyEmailFailure value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
+    TResult? Function(VerifyEmailLoading value)? loading,
+    TResult? Function(VerifyEmailSuccess value)? success,
+    TResult? Function(VerifyEmailFailure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult Function(VerifyEmailLoading value)? loading,
+    TResult Function(VerifyEmailSuccess value)? success,
+    TResult Function(VerifyEmailFailure value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,8 +127,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function(bool isSignedIn) success,
+    required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
     return initial();
   }
@@ -138,8 +138,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(bool isSignedIn)? success,
+    TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
     return initial?.call();
   }
@@ -149,8 +149,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function(bool isSignedIn)? success,
+    TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -163,9 +163,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(VerifyEmailLoading value) loading,
+    required TResult Function(VerifyEmailSuccess value) success,
+    required TResult Function(VerifyEmailFailure value) failure,
   }) {
     return initial(this);
   }
@@ -174,9 +174,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
+    TResult? Function(VerifyEmailLoading value)? loading,
+    TResult? Function(VerifyEmailSuccess value)? success,
+    TResult? Function(VerifyEmailFailure value)? failure,
   }) {
     return initial?.call(this);
   }
@@ -185,9 +185,9 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult Function(VerifyEmailLoading value)? loading,
+    TResult Function(VerifyEmailSuccess value)? success,
+    TResult Function(VerifyEmailFailure value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,25 +202,25 @@ abstract class _Initial implements VerifyEmailCubitState {
 }
 
 /// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
+abstract class _$$VerifyEmailLoadingImplCopyWith<$Res> {
+  factory _$$VerifyEmailLoadingImplCopyWith(_$VerifyEmailLoadingImpl value,
+          $Res Function(_$VerifyEmailLoadingImpl) then) =
+      __$$VerifyEmailLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$VerifyEmailCubitStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
+class __$$VerifyEmailLoadingImplCopyWithImpl<$Res>
+    extends _$VerifyEmailCubitStateCopyWithImpl<$Res, _$VerifyEmailLoadingImpl>
+    implements _$$VerifyEmailLoadingImplCopyWith<$Res> {
+  __$$VerifyEmailLoadingImplCopyWithImpl(_$VerifyEmailLoadingImpl _value,
+      $Res Function(_$VerifyEmailLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
+class _$VerifyEmailLoadingImpl implements VerifyEmailLoading {
+  const _$VerifyEmailLoadingImpl();
 
   @override
   String toString() {
@@ -230,7 +230,7 @@ class _$LoadingImpl implements _Loading {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
+        (other.runtimeType == runtimeType && other is _$VerifyEmailLoadingImpl);
   }
 
   @override
@@ -241,8 +241,8 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function(bool isSignedIn) success,
+    required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
     return loading();
   }
@@ -252,8 +252,8 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(bool isSignedIn)? success,
+    TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
     return loading?.call();
   }
@@ -263,8 +263,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function(bool isSignedIn)? success,
+    TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -277,9 +277,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(VerifyEmailLoading value) loading,
+    required TResult Function(VerifyEmailSuccess value) success,
+    required TResult Function(VerifyEmailFailure value) failure,
   }) {
     return loading(this);
   }
@@ -288,9 +288,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
+    TResult? Function(VerifyEmailLoading value)? loading,
+    TResult? Function(VerifyEmailSuccess value)? success,
+    TResult? Function(VerifyEmailFailure value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -299,9 +299,9 @@ class _$LoadingImpl implements _Loading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult Function(VerifyEmailLoading value)? loading,
+    TResult Function(VerifyEmailSuccess value)? success,
+    TResult Function(VerifyEmailFailure value)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -311,54 +311,82 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements VerifyEmailCubitState {
-  const factory _Loading() = _$LoadingImpl;
+abstract class VerifyEmailLoading implements VerifyEmailCubitState {
+  const factory VerifyEmailLoading() = _$VerifyEmailLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
+abstract class _$$VerifyEmailSuccessImplCopyWith<$Res> {
+  factory _$$VerifyEmailSuccessImplCopyWith(_$VerifyEmailSuccessImpl value,
+          $Res Function(_$VerifyEmailSuccessImpl) then) =
+      __$$VerifyEmailSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isSignedIn});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$VerifyEmailCubitStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+class __$$VerifyEmailSuccessImplCopyWithImpl<$Res>
+    extends _$VerifyEmailCubitStateCopyWithImpl<$Res, _$VerifyEmailSuccessImpl>
+    implements _$$VerifyEmailSuccessImplCopyWith<$Res> {
+  __$$VerifyEmailSuccessImplCopyWithImpl(_$VerifyEmailSuccessImpl _value,
+      $Res Function(_$VerifyEmailSuccessImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isSignedIn = null,
+  }) {
+    return _then(_$VerifyEmailSuccessImpl(
+      null == isSignedIn
+          ? _value.isSignedIn
+          : isSignedIn // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$SuccessImpl implements _Success {
-  const _$SuccessImpl();
+class _$VerifyEmailSuccessImpl implements VerifyEmailSuccess {
+  const _$VerifyEmailSuccessImpl(this.isSignedIn);
+
+  @override
+  final bool isSignedIn;
 
   @override
   String toString() {
-    return 'VerifyEmailCubitState.success()';
+    return 'VerifyEmailCubitState.success(isSignedIn: $isSignedIn)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyEmailSuccessImpl &&
+            (identical(other.isSignedIn, isSignedIn) ||
+                other.isSignedIn == isSignedIn));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, isSignedIn);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VerifyEmailSuccessImplCopyWith<_$VerifyEmailSuccessImpl> get copyWith =>
+      __$$VerifyEmailSuccessImplCopyWithImpl<_$VerifyEmailSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function(bool isSignedIn) success,
+    required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
-    return success();
+    return success(isSignedIn);
   }
 
   @override
@@ -366,10 +394,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(bool isSignedIn)? success,
+    TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
-    return success?.call();
+    return success?.call(isSignedIn);
   }
 
   @override
@@ -377,12 +405,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function(bool isSignedIn)? success,
+    TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(isSignedIn);
     }
     return orElse();
   }
@@ -391,9 +419,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(VerifyEmailLoading value) loading,
+    required TResult Function(VerifyEmailSuccess value) success,
+    required TResult Function(VerifyEmailFailure value) failure,
   }) {
     return success(this);
   }
@@ -402,9 +430,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
+    TResult? Function(VerifyEmailLoading value)? loading,
+    TResult? Function(VerifyEmailSuccess value)? success,
+    TResult? Function(VerifyEmailFailure value)? failure,
   }) {
     return success?.call(this);
   }
@@ -413,9 +441,9 @@ class _$SuccessImpl implements _Success {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult Function(VerifyEmailLoading value)? loading,
+    TResult Function(VerifyEmailSuccess value)? success,
+    TResult Function(VerifyEmailFailure value)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -425,80 +453,96 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements VerifyEmailCubitState {
-  const factory _Success() = _$SuccessImpl;
+abstract class VerifyEmailSuccess implements VerifyEmailCubitState {
+  const factory VerifyEmailSuccess(final bool isSignedIn) =
+      _$VerifyEmailSuccessImpl;
+
+  bool get isSignedIn;
+  @JsonKey(ignore: true)
+  _$$VerifyEmailSuccessImplCopyWith<_$VerifyEmailSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailureImplCopyWith<$Res> {
-  factory _$$FailureImplCopyWith(
-          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
-      __$$FailureImplCopyWithImpl<$Res>;
+abstract class _$$VerifyEmailFailureImplCopyWith<$Res> {
+  factory _$$VerifyEmailFailureImplCopyWith(_$VerifyEmailFailureImpl value,
+          $Res Function(_$VerifyEmailFailureImpl) then) =
+      __$$VerifyEmailFailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String message});
+  $Res call({String message, StackTrace? stackTrace});
 }
 
 /// @nodoc
-class __$$FailureImplCopyWithImpl<$Res>
-    extends _$VerifyEmailCubitStateCopyWithImpl<$Res, _$FailureImpl>
-    implements _$$FailureImplCopyWith<$Res> {
-  __$$FailureImplCopyWithImpl(
-      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
+class __$$VerifyEmailFailureImplCopyWithImpl<$Res>
+    extends _$VerifyEmailCubitStateCopyWithImpl<$Res, _$VerifyEmailFailureImpl>
+    implements _$$VerifyEmailFailureImplCopyWith<$Res> {
+  __$$VerifyEmailFailureImplCopyWithImpl(_$VerifyEmailFailureImpl _value,
+      $Res Function(_$VerifyEmailFailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? message = null,
+    Object? stackTrace = freezed,
   }) {
-    return _then(_$FailureImpl(
+    return _then(_$VerifyEmailFailureImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
+      freezed == stackTrace
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$FailureImpl implements _Failure {
-  const _$FailureImpl(this.message);
+class _$VerifyEmailFailureImpl implements VerifyEmailFailure {
+  const _$VerifyEmailFailureImpl(this.message, this.stackTrace);
 
   @override
   final String message;
+  @override
+  final StackTrace? stackTrace;
 
   @override
   String toString() {
-    return 'VerifyEmailCubitState.failure(message: $message)';
+    return 'VerifyEmailCubitState.failure(message: $message, stackTrace: $stackTrace)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailureImpl &&
-            (identical(other.message, message) || other.message == message));
+            other is _$VerifyEmailFailureImpl &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.stackTrace, stackTrace) ||
+                other.stackTrace == stackTrace));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, message, stackTrace);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
+  _$$VerifyEmailFailureImplCopyWith<_$VerifyEmailFailureImpl> get copyWith =>
+      __$$VerifyEmailFailureImplCopyWithImpl<_$VerifyEmailFailureImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String message) failure,
+    required TResult Function(bool isSignedIn) success,
+    required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
-    return failure(message);
+    return failure(message, stackTrace);
   }
 
   @override
@@ -506,10 +550,10 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function(String message)? failure,
+    TResult? Function(bool isSignedIn)? success,
+    TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
-    return failure?.call(message);
+    return failure?.call(message, stackTrace);
   }
 
   @override
@@ -517,12 +561,12 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String message)? failure,
+    TResult Function(bool isSignedIn)? success,
+    TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(message);
+      return failure(message, stackTrace);
     }
     return orElse();
   }
@@ -531,9 +575,9 @@ class _$FailureImpl implements _Failure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(VerifyEmailLoading value) loading,
+    required TResult Function(VerifyEmailSuccess value) success,
+    required TResult Function(VerifyEmailFailure value) failure,
   }) {
     return failure(this);
   }
@@ -542,9 +586,9 @@ class _$FailureImpl implements _Failure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
+    TResult? Function(VerifyEmailLoading value)? loading,
+    TResult? Function(VerifyEmailSuccess value)? success,
+    TResult? Function(VerifyEmailFailure value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -553,9 +597,9 @@ class _$FailureImpl implements _Failure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
+    TResult Function(VerifyEmailLoading value)? loading,
+    TResult Function(VerifyEmailSuccess value)? success,
+    TResult Function(VerifyEmailFailure value)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -565,11 +609,14 @@ class _$FailureImpl implements _Failure {
   }
 }
 
-abstract class _Failure implements VerifyEmailCubitState {
-  const factory _Failure(final String message) = _$FailureImpl;
+abstract class VerifyEmailFailure implements VerifyEmailCubitState {
+  const factory VerifyEmailFailure(
+          final String message, final StackTrace? stackTrace) =
+      _$VerifyEmailFailureImpl;
 
   String get message;
+  StackTrace? get stackTrace;
   @JsonKey(ignore: true)
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+  _$$VerifyEmailFailureImplCopyWith<_$VerifyEmailFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

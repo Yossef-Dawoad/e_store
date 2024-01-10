@@ -1,18 +1,21 @@
-import 'package:e_store/core/common/widgets/success_screen.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/utils/helpers/helper_functions.dart';
-import 'package:e_store/core/routes/routes.dart';
+import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'widgets/verify_email_listener.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
   const VerifyEmailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final email = ModalRoute.of(context)?.settings.arguments as String? ?? '';
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -43,7 +46,7 @@ class VerifyEmailScreen extends StatelessWidget {
               ),
               const SizedBox(height: AppSizes.spaceBtwItems),
               Text(
-                'support@dawoud.com',
+                email,
                 style: context.textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
@@ -55,17 +58,11 @@ class VerifyEmailScreen extends StatelessWidget {
               ),
               const SizedBox(height: AppSizes.spaceBtwSections),
 
-              ///Action Button
+              ///Action verifyEmail Button
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => context.pushRoute(
-                    const SuccessScreen(
-                        image: AppImages.staticSuccessIllustration,
-                        title: AppTexts.yourAccountCreatedTitle,
-                        subTitle: AppTexts.yourAccountCreatedSubTitle,
-                        routeTo: Routes.signIn),
-                  ),
+                  onPressed: () => _onVerifyEmail(context, email),
                   child: const Text(AppTexts.tContinue),
                 ),
               ),
@@ -78,11 +75,17 @@ class VerifyEmailScreen extends StatelessWidget {
                   onPressed: () {},
                   child: const Text(AppTexts.resendEmail),
                 ),
-              )
+              ),
+              const VerifyEmailCubitListener(),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _onVerifyEmail(BuildContext context, String email) {
+    final verifyEmailCubit = context.read<VerifyEmailCubit>();
+    verifyEmailCubit.verifyEmail(email: email);
   }
 }

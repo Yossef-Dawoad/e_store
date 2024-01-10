@@ -7,17 +7,18 @@ import 'package:e_store/features/authentication/domain/usecases/user_email_verif
 part 'verify_email_cubit_cubit.freezed.dart';
 part 'verify_email_cubit_state.dart';
 
-class VerifyEmailCubitCubit extends Cubit<VerifyEmailCubitState> {
+class VerifyEmailCubit extends Cubit<VerifyEmailCubitState> {
   VerifyEmailUseCase usecase;
-  VerifyEmailCubitCubit(this.usecase)
-      : super(const VerifyEmailCubitState.initial());
+  VerifyEmailCubit(this.usecase) : super(const VerifyEmailCubitState.initial());
 
   void verifyEmail({required String email}) async {
     emit(const VerifyEmailCubitState.loading());
     final result = await usecase(params: VoidParams());
     result.when(
-      success: (_) => emit(const VerifyEmailCubitState.success()),
-      failure: (err) => emit(VerifyEmailCubitState.failure(err.toString())),
+      //TODO Disply snackbar with bloc listener
+      success: (isSignedIn) => emit(VerifyEmailCubitState.success(isSignedIn)),
+      failure: (err) =>
+          emit(VerifyEmailCubitState.failure(err.msg, err.stackTrace)),
     );
   }
 }

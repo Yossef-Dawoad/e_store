@@ -46,6 +46,12 @@ class MockAuthenticationRepository extends _i1.Mock
   }
 
   @override
+  bool get isSignedIn => (super.noSuchMethod(
+        Invocation.getter(#isSignedIn),
+        returnValue: false,
+      ) as bool);
+
+  @override
   _i4.Future<_i2.Result<_i5.UserAccountEntity, _i6.BaseException>>
       signInWithEmailPassword(
     String? email,
@@ -140,19 +146,19 @@ class MockAuthenticationRepository extends _i1.Mock
       ) as _i4.Future<_i2.Result<void, _i6.BaseException>>);
 
   @override
-  _i4.Future<_i2.Result<void, _i6.BaseException>> verifyEmail() =>
+  _i4.Future<_i2.Result<bool, _i6.BaseException>> verifyEmail() =>
       (super.noSuchMethod(
         Invocation.method(
           #verifyEmail,
           [],
         ),
-        returnValue: _i4.Future<_i2.Result<void, _i6.BaseException>>.value(
-            _FakeResult_0<void, _i6.BaseException>(
+        returnValue: _i4.Future<_i2.Result<bool, _i6.BaseException>>.value(
+            _FakeResult_0<bool, _i6.BaseException>(
           this,
           Invocation.method(
             #verifyEmail,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.Result<void, _i6.BaseException>>);
+      ) as _i4.Future<_i2.Result<bool, _i6.BaseException>>);
 }

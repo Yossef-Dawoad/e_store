@@ -1,4 +1,5 @@
 import 'package:e_store/core/utils/local_storage/storage_utility.dart';
+import 'package:flutter/foundation.dart';
 
 class Routes {
   static const onBoarding = '/on-boarding';
@@ -15,6 +16,7 @@ class Routes {
   static String get initialRoute {
     final storage = LocalStorageManager.instance;
     final initialRoute = storage.readData('initial_route');
+    if (kDebugMode) print(initialRoute);
 
     if (initialRoute == null || initialRoute == 0) {
       return Routes.onBoarding;
