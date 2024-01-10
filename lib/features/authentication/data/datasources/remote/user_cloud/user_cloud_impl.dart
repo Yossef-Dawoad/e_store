@@ -8,12 +8,12 @@ class UserCloudServiceImpl implements UserCloudService {
 
   @override
   Future<UserAccount> readUser(String uid) async {
-    DocumentSnapshot doc = await db.doc(uid).get();
+    DocumentSnapshot doc = await db.collection("users").doc(uid).get();
     return UserAccount.fromJson(doc.data() as Map<String, dynamic>);
   }
 
   @override
   Future<void> writeUser(UserAccount user) async {
-    await db.doc(user.uid).set(user.toJson());
+    await db.collection("users").doc(user.uid).set(user.toJson());
   }
 }
