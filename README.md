@@ -9,7 +9,7 @@ This an e_store with Flutter that represent a lot of concepts and practices that
 
 
 ## Features
-- [ ] native Splash Screen (no-dependency)
+- [X] native Splash Screen (no-dependency)
 - [X] Animated OnBoarding Screen (no-dependency)
 - [X] Login Screen & SignUp Screen UI  
 - [X] Full authentication feature with clean archticture (firebase)
