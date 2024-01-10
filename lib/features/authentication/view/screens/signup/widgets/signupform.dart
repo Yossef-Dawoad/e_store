@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'password_input_field.dart';
 import 'terms_and_condtions.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -29,12 +30,12 @@ class _SignUpFormState extends State<SignUpForm> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _rePasswordController = TextEditingController();
 
-  final formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: formKey,
+      key: _formKey,
       child: Column(
         children: <Widget>[
           //user name first & last name
@@ -127,7 +128,7 @@ class _SignUpFormState extends State<SignUpForm> {
     // using a golbal key to access the agreement checkbox
     // else snackbar should be placed
     final email = _emailController.text.trim();
-    if (formKey.currentState!.validate()) {
+    if (_formKey.currentState!.validate()) {
       signUpCubit.signUp(
         email: email,
         password: _passwordController.text.trim(),
@@ -159,42 +160,6 @@ class _TermsAgreementCheckBoxState extends State<TermsAgreementCheckBox> {
         value: isAgreed,
         onChanged: (val) => setState(() => isAgreed = !isAgreed),
       ),
-    );
-  }
-}
-
-class PassWordInputField extends StatefulWidget {
-  const PassWordInputField({
-    super.key,
-    required this.controller,
-    this.validator,
-  });
-
-  final TextEditingController controller;
-  final String? Function(String?)? validator;
-
-  @override
-  State<PassWordInputField> createState() => _PassWordInputFieldState();
-}
-
-class _PassWordInputFieldState extends State<PassWordInputField> {
-  bool obscureText = true;
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      expands: false,
-      controller: widget.controller,
-      decoration: InputDecoration(
-        labelText: AppTexts.password,
-        labelStyle: context.textTheme.labelLarge,
-        prefixIcon: const Icon(Iconsax.password_check),
-        suffixIcon: IconButton(
-          onPressed: () => setState(() => obscureText = !obscureText),
-          icon: Icon(obscureText ? Iconsax.eye_slash : Iconsax.eye),
-        ),
-      ),
-      obscureText: obscureText,
-      validator: widget.validator,
     );
   }
 }

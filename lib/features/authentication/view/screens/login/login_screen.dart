@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: AppSizes.spaceBtwSections),
               // Form Section
-              const LoginForm(),
+              LoginForm(),
               const SizedBox(height: AppSizes.spaceBtwSections),
 
               // Divider
