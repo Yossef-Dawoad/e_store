@@ -22,6 +22,8 @@ class _LoginFormState extends State<LoginForm> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  var rememberMe = false;
+  // final
 
   @override
   void dispose() {
@@ -41,6 +43,7 @@ class _LoginFormState extends State<LoginForm> {
             // Email
             TextFormField(
               controller: _emailController,
+              validator: (val) => FieldValidator.validateEmail(val),
               decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct_right),
                 labelText: AppTexts.email,
@@ -60,7 +63,9 @@ class _LoginFormState extends State<LoginForm> {
               children: [
                 Row(
                   children: [
-                    Checkbox(value: true, onChanged: ((value) {})),
+                    Checkbox(
+                        value: rememberMe,
+                        onChanged: (_) => rememberMe = !rememberMe),
                     TextButton(
                       onPressed: () {},
                       child: const Text(AppTexts.rememberMe),
@@ -112,6 +117,9 @@ class _LoginFormState extends State<LoginForm> {
         email: email,
         password: _passwordController.text.trim(),
       );
+      // save user credintials to local storage
+      
+      if (rememberMe) => 
       context.pushReplacementNamedRoute(Routes.navigationMenu);
     }
     // should display snackbar if validation fails??

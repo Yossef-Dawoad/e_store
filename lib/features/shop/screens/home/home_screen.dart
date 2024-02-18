@@ -33,7 +33,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBtwSections),
 
             /// Product GridView
-            HeaderSection(title: 'Popular Products', onPressed: () {}),
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0),
+              child: HeaderSection(title: 'Popular Products', onPressed: () {}),
+            ),
             const SizedBox(height: AppSizes.spaceBtwItems),
             const ProductGridView(),
           ],

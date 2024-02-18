@@ -97,7 +97,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     setState(() => currentPageIndex = index);
   }
 
-  void _skiptoLastPage({String exitRouteName = '/'}) async {
+  void _skiptoLastPage({String exitRouteName = '/'}) {
     final lastPageIndex = onBoardingPages.length - 1;
 
     if (currentPageIndex != lastPageIndex) {
@@ -106,7 +106,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     }
 
     final storage = LocalStorageManager.instance;
-    await storage.saveData('initial_route', 1).then(
+    storage.saveData('initial_route', 1).then(
           (value) => Navigator.of(context).pushNamedAndRemoveUntil(
             exitRouteName,
             (Route<dynamic> route) => route.isFirst,
