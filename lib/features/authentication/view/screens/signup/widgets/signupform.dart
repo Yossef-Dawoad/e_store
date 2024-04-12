@@ -1,23 +1,22 @@
-import 'package:e_store/core/constants/sizes.dart';
-import 'package:e_store/core/constants/text_strings.dart';
-import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/core/routes/routes.dart';
-import 'package:e_store/core/utils/validators/validation.dart';
-import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'package:e_store/core/constants/sizes.dart';
+import 'package:e_store/core/constants/text_strings.dart';
+import 'package:e_store/core/routes/routes.dart';
+import 'package:e_store/core/utils/extensions/context_ext.dart';
+import 'package:e_store/core/utils/helpers/helper_functions.dart';
+import 'package:e_store/core/utils/validators/validation.dart';
+import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_cubit.dart';
+
+import 'package:e_store/features/authentication/view/screens/login/widgets/google_facebook_login.dart';
+import 'package:e_store/features/authentication/view/screens/login/widgets/or_signin_div.dart';
 import 'password_input_field.dart';
 import 'terms_and_condtions.dart';
 
 class SignUpForm extends StatefulWidget {
-  const SignUpForm({
-    super.key,
-    required this.isDark,
-  });
-
-  final bool isDark;
+  const SignUpForm({super.key});
 
   @override
   State<SignUpForm> createState() => _SignUpFormState();
@@ -34,6 +33,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = HelperFunctions.isDarkMode(context);
     return Form(
       key: _formKey,
       child: Column(
@@ -116,7 +116,28 @@ class _SignUpFormState extends State<SignUpForm> {
               onPressed: () => _validateThenPerfromSignUp(context),
               child: const Text(AppTexts.createAccount),
             ),
-          )
+          ),
+          const SizedBox(height: AppSizes.spaceBtwSections),
+          // Sign In Button
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () => context.pushNamedRoute(Routes.signIn),
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Colors.transparent),
+              child: const Text(AppTexts.signIn),
+            ),
+          ),
+          const SizedBox(height: AppSizes.spaceBtwSections),
+          // Divider
+          TextBtwDivider(
+            text: AppTexts.orSignUpWith,
+            isDarkMode: isDark,
+          ),
+          const SizedBox(height: AppSizes.spaceBtwSections),
+
+          // Footer
+          const GoogleFaceBookButton(),
         ],
       ),
     );
@@ -134,6 +155,7 @@ class _SignUpFormState extends State<SignUpForm> {
         password: _passwordController.text.trim(),
       );
       // BUG arguments doesn't passed correctly
+      // or should redirected to login screen
       context.pushNamedRoute(
         Routes.verifyEmail,
         arguments: email,

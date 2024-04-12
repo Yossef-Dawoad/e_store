@@ -36,6 +36,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       return Result.success(googleUser.toEntity);
     } on FirebaseAuthException catch (err) {
       return Result.failure(BaseException(msg: err.toString()));
+    } catch (e) {
+      return Result.failure(BaseException(msg: e.toString()));
     }
   }
 

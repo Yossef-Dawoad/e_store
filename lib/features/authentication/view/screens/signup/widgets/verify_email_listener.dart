@@ -30,8 +30,6 @@ class VerifyEmailCubitListener extends StatelessWidget {
         success: (isSignedIn) => userScreenRedirect(context, isSignedIn),
         failure: (err, st) {
           context.popRoute();
-          print(err);
-          print(st);
           customDialogPopUp(
             context,
             err.toString(),

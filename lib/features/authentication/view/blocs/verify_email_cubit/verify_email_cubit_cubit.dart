@@ -15,7 +15,7 @@ class VerifyEmailCubit extends Cubit<VerifyEmailCubitState> {
     emit(const VerifyEmailCubitState.loading());
     final result = await usecase(params: VoidParams());
     result.when(
-      //TODO Disply snackbar with bloc listener
+      //TODO Display snackbar with bloc listener
       success: (isSignedIn) => emit(VerifyEmailCubitState.success(isSignedIn)),
       failure: (err) =>
           emit(VerifyEmailCubitState.failure(err.msg, err.stackTrace)),

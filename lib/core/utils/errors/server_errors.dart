@@ -3,4 +3,7 @@ class BaseException implements Exception {
   final StackTrace? stackTrace;
 
   BaseException({required this.msg, this.stackTrace});
+  // implemnt toString method
+  @override
+  String toString() => msg;
 }

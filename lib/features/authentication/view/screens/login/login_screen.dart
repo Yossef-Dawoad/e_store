@@ -1,21 +1,20 @@
-import 'package:e_store/core/common/styles/spacing_styles.dart';
-import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/features/authentication/view/screens/login/widgets/login_form.dart';
-import 'package:e_store/core/constants/sizes.dart';
-import 'package:e_store/core/constants/text_strings.dart';
-import 'package:e_store/core/utils/helpers/helper_functions.dart';
-
+import 'package:e_store/core/constants/colors.dart';
+import 'package:e_store/core/routes/routes.dart';
+import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/google_facebook_login.dart';
-import 'widgets/or_signin_div.dart';
+import 'package:e_store/core/common/styles/spacing_styles.dart';
+import 'package:e_store/core/constants/sizes.dart';
+import 'package:e_store/core/constants/text_strings.dart';
+import 'package:e_store/core/utils/extensions/context_ext.dart';
+import 'package:e_store/features/authentication/view/screens/login/widgets/login_form.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = HelperFunctions.isDarkMode(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -36,16 +35,21 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: AppSizes.spaceBtwSections),
               // Form Section
               const LoginForm(),
-              const SizedBox(height: AppSizes.spaceBtwSections),
-
-              // Divider
-              TextBtwDivider(
-                text: AppTexts.orSignInWith,
-                isDarkMode: isDarkMode,
-              ),
-              const SizedBox(height: AppSizes.spaceBtwSections),
-              // Footer
-              const GoogleFaceBookButton(),
+              BlocListener<LoginCubit, LoginState>(
+                listener: (context, state) => switch (state) {
+                  LogInLoading() => showDialog(
+                      context: context,
+                      builder: (context) => const Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    ),
+                  LogInSuccess() =>
+                    context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu),
+                  _ => context.showSnackBar(
+                      'Somthing went Worng', ColorPalette.error),
+                },
+                child: Container(),
+              )
             ],
           ),
         ),

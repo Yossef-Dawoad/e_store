@@ -16,6 +16,7 @@ class Routes {
   static String get initialRoute {
     final storage = LocalStorageManager.instance;
     final initialRoute = storage.readData('initial_route');
+
     if (kDebugMode) print(initialRoute);
 
     if (initialRoute == null || initialRoute == 0) {

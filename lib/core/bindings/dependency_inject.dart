@@ -9,6 +9,7 @@ import 'package:e_store/features/authentication/domain/usecases/signin_email_and
 import 'package:e_store/features/authentication/domain/usecases/signin_google.dart';
 import 'package:e_store/features/authentication/domain/usecases/signup_email_and_password.dart';
 import 'package:e_store/features/authentication/domain/usecases/user_email_verify.dart';
+import 'package:e_store/features/authentication/view/blocs/google_auth_cubit/google_auth_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
@@ -48,7 +49,8 @@ Future<void> initializeDependence() async {
   sl.registerLazySingleton(() => VerifyEmailUseCase(sl()));
 
   /// Register Controllers (Cubits)
-  sl.registerFactory<LoginCubit>(() => LoginCubit(sl(), sl()));
+  sl.registerFactory<LoginCubit>(() => LoginCubit(sl()));
+  sl.registerFactory<GoogleAuthCubit>(() => GoogleAuthCubit(sl()));
   sl.registerFactory<SignUpCubit>(() => SignUpCubit(sl()));
   sl.registerFactory<VerifyEmailCubit>(() => VerifyEmailCubit(sl()));
 }

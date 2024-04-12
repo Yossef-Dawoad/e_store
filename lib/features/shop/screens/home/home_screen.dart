@@ -2,7 +2,7 @@ import 'package:e_store/core/common/widgets/carousel_slider.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/utils/helpers/helper_functions.dart';
-import 'package:e_store/features/shop/screens/home/widgets/header/header_section.dart';
+import 'package:e_store/features/shop/screens/home/widgets/header/header_title.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/header/home_custom_appbar.dart';
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             /// Header
-            HomeCustomAppBar(height: screenHeight * 0.42),
+            CustomHomeAppBar(height: screenHeight * 0.42),
 
             /// body
             /// Carousel
@@ -32,10 +32,10 @@ class HomeScreen extends StatelessWidget {
             ]),
             const SizedBox(height: AppSizes.spaceBtwSections),
 
-            /// Product GridView
+            /// Product GridView Section
             Padding(
               padding: const EdgeInsets.only(left: 12.0),
-              child: HeaderSection(title: 'Popular Products', onPressed: () {}),
+              child: TitleHeader(title: 'Popular Products', onPressed: () {}),
             ),
             const SizedBox(height: AppSizes.spaceBtwItems),
             const ProductGridView(),

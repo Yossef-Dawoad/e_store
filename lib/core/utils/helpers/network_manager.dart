@@ -17,7 +17,7 @@ class NetworkManager {
   Future<bool> isConnected() async {
     try {
       final result = await connectivity.checkConnectivity();
-      if (result == ConnectivityResult.none) return false;
+      if (result.first == ConnectivityResult.none) return false;
       return true;
     } on PlatformException catch (_) {
       return false;

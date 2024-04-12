@@ -17,7 +17,7 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final PageController _pageController = PageController();
-  int currentPageIndex = 0;
+  int _currentPageIndex = 0;
 
   @override
   void dispose() {
@@ -70,23 +70,24 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           /// Circluar Navigation Button
           Positioned(
             right: 24,
-            bottom: kBottomNavigationBarHeight + 20.0,
+            bottom: kBottomNavigationBarHeight + 10.0,
             child: ElevatedButton(
-                onPressed: () => _navigateToNextPage(
-                      exitsRouteName: Routes.signIn,
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(12.0),
+                shape: const StadiumBorder(),
+              ),
+              onPressed: () => _navigateToNextPage(
+                exitsRouteName: Routes.signIn,
+              ),
+              child: (_currentPageIndex == onBoardingPages.length - 1)
+                  ? const Text("continue")
+                  : Icon(
+                      Icons.arrow_forward_ios,
+                      color: isDarkMode
+                          ? ColorPalette.white
+                          : ColorPalette.primary,
                     ),
-                child: (currentPageIndex == onBoardingPages.length - 1)
-                    ? const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 16.0, vertical: 2.0),
-                        child: Text("continue"),
-                      )
-                    : Icon(
-                        Icons.arrow_forward_ios,
-                        color: isDarkMode
-                            ? ColorPalette.white
-                            : ColorPalette.primary,
-                      )),
+            ),
           )
         ],
       ),
@@ -94,29 +95,31 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 
   void _updatePageIndicator(int index) {
-    setState(() => currentPageIndex = index);
+    setState(() => _currentPageIndex = index);
   }
 
-  void _skiptoLastPage({String exitRouteName = '/'}) {
+  void _skiptoLastPage({String exitRouteName = '/'}) async {
     final lastPageIndex = onBoardingPages.length - 1;
 
-    if (currentPageIndex != lastPageIndex) {
+    if (_currentPageIndex != lastPageIndex) {
       _pageController.jumpToPage(lastPageIndex);
       return;
     }
 
     final storage = LocalStorageManager.instance;
-    storage.saveData('initial_route', 1).then(
+    await storage.saveData('initial_route', 1).then(
           (value) => Navigator.of(context).pushNamedAndRemoveUntil(
             exitRouteName,
             (Route<dynamic> route) => route.isFirst,
           ),
         );
-    if (kDebugMode) print('initial_route saved');
+    if (kDebugMode) {
+      debugPrint('initial_route saved with value ${Routes.initialRoute}');
+    }
   }
 
   void _navigateToNextPage({String exitsRouteName = '/'}) {
-    if (currentPageIndex == onBoardingPages.length - 1) {
+    if (_currentPageIndex == onBoardingPages.length - 1) {
       _skiptoLastPage(exitRouteName: exitsRouteName);
       return;
     }

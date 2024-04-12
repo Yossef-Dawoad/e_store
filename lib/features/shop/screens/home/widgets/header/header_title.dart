@@ -2,8 +2,8 @@ import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:flutter/material.dart';
 
-class HeaderSection extends StatelessWidget {
-  const HeaderSection({
+class TitleHeader extends StatelessWidget {
+  const TitleHeader({
     super.key,
     this.onPressed,
     required this.title,
@@ -21,17 +21,13 @@ class HeaderSection extends StatelessWidget {
       children: [
         Text(
           title,
-          style: context.textTheme.headlineSmall?.apply(
-            color: color ?? ColorPalette.white,
-          ),
+          style: context.textTheme.headlineSmall
+              ?.apply(color: color ?? ColorPalette.white),
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
         ),
         if (btntitle != null)
-          TextButton(
-            onPressed: onPressed,
-            child: Text(btntitle!),
-          )
+          TextButton(onPressed: onPressed, child: Text(btntitle!))
       ],
     );
   }

@@ -29,13 +29,13 @@ extension NavigatingExtensions on BuildContext {
   }
 
   Future<T?> pushNamedRouteAndRemoveUntil<T>(
-    String routeName,
-    Widget page, {
+    String routeName, {
+    String? routeNameToRemove,
     Object? arguments,
   }) {
     return Navigator.of(this).pushNamedAndRemoveUntil(
       routeName,
-      ModalRoute.withName(routeName),
+      ModalRoute.withName(routeNameToRemove ?? routeName),
       arguments: arguments,
     );
   }
@@ -53,5 +53,17 @@ extension NavigatingExtensions on BuildContext {
 
   void popRoute<T>([T? result]) {
     Navigator.of(this).pop(result);
+  }
+
+  // show snackbar
+  void showSnackBar(String message, Color backgroundColor) {
+    ScaffoldMessenger.of(this)
+      ..removeCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(message),
+          backgroundColor: backgroundColor,
+        ),
+      );
   }
 }

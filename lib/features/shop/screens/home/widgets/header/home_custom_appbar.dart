@@ -11,11 +11,11 @@ import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/utils/helpers/helper_functions.dart';
 
-import 'header_curved_shape.dart';
-import 'header_section.dart';
+import 'rounded_bottom_corner.dart';
+import 'header_title.dart';
 
-class HomeCustomAppBar extends StatelessWidget {
-  const HomeCustomAppBar({
+class CustomHomeAppBar extends StatelessWidget {
+  const CustomHomeAppBar({
     super.key,
     required this.height,
   });
@@ -26,7 +26,7 @@ class HomeCustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = HelperFunctions.screenWidth(context);
     final isDark = HelperFunctions.isDarkMode(context);
-    return ClipReverseBottomSheetShape(
+    return RoundedBottomCornerContainer(
       height: height,
       width: double.maxFinite,
       child: Column(
@@ -70,7 +70,7 @@ class HomeCustomAppBar extends StatelessWidget {
             child: Column(
               children: [
                 /// section title
-                const HeaderSection(title: 'Popular Categories'),
+                const TitleHeader(title: 'Popular Categories'),
 
                 // // section items
                 SizedBox(

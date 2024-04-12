@@ -8,11 +8,13 @@ class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({
     super.key,
     required this.width,
+    this.hintText = 'Search in Store',
     this.backgroundColor,
     this.boder,
   });
 
   final double width;
+  final String hintText;
   final Color? backgroundColor;
   final Border? boder;
 
@@ -35,7 +37,7 @@ class CustomSearchBar extends StatelessWidget {
             const Icon(Iconsax.search_normal, color: ColorPalette.darkGrey),
             const SizedBox(width: AppSizes.spaceBtwSections),
             Text(
-              'Search in Store',
+              hintText,
               style: context.textTheme.bodySmall?.apply(
                 color: ColorPalette.grey,
               ),

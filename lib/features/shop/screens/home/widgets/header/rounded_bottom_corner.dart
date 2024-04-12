@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:e_store/core/common/widgets/curved_edges/reverse_bottom_sheet_edge.dart';
 import 'package:e_store/core/constants/colors.dart';
 
-class ClipReverseBottomSheetShape extends StatelessWidget {
-  const ClipReverseBottomSheetShape({
+class RoundedBottomCornerContainer extends StatelessWidget {
+  const RoundedBottomCornerContainer({
     super.key,
     required this.height,
     required this.width,

@@ -1,3 +1,4 @@
+import 'package:e_store/features/shop/screens/store/store_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -30,7 +31,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
       ),
       body: switch (currentIndex) {
         0 => const HomeScreen(),
-        1 => const Center(child: Text('store')),
+        1 => const StoreScreen(),
         2 => const Center(child: Text('wishlist')),
         _ => const Center(child: Text('Profile')),
       },

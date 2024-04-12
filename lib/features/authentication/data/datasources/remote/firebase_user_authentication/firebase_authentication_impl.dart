@@ -52,7 +52,9 @@ class AuthenticationRemoteDataSourceImpl
 
   @override
   Future<models.UserAccount> signUpEmailAndPassword(
-      String email, String password) async {
+    String email,
+    String password,
+  ) async {
     try {
       final userData = await _auth.createUserWithEmailAndPassword(
         email: email,
@@ -71,6 +73,7 @@ class AuthenticationRemoteDataSourceImpl
 
   @override
   Future<models.UserAccount> signInWithGoogle() async {
+    // TODO Add some error handling here.
     final googleUserAccount = await _googleSignIn.signIn();
     final googleAuth = await googleUserAccount!.authentication;
     final credential = GoogleAuthProvider.credential(
@@ -80,10 +83,11 @@ class AuthenticationRemoteDataSourceImpl
 
     final userData = await _auth.signInWithCredential(credential);
     final userAccount = models.UserAccount(
-        uid: userData.user!.uid,
-        email: userData.user!.email!,
-        username: userData.user?.displayName,
-        photoURL: userData.user?.photoURL);
+      uid: userData.user!.uid,
+      email: userData.user!.email!,
+      username: userData.user?.displayName,
+      photoURL: userData.user?.photoURL,
+    );
 
     await userCloudService.writeUser(userAccount);
     return userAccount;

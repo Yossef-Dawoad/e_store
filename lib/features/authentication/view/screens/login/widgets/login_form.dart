@@ -2,12 +2,17 @@ import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/routes/routes.dart';
+import 'package:e_store/core/utils/helpers/helper_functions.dart';
+import 'package:e_store/core/utils/local_storage/storage_utility.dart';
 import 'package:e_store/core/utils/validators/validation.dart';
 import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:e_store/features/authentication/view/screens/signup/widgets/password_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
+
+import 'google_facebook_login.dart';
+import 'or_signin_div.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({
@@ -34,6 +39,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = HelperFunctions.isDarkMode(context);
     return Form(
       key: _formKey,
       child: Padding(
@@ -98,9 +104,22 @@ class _LoginFormState extends State<LoginForm> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => context.pushNamedRoute(Routes.signUp),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                ),
                 child: const Text(AppTexts.createAccount),
               ),
             ),
+            const SizedBox(height: AppSizes.spaceBtwSections),
+
+            // Divider
+            TextBtwDivider(
+              text: AppTexts.orSignInWith,
+              isDarkMode: isDarkMode,
+            ),
+            const SizedBox(height: AppSizes.spaceBtwSections),
+            // Footer
+            const GoogleFaceBookButton(),
           ],
         ),
       ),
@@ -108,7 +127,7 @@ class _LoginFormState extends State<LoginForm> {
   }
 
   // ignore: unused_element
-  void _validateThenPerfromSignIn(BuildContext context) {
+  Future<void> _validateThenPerfromSignIn(BuildContext context) async {
     final email = _emailController.text.trim();
     final signInCubit = context.read<LoginCubit>();
 
@@ -118,9 +137,15 @@ class _LoginFormState extends State<LoginForm> {
         password: _passwordController.text.trim(),
       );
       // save user credintials to local storage
-      
-      if (rememberMe) => 
-      context.pushReplacementNamedRoute(Routes.navigationMenu);
+      if (!rememberMe) context.pushReplacementNamedRoute(Routes.navigationMenu);
+      final storage = LocalStorageManager.instance;
+
+      await storage.saveData('initial_route', 2).then(
+            (value) => Navigator.of(context).pushNamedAndRemoveUntil(
+              '/',
+              (Route<dynamic> route) => route.isFirst,
+            ),
+          );
     }
     // should display snackbar if validation fails??
   }

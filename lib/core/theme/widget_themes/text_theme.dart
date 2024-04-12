@@ -53,7 +53,7 @@ class ECTextTheme {
       color: ColorPalette.dark,
     ),
     bodySmall: const TextStyle().copyWith(
-      fontSize: 14.0,
+      fontSize: 12.0,
       fontWeight: FontWeight.w500,
       color: ColorPalette.dark.withOpacity(0.5),
     ),
@@ -119,7 +119,7 @@ class ECTextTheme {
       color: ColorPalette.light,
     ),
     bodySmall: const TextStyle().copyWith(
-      fontSize: 14.0,
+      fontSize: 12.0,
       fontWeight: FontWeight.w500,
       color: ColorPalette.light.withOpacity(0.5),
     ),

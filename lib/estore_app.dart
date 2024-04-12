@@ -19,7 +19,7 @@ class EStoreApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      initialRoute: Routes.initialRoute,
+      initialRoute: Routes.onBoarding,
       onGenerateRoute: router.onGenerateRoute,
     );
   }
