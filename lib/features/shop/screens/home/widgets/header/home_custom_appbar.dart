@@ -17,17 +17,14 @@ import 'header_title.dart';
 class CustomHomeAppBar extends StatelessWidget {
   const CustomHomeAppBar({
     super.key,
-    required this.height,
   });
-
-  final double height;
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = HelperFunctions.screenWidth(context);
     final isDark = HelperFunctions.isDarkMode(context);
     return RoundedBottomCornerContainer(
-      height: height,
+      // height: height,
       width: double.maxFinite,
       child: Column(
         children: [
@@ -70,7 +67,10 @@ class CustomHomeAppBar extends StatelessWidget {
             child: Column(
               children: [
                 /// section title
-                const TitleHeader(title: 'Popular Categories'),
+                const TitleHeader(
+                  title: 'Popular Categories',
+                  color: Colors.white,
+                ),
 
                 // // section items
                 SizedBox(
@@ -86,6 +86,7 @@ class CustomHomeAppBar extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: AppSizes.spaceBtwSections),
               ],
             ),
           )

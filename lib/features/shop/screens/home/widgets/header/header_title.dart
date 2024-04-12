@@ -1,5 +1,6 @@
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
+import 'package:e_store/core/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class TitleHeader extends StatelessWidget {
@@ -17,12 +18,15 @@ class TitleHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = HelperFunctions.isDarkMode(context);
     return Row(
       children: [
         Text(
           title,
-          style: context.textTheme.headlineSmall
-              ?.apply(color: color ?? ColorPalette.white),
+          style: context.textTheme.headlineSmall?.apply(
+            color:
+                color ?? (isDarkMode ? ColorPalette.white : ColorPalette.dark),
+          ),
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
         ),

@@ -81,11 +81,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
               child: (_currentPageIndex == onBoardingPages.length - 1)
                   ? const Text("continue")
-                  : Icon(
+                  : const Icon(
                       Icons.arrow_forward_ios,
-                      color: isDarkMode
-                          ? ColorPalette.white
-                          : ColorPalette.primary,
+                      color: ColorPalette.white,
                     ),
             ),
           )

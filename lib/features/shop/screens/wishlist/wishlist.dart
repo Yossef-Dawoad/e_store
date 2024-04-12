@@ -18,12 +18,7 @@ class WishLessScreen extends StatelessWidget {
         actions: [IconButton(icon: const Icon(Icons.add), onPressed: () {})],
       ),
       body: const SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(AppSizes.defaultSpace),
-          child: Column(
-            children: [ProductGridView()],
-          ),
-        ),
+        child: ProductGridView(),
       ),
     );
   }

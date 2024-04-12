@@ -1,8 +1,10 @@
+import 'package:e_store/features/personalization/view/settings/settings.dart';
 import 'package:e_store/features/shop/screens/store/store_screen.dart';
+import 'package:e_store/features/shop/screens/wishlist/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'home_screen.dart';
+import 'home/home_screen.dart';
 
 class NavigationMenu extends StatefulWidget {
   const NavigationMenu({super.key});
@@ -32,8 +34,8 @@ class _NavigationMenuState extends State<NavigationMenu> {
       body: switch (currentIndex) {
         0 => const HomeScreen(),
         1 => const StoreScreen(),
-        2 => const Center(child: Text('wishlist')),
-        _ => const Center(child: Text('Profile')),
+        2 => const WishLessScreen(),
+        _ => const SettingsScreen(),
       },
     );
   }

@@ -50,9 +50,10 @@ class _LoginFormState extends State<LoginForm> {
             TextFormField(
               controller: _emailController,
               validator: (val) => FieldValidator.validateEmail(val),
-              decoration: const InputDecoration(
-                prefixIcon: Icon(Iconsax.direct_right),
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Iconsax.direct_right),
                 labelText: AppTexts.email,
+                labelStyle: context.textTheme.labelLarge,
               ),
             ),
             const SizedBox(height: AppSizes.spaceBtwInputFields),
@@ -107,7 +108,11 @@ class _LoginFormState extends State<LoginForm> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                 ),
-                child: const Text(AppTexts.createAccount),
+                child: Text(
+                  AppTexts.createAccount,
+                  style: TextStyle(
+                      color: isDarkMode ? Colors.white : Colors.black87),
+                ),
               ),
             ),
             const SizedBox(height: AppSizes.spaceBtwSections),

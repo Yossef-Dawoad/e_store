@@ -1,7 +1,6 @@
 import 'package:e_store/core/common/widgets/carousel_slider.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
-import 'package:e_store/core/utils/helpers/helper_functions.dart';
 import 'package:e_store/features/shop/screens/home/widgets/header/header_title.dart';
 import 'package:flutter/material.dart';
 
@@ -13,14 +12,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = HelperFunctions.screenHeight(context);
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             /// Header
-            CustomHomeAppBar(height: screenHeight * 0.42),
+            const CustomHomeAppBar(),
 
             /// body
             /// Carousel
