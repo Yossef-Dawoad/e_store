@@ -9,6 +9,7 @@ class Routes {
   static const verifySuccess = '/verify-success';
   static const forgetPassword = '/forget-password';
   static const navigationMenu = '/navigation-menu';
+  static const profile = '/profile';
 
   /// Gets the initial route to display when the app starts based on
   /// previously saved state. Checks local storage for an initial route flag,

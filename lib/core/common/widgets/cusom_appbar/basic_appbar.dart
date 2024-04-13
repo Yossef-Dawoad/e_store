@@ -5,10 +5,12 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;
   final List<Widget>? actions;
   final EdgeInsets padding;
+  final bool implyLeading;
 
   const BasicAppBar({
     super.key,
     required this.title,
+    this.implyLeading = false,
     this.actions,
     this.leading,
     this.padding = const EdgeInsets.symmetric(horizontal: 20),
@@ -19,7 +21,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Padding(
       padding: padding,
       child: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: implyLeading,
         title: title,
         leading: leading,
         actions: actions,

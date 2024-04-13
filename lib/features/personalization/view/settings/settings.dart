@@ -2,6 +2,7 @@ import 'package:e_store/core/common/widgets/cusom_appbar/basic_appbar.dart';
 import 'package:e_store/core/common/widgets/list_tiles/profile_listtile.dart';
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/sizes.dart';
+import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/shop/screens/home/widgets/header/header_title.dart';
 import 'package:e_store/features/shop/screens/home/widgets/header/rounded_bottom_corner.dart';
@@ -42,7 +43,9 @@ class SettingsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const ProfileListTile(),
+                  ProfileInfoTile(
+                    onPressed: () => context.pushNamedRoute(Routes.profile),
+                  ),
                   const SizedBox(height: AppSizes.spaceBtwSections),
                 ],
               ),
@@ -96,7 +99,7 @@ class SettingsScreen extends StatelessWidget {
                   MenuListTile(
                     title: 'GeoLocation',
                     subtitle: 'Set Recommedations based on your location',
-                    icon: Iconsax.document_upload,
+                    icon: Iconsax.location,
                     trailing: Switch(
                       value: false,
                       onChanged: (value) {},
@@ -105,7 +108,7 @@ class SettingsScreen extends StatelessWidget {
                   MenuListTile(
                     title: 'Safe Mode',
                     subtitle: 'Search result is safe for all ages',
-                    icon: Iconsax.document_upload,
+                    icon: Iconsax.security_safe,
                     trailing: Switch(
                       value: false,
                       onChanged: (value) {},

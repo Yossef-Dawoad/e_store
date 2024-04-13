@@ -19,21 +19,21 @@ dependencies:
   http: ^1.2.1
   intl: ^0.19.0
   logger: ^2.2.0
-  url_launcher: ^6.2.5
-  connectivity_plus: ^6.0.1
+  url_launcher: ^6.2.6
+  connectivity_plus: ^6.0.2
   get_storage: ^2.1.1
   lottie: ^3.1.0
 
   ## State management
 
   flutter_bloc: ^8.1.5
-  get_it: ^7.6.8
+  get_it: ^7.6.9
 
   ## Firebase Packages
-  firebase_core: ^2.28.0
-  firebase_storage: ^11.7.0
-  firebase_auth: ^4.19.0
-  cloud_firestore: ^4.16.0
+  firebase_core: ^2.29.0
+  firebase_storage: ^11.7.1
+  firebase_auth: ^4.19.1
+  cloud_firestore: ^4.16.1
   google_sign_in: ^6.2.1
   # google_sign_in_web: ^0.12.4 //TODO web support
 
@@ -49,7 +49,7 @@ dev_dependencies:
 
   flutter_lints: ^3.0.2
   build_runner: ^2.4.9
-  freezed: ^2.5.1
+  freezed: ^2.5.2
   json_serializable: ^6.7.1
   bloc_test: ^9.1.7
   mockito: ^5.4.4
