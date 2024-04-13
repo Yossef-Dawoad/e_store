@@ -1,3 +1,4 @@
+import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:flutter/material.dart';
 
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -18,12 +19,20 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = context.isDarkMode;
     return Padding(
       padding: padding,
       child: AppBar(
         automaticallyImplyLeading: implyLeading,
         title: title,
-        leading: leading,
+        leading: leading ??
+            IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                color: isDarkMode ? Colors.white : Colors.black,
+              ),
+              onPressed: () => context.popRoute(),
+            ),
         actions: actions,
       ),
     );

@@ -55,6 +55,8 @@ extension NavigatingExtensions on BuildContext {
     Navigator.of(this).pop(result);
   }
 
+  bool get isDarkMode => theme.brightness == Brightness.dark;
+
   // show snackbar
   void showSnackBar(String message, Color backgroundColor) {
     ScaffoldMessenger.of(this)
