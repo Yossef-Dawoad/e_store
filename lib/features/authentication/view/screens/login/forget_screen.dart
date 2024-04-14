@@ -1,11 +1,21 @@
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
+// import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
+import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
+class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
+
+  @override
+  State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
+}
+
+class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
+  final emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +39,8 @@ class ForgetPasswordScreen extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBtwSections * 2.0),
 
             // ///email
-            TextFormField(
+            TextField(
+              controller: emailController,
               decoration: const InputDecoration(
                 labelText: AppTexts.email,
                 prefixIcon: Icon(Iconsax.direct_right),
@@ -40,7 +51,10 @@ class ForgetPasswordScreen extends StatelessWidget {
             // ///submit button
             SizedBox(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => _sendResetPasswordEmail(
+                  context,
+                  emailController.text.trim(),
+                ),
                 style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
                       padding: MaterialStateProperty.all(
                         const EdgeInsets.all(15.0),
@@ -53,5 +67,10 @@ class ForgetPasswordScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _sendResetPasswordEmail(BuildContext context, String email) {
+    context.read<LoginCubit>().sendResetEmail(email: email);
+    // context.pushNamedRoute(Routes.resetPasswordSuccess);
   }
 }

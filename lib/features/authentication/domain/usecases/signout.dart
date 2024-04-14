@@ -14,6 +14,6 @@ class SignOutUseCase implements UseCase<void, VoidParams> {
 
   @override
   Future<VoidResult> call({required VoidParams params}) async {
-    return _authenticationRepository.signOut();
+    return await _authenticationRepository.signOut();
   }
 }

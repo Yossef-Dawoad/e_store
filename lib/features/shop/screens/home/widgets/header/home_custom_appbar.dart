@@ -29,6 +29,7 @@ class CustomHomeAppBar extends StatelessWidget {
       child: Column(
         children: [
           BasicAppBar(
+            implyLeading: false,
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

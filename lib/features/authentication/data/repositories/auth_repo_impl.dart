@@ -77,4 +77,14 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
 
   @override
   bool get isSignedIn => _remoteDataSource.isUserLoggedIn;
+
+  @override
+  FutureResult<void, BaseException> sendResetPasswordEmail(String email) async {
+    try {
+      await _remoteDataSource.sendResetPasswordEmail(email);
+      return const Result.success(null);
+    } on FirebaseAuthException catch (err) {
+      return Result.failure(BaseException(msg: err.toString()));
+    }
+  }
 }

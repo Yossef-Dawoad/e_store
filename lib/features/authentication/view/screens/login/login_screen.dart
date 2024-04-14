@@ -1,4 +1,6 @@
+import 'package:e_store/core/common/widgets/dialogs/loading_dialogs.dart';
 import 'package:e_store/core/constants/colors.dart';
+import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
@@ -37,16 +39,24 @@ class LoginScreen extends StatelessWidget {
               const LoginForm(),
               BlocListener<LoginCubit, LoginState>(
                 listener: (context, state) => switch (state) {
-                  LogInLoading() => showDialog(
-                      context: context,
-                      builder: (context) => const Center(
-                        child: CircularProgressIndicator(),
-                      ),
+                  LogInLoading() ||
+                  SendResetEmailLoading() =>
+                    animatedDialogScreenLoader(
+                      context,
+                      'Processing Your request...',
+                      AppImages.docerLoaderAnimation,
                     ),
                   LogInSuccess() =>
                     context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu),
-                  _ => context.showSnackBar(
-                      'Somthing went Worng', ColorPalette.error),
+                  SendResetEmailSuccess() => {
+                      print('should be routed to reset password screen'),
+                      context.pushNamedRoute(Routes.resetPasswordSuccess),
+                    },
+                  _ => {
+                      closeLoaderDialogScreen(context),
+                      context.showSnackBar(
+                          'Somthing went Worng', ColorPalette.error)
+                    },
                 },
                 child: Container(),
               )

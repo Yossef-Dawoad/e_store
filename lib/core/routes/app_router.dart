@@ -4,6 +4,7 @@ import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_c
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
 import 'package:e_store/features/authentication/view/screens/login/forget_screen.dart';
 import 'package:e_store/features/authentication/view/screens/login/login_screen.dart';
+import 'package:e_store/features/authentication/view/screens/login/reset_password_screen.dart';
 import 'package:e_store/features/authentication/view/screens/signup/signup_screen.dart';
 import 'package:e_store/features/authentication/view/screens/signup/verify_email.dart';
 import 'package:e_store/features/onboarding/onboarding_main.dart';
@@ -38,8 +39,15 @@ class AppRouter {
             child: const VerifyEmailScreen(),
           ),
         ),
-      Routes.forgetPassword =>
-        MaterialPageRoute(builder: (_) => const ForgetPasswordScreen()),
+      Routes.forgetPassword => MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => sl<LoginCubit>(),
+            child: const ForgetPasswordScreen(),
+          ),
+        ),
+      Routes.resetPasswordSuccess => MaterialPageRoute(
+          builder: (context) => const ResetPasswordScreen(),
+        ),
       Routes.profile =>
         MaterialPageRoute(builder: (_) => const ProfileScreen()),
       Routes.productDetail =>

@@ -1,6 +1,7 @@
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
+import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
@@ -53,7 +54,7 @@ class ResetPasswordScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.pushNamedRoute(Routes.signIn),
                   child: const Text(AppTexts.done),
                 ),
               ),
@@ -61,7 +62,8 @@ class ResetPasswordScreen extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () =>
+                      context.pushNamedRoute(Routes.forgetPassword),
                   child: const Text(AppTexts.resendEmail),
                 ),
               )

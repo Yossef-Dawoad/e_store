@@ -257,4 +257,8 @@ class AppImages {
   static const String paytm = "assets/icons/payment_methods/paytm.png";
   static const String successfulPaymentIcon =
       "assets/icons/payment_methods/successful_payment_icon.png";
+
+  // lottie animations
+  static const String docerLoaderAnimation =
+      'assets/images/animations/141594-animation-of-docer.json';
 }

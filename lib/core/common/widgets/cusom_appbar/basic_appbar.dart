@@ -25,14 +25,15 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         automaticallyImplyLeading: implyLeading,
         title: title,
-        leading: leading ??
-            IconButton(
-              icon: Icon(
-                Icons.arrow_back,
-                color: isDarkMode ? Colors.white : Colors.black,
-              ),
-              onPressed: () => context.popRoute(),
-            ),
+        leading: implyLeading
+            ? IconButton(
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: isDarkMode ? Colors.white : Colors.black,
+                ),
+                onPressed: () => context.popRoute(),
+              )
+            : null,
         actions: actions,
       ),
     );

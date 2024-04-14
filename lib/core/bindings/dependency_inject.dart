@@ -5,6 +5,7 @@ import 'package:e_store/features/authentication/data/datasources/remote/user_clo
 import 'package:e_store/features/authentication/data/datasources/remote/user_cloud/user_cloud_impl.dart';
 import 'package:e_store/features/authentication/data/repositories/auth_repo_impl.dart';
 import 'package:e_store/features/authentication/domain/repositories/auth_repo.dart';
+import 'package:e_store/features/authentication/domain/usecases/send_reset_email.dart';
 import 'package:e_store/features/authentication/domain/usecases/signin_email_and_password.dart';
 import 'package:e_store/features/authentication/domain/usecases/signin_google.dart';
 import 'package:e_store/features/authentication/domain/usecases/signup_email_and_password.dart';
@@ -47,9 +48,10 @@ Future<void> initializeDependence() async {
 
   sl.registerLazySingleton(() => SignUpUseCase(sl()));
   sl.registerLazySingleton(() => VerifyEmailUseCase(sl()));
+  sl.registerLazySingleton(() => SendResetPasswordEmailUseCase(sl()));
 
   /// Register Controllers (Cubits)
-  sl.registerFactory<LoginCubit>(() => LoginCubit(sl()));
+  sl.registerFactory<LoginCubit>(() => LoginCubit(sl(), sl()));
   sl.registerFactory<GoogleAuthCubit>(() => GoogleAuthCubit(sl()));
   sl.registerFactory<SignUpCubit>(() => SignUpCubit(sl()));
   sl.registerFactory<VerifyEmailCubit>(() => VerifyEmailCubit(sl()));

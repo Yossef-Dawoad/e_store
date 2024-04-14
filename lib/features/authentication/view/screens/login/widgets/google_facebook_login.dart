@@ -1,4 +1,5 @@
 import 'package:e_store/core/bindings/dependency_inject.dart';
+import 'package:e_store/core/common/widgets/dialogs/loading_dialogs.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/authentication/view/blocs/google_auth_cubit/google_auth_cubit.dart';
@@ -64,10 +65,10 @@ class GoogleFaceBookButton extends StatelessWidget {
                       ColorPalette.error,
                     ),
                   //TDOO an animated loading screen
-                  GoogleAuthLoading() => showDialog(
-                      context: context,
-                      builder: (context) =>
-                          const Center(child: CircularProgressIndicator()),
+                  GoogleAuthLoading() => animatedDialogScreenLoader(
+                      context,
+                      'Processing Your request...',
+                      AppImages.docerLoaderAnimation,
                     ),
                   _ => context.showSnackBar(
                       'Something went Worng', ColorPalette.error),

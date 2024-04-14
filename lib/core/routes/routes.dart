@@ -8,6 +8,7 @@ class Routes {
   static const verifyEmail = '/verify-email';
   static const verifySuccess = '/verify-success';
   static const forgetPassword = '/forget-password';
+  static const resetPasswordSuccess = '/reset-password-success';
   static const navigationMenu = '/navigation-menu';
   static const profile = '/profile';
   static const productDetail = '/product-detail';

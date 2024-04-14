@@ -17,7 +17,7 @@ abstract class AuthenticationRepository {
   FutureResult<UserAccountEntity, BaseException> signInWithGoogle();
 
   FutureResult<void, BaseException> signOut();
-
+  FutureResult<void, BaseException> sendResetPasswordEmail(String email);
   FutureResult<bool, BaseException> verifyEmail();
   bool get isSignedIn;
 }

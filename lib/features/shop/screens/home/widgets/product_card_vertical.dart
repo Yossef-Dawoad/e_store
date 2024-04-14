@@ -19,7 +19,7 @@ class ProducCardVertical extends StatelessWidget {
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          color: isDark ? ColorPalette.darkGrey : ColorPalette.white,
+          color: isDark ? ColorPalette.darkerGrey : ColorPalette.white,
           borderRadius: BorderRadius.circular(AppSizes.productImageRadius),
           boxShadow: [ShadowStyles.verticalProductCardShadow],
         ),

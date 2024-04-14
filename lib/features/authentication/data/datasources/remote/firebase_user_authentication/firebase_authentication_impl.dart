@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_store/core/utils/errors/server_errors.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/user_cloud/user_cloud.dart';
 import 'package:e_store/features/authentication/data/models/user_account.dart'
     as models;
@@ -74,23 +76,31 @@ class AuthenticationRemoteDataSourceImpl
   @override
   Future<models.UserAccount> signInWithGoogle() async {
     // TODO Add some error handling here.
-    final googleUserAccount = await _googleSignIn.signIn();
-    final googleAuth = await googleUserAccount!.authentication;
-    final credential = GoogleAuthProvider.credential(
-      idToken: googleAuth.idToken,
-      accessToken: googleAuth.accessToken,
-    );
+    try {
+      final googleUserAccount = await _googleSignIn.signIn();
+      final googleAuth = await googleUserAccount!.authentication;
+      final credential = GoogleAuthProvider.credential(
+        idToken: googleAuth.idToken,
+        accessToken: googleAuth.accessToken,
+      );
 
-    final userData = await _auth.signInWithCredential(credential);
-    final userAccount = models.UserAccount(
-      uid: userData.user!.uid,
-      email: userData.user!.email!,
-      username: userData.user?.displayName,
-      photoURL: userData.user?.photoURL,
-    );
+      final userData = await _auth.signInWithCredential(credential);
+      final userAccount = models.UserAccount(
+        uid: userData.user!.uid,
+        email: userData.user!.email!,
+        username: userData.user?.displayName,
+        photoURL: userData.user?.photoURL,
+      );
 
-    await userCloudService.writeUser(userAccount);
-    return userAccount;
+      await userCloudService.writeUser(userAccount);
+      return userAccount;
+    } on FirebaseAuthException catch (e) {
+      throw FirebaseAuthException(code: e.code, message: e.message);
+    } on FirebaseFirestore catch (_) {
+      rethrow;
+    } catch (e) {
+      throw BaseException(msg: e.toString());
+    }
   }
 
   @override
@@ -111,6 +121,19 @@ class AuthenticationRemoteDataSourceImpl
       await userCloudService.writeUser(user.copyWith(isEmailVerified: true));
     } on FirebaseAuthException catch (e) {
       throw FirebaseAuthException(code: e.code, message: e.message);
+    }
+  }
+
+  @override
+  Future<void> sendResetPasswordEmail(String email) {
+    try {
+      return _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw FirebaseAuthException(code: e.code, message: e.message);
+    } catch (e) {
+      throw FirebaseAuthException(
+          code: "Somthing went Wrong, Please try again later",
+          message: e.toString());
     }
   }
 }
