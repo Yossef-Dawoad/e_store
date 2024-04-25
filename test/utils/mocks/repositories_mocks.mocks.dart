@@ -46,10 +46,17 @@ class MockAuthenticationRepository extends _i1.Mock
   }
 
   @override
-  bool get isSignedIn => (super.noSuchMethod(
-        Invocation.getter(#isSignedIn),
-        returnValue: false,
-      ) as bool);
+  _i4.Future<bool> get isVerifiedUser => (super.noSuchMethod(
+        Invocation.getter(#isVerifiedUser),
+        returnValue: _i4.Future<bool>.value(false),
+      ) as _i4.Future<bool>);
+
+  @override
+  _i4.Stream<_i5.UserAccountEntity> get userAuthStatusStream =>
+      (super.noSuchMethod(
+        Invocation.getter(#userAuthStatusStream),
+        returnValue: _i4.Stream<_i5.UserAccountEntity>.empty(),
+      ) as _i4.Stream<_i5.UserAccountEntity>);
 
   @override
   _i4.Future<_i2.Result<_i5.UserAccountEntity, _i6.BaseException>>
@@ -141,6 +148,24 @@ class MockAuthenticationRepository extends _i1.Mock
           Invocation.method(
             #signOut,
             [],
+          ),
+        )),
+      ) as _i4.Future<_i2.Result<void, _i6.BaseException>>);
+
+  @override
+  _i4.Future<_i2.Result<void, _i6.BaseException>> sendResetPasswordEmail(
+          String? email) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #sendResetPasswordEmail,
+          [email],
+        ),
+        returnValue: _i4.Future<_i2.Result<void, _i6.BaseException>>.value(
+            _FakeResult_0<void, _i6.BaseException>(
+          this,
+          Invocation.method(
+            #sendResetPasswordEmail,
+            [email],
           ),
         )),
       ) as _i4.Future<_i2.Result<void, _i6.BaseException>>);

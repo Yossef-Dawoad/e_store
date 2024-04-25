@@ -1,3 +1,4 @@
+import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:flutter/material.dart';
 
@@ -17,27 +18,32 @@ class ProfileListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Row(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Text(title,
-                style: context.textTheme.bodySmall,
-                overflow: TextOverflow.ellipsis),
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: onTap,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 3,
+                child: Text(title,
+                    style: context.textTheme.bodySmall,
+                    overflow: TextOverflow.ellipsis),
+              ),
+              Expanded(
+                flex: 5,
+                child: Text(
+                  subtitle,
+                  style: context.textTheme.bodyMedium,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              Icon(icon, size: 18)
+            ],
           ),
-          Expanded(
-            flex: 5,
-            child: Text(
-              subtitle,
-              style: context.textTheme.bodyMedium,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-          Icon(icon, size: 18)
-        ],
-      ),
+        ),
+        const SizedBox(height: AppSizes.spaceBtwItems)
+      ],
     );
   }
 }

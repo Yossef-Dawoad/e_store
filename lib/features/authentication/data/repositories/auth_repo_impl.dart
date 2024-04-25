@@ -69,14 +69,14 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   FutureResult<bool, BaseException> verifyEmail() async {
     try {
       await _remoteDataSource.verifyEmail();
-      return Result.success(isSignedIn);
+      return Result.success(await isVerifiedUser);
     } catch (err, st) {
       return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
   @override
-  bool get isSignedIn => _remoteDataSource.isUserLoggedIn;
+  Future<bool> get isVerifiedUser => _remoteDataSource.isUserVerified;
 
   @override
   FutureResult<void, BaseException> sendResetPasswordEmail(String email) async {
@@ -87,4 +87,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       return Result.failure(BaseException(msg: err.toString()));
     }
   }
+
+  @override
+  Stream<UserAccountEntity> get userAuthStatusStream =>
+      _remoteDataSource.userAuthStatusStream.map((event) => event.toEntity);
 }

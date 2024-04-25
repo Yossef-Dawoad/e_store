@@ -1,4 +1,4 @@
-import 'package:e_store/core/common/widgets/cusom_appbar/basic_appbar.dart';
+import 'package:e_store/core/shared/widgets/cusom_appbar/basic_appbar.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/features/personalization/view/profile/widgets/profile_listtile.dart';
@@ -58,6 +58,7 @@ class ProfileScreen extends StatelessWidget {
               const Divider(),
               const SizedBox(height: AppSizes.spaceBtwItems),
               const TitleHeader(title: 'Personal Information'),
+              const SizedBox(height: AppSizes.spaceBtwItems),
               const ProfileListTile(
                 title: 'User ID',
                 subtitle: '301519',
@@ -66,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
               const ProfileListTile(
                 title: 'E-mail',
                 subtitle: 'yossefdawoad15@gmail.com',
-                icon: Iconsax.arrow_right,
+                icon: Iconsax.copy,
               ),
               const ProfileListTile(
                 title: 'Phone Number',
@@ -81,11 +82,24 @@ class ProfileScreen extends StatelessWidget {
               const Divider(),
               const SizedBox(height: AppSizes.spaceBtwItems),
               Center(
-                child: TextButton(
+                child: IconButton(
                   onPressed: () {},
-                  child: const Text(
-                    'Close Your Account',
-                    style: TextStyle(color: Colors.red),
+                  icon: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Iconsax.danger,
+                        color: Colors.red,
+                      ),
+                      const SizedBox(width: 8.0),
+                      Text(
+                        'Delete Your Account',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium
+                            ?.apply(color: Colors.red),
+                      ),
+                    ],
                   ),
                 ),
               )

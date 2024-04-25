@@ -1,5 +1,5 @@
-import 'package:e_store/core/common/widgets/cusom_appbar/basic_appbar.dart';
-import 'package:e_store/core/common/widgets/list_tiles/profile_listtile.dart';
+import 'package:e_store/core/shared/widgets/cusom_appbar/basic_appbar.dart';
+import 'package:e_store/core/shared/widgets/list_tiles/profile_listtile.dart';
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/routes/routes.dart';

@@ -1,4 +1,4 @@
-import 'package:e_store/core/common/widgets/cusom_appbar/basic_appbar.dart';
+import 'package:e_store/core/shared/widgets/cusom_appbar/basic_appbar.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/shop/screens/home/widgets/product_gridview.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,6 @@
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/core/utils/helpers/helper_functions.dart';
+import 'package:e_store/core/shared/logic/services/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class TitleHeader extends StatelessWidget {

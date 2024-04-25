@@ -1,4 +1,4 @@
-import 'package:e_store/core/bindings/dependency_inject.dart';
+import 'package:e_store/core/di/dependency_inject.dart';
 import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
@@ -7,8 +7,10 @@ import 'package:e_store/features/authentication/view/screens/login/login_screen.
 import 'package:e_store/features/authentication/view/screens/login/reset_password_screen.dart';
 import 'package:e_store/features/authentication/view/screens/signup/signup_screen.dart';
 import 'package:e_store/features/authentication/view/screens/signup/verify_email.dart';
+import 'package:e_store/core/shared/logic/blocs/redirect_route/redirect_route_bloc.dart';
+import 'package:e_store/features/first_route_page.dart';
 import 'package:e_store/features/onboarding/onboarding_main.dart';
-import 'package:e_store/features/personalization/view/profile/proiile.dart';
+import 'package:e_store/features/personalization/view/profile/profile.dart';
 import 'package:e_store/features/shop/screens/navigation_menu.dart';
 import 'package:e_store/features/shop/screens/product_details/product_details.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +21,13 @@ import 'routes.dart';
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
     return switch (settings.name) {
+      Routes.initialRoute => MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => sl<RedirectRouteBloc>()
+              ..add(const RedirectRouteEvent.routeEntered()),
+            child: const ManageFirstRoute(),
+          ),
+        ),
       Routes.onBoarding =>
         MaterialPageRoute(builder: (_) => const OnBoardingScreen()),
       Routes.signIn => MaterialPageRoute(

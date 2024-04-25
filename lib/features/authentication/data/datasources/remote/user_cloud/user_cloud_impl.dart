@@ -16,4 +16,14 @@ class UserCloudServiceImpl implements UserCloudService {
   Future<void> writeUser(UserAccount user) async {
     await db.collection("users").doc(user.uid).set(user.toJson());
   }
+
+  @override
+  Future<void> deleteUser(String uid) async {
+    await db.collection('users').doc(uid).delete();
+  }
+
+  @override
+  Future<void> updateUser(UserAccount user) async {
+    await db.collection('users').doc(user.uid).update(user.toJson());
+  }
 }

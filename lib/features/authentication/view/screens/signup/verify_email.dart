@@ -2,7 +2,7 @@ import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/core/utils/helpers/helper_functions.dart';
+import 'package:e_store/core/shared/logic/services/helper_functions.dart';
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

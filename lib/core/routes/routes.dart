@@ -1,8 +1,9 @@
-import 'package:e_store/core/utils/local_storage/storage_utility.dart';
-import 'package:flutter/foundation.dart';
+// import 'package:e_store/core/utils/local_storage/storage_utility.dart';
+// import 'package:flutter/foundation.dart';
 
 class Routes {
   static const onBoarding = '/on-boarding';
+  static const initialRoute = '/home';
   static const signUp = '/sign-up';
   static const signIn = '/sign-in';
   static const verifyEmail = '/verify-email';
@@ -16,17 +17,17 @@ class Routes {
   /// Gets the initial route to display when the app starts based on
   /// previously saved state. Checks local storage for an initial route flag,
   /// saves the next state, and returns the appropriate route name.
-  static String get initialRoute {
-    final storage = LocalStorageManager.instance;
-    final initialRoute = storage.readData('initial_route');
+  // static String get initialRoute {
+  //   final storage = LocalStorageManager.instance;
+  //   final initialRoute = storage.readData('initial_route');
 
-    if (kDebugMode) print(initialRoute);
+  //   if (kDebugMode) print(initialRoute);
 
-    if (initialRoute == null || initialRoute == 0) {
-      return Routes.onBoarding;
-    }
-    if (initialRoute == 1) return Routes.signIn;
+  //   if (initialRoute == null || initialRoute == 0) {
+  //     return Routes.onBoarding;
+  //   }
+  //   if (initialRoute == 1) return Routes.signIn;
 
-    return Routes.navigationMenu;
-  }
+  //   return Routes.navigationMenu;
+  // }
 }

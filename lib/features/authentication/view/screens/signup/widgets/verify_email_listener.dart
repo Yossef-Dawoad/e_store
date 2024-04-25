@@ -1,11 +1,11 @@
-import 'package:e_store/core/common/widgets/dialogs/dialog_base.dart';
-import 'package:e_store/core/common/widgets/success_screen.dart';
+import 'package:e_store/core/shared/widgets/dialogs/dialog_base.dart';
+import 'package:e_store/core/shared/widgets/success_screen.dart';
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/core/utils/local_storage/storage_utility.dart';
+import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

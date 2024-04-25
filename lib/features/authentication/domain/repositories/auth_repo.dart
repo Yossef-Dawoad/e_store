@@ -19,5 +19,6 @@ abstract class AuthenticationRepository {
   FutureResult<void, BaseException> signOut();
   FutureResult<void, BaseException> sendResetPasswordEmail(String email);
   FutureResult<bool, BaseException> verifyEmail();
-  bool get isSignedIn;
+  Future<bool> get isVerifiedUser;
+  Stream<UserAccountEntity> get userAuthStatusStream;
 }

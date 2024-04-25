@@ -1,4 +1,4 @@
-import 'package:e_store/core/common/styles/shadow_styles.dart';
+import 'package:e_store/core/shared/styles/shadow_styles.dart';
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';

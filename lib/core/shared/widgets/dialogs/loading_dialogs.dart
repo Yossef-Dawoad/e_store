@@ -1,4 +1,4 @@
-import 'package:e_store/core/common/widgets/dialogs/animation_loader.dart';
+import 'package:e_store/core/shared/widgets/dialogs/animation_loader.dart';
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +61,7 @@ void animatedDialogScreenLoader(
         color: context.isDarkMode ? ColorPalette.dark : ColorPalette.light,
         child: Column(
           children: [
-            SizedBox(height: 250),
+            const SizedBox(height: 250),
             // animation loader widget
             CenterAnimationLoaderWidget(
               animationUrl: image,

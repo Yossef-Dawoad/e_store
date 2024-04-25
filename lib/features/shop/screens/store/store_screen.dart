@@ -1,13 +1,13 @@
-import 'package:e_store/core/common/widgets/cusom_appbar/custom_tabbar.dart';
+import 'package:e_store/core/shared/widgets/cusom_appbar/custom_tabbar.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
-import 'package:e_store/core/common/widgets/cart_counter_icon.dart';
-import 'package:e_store/core/common/widgets/searchbar.dart';
+import 'package:e_store/core/shared/widgets/cart_counter_icon.dart';
+import 'package:e_store/core/shared/widgets/searchbar.dart';
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/core/utils/helpers/helper_functions.dart';
+import 'package:e_store/core/shared/logic/services/helper_functions.dart';
 import 'package:e_store/features/shop/screens/home/widgets/header/header_title.dart';
 
 import 'widgets/brand_container_band.dart';

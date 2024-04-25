@@ -1,4 +1,4 @@
-import 'package:e_store/core/utils/helpers/network_manager.dart';
+import 'package:e_store/core/shared/logic/services/network_manager.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication_impl.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/user_cloud/user_cloud.dart';
@@ -14,6 +14,7 @@ import 'package:e_store/features/authentication/view/blocs/google_auth_cubit/goo
 import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
+import 'package:e_store/core/shared/logic/blocs/redirect_route/redirect_route_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -55,4 +56,5 @@ Future<void> initializeDependence() async {
   sl.registerFactory<GoogleAuthCubit>(() => GoogleAuthCubit(sl()));
   sl.registerFactory<SignUpCubit>(() => SignUpCubit(sl()));
   sl.registerFactory<VerifyEmailCubit>(() => VerifyEmailCubit(sl()));
+  sl.registerFactory<RedirectRouteBloc>(() => RedirectRouteBloc(sl()));
 }

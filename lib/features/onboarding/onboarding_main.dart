@@ -1,6 +1,6 @@
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/routes/routes.dart';
-import 'package:e_store/core/utils/local_storage/storage_utility.dart';
+import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +72,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             bottom: kBottomNavigationBarHeight + 10.0,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(12.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 18.0, vertical: 12),
                 shape: const StadiumBorder(),
               ),
               onPressed: () => _navigateToNextPage(

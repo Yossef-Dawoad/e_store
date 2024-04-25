@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_store/core/utils/errors/server_errors.dart';
-import 'package:e_store/features/authentication/data/datasources/remote/user_cloud/user_cloud.dart';
-import 'package:e_store/features/authentication/data/models/user_account.dart'
-    as models;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import 'package:e_store/core/utils/errors/server_errors.dart';
+import 'package:e_store/features/authentication/data/datasources/remote/user_cloud/user_cloud.dart';
+import 'package:e_store/features/authentication/data/models/user_account.dart';
 
 import 'firebase_authentication.dart';
 
@@ -24,14 +24,14 @@ class AuthenticationRemoteDataSourceImpl
 
   /// return true if the user is logged in
   @override
-  bool get isUserLoggedIn {
-    _auth.currentUser?.reload();
+  Future<bool> get isUserVerified async {
+    await _auth.currentUser?.reload();
     if (_auth.currentUser?.emailVerified ?? false) return true;
     return false;
   }
 
   @override
-  Future<models.UserAccount> signInWithEmailPassword(
+  Future<UserAccount> signInWithEmailPassword(
     String email,
     String password,
   ) async {
@@ -40,7 +40,7 @@ class AuthenticationRemoteDataSourceImpl
         email: email,
         password: password,
       );
-      final userAccount = models.UserAccount(
+      final userAccount = UserAccount(
           uid: userData.user!.uid,
           email: email,
           username: userData.user?.displayName,
@@ -53,7 +53,7 @@ class AuthenticationRemoteDataSourceImpl
   }
 
   @override
-  Future<models.UserAccount> signUpEmailAndPassword(
+  Future<UserAccount> signUpEmailAndPassword(
     String email,
     String password,
   ) async {
@@ -62,7 +62,7 @@ class AuthenticationRemoteDataSourceImpl
         email: email,
         password: password,
       );
-      final userAccount = models.UserAccount(
+      final userAccount = UserAccount(
         uid: userData.user!.uid,
         email: email,
         username: userData.user?.displayName,
@@ -74,7 +74,7 @@ class AuthenticationRemoteDataSourceImpl
   }
 
   @override
-  Future<models.UserAccount> signInWithGoogle() async {
+  Future<UserAccount> signInWithGoogle() async {
     // TODO Add some error handling here.
     try {
       final googleUserAccount = await _googleSignIn.signIn();
@@ -85,7 +85,7 @@ class AuthenticationRemoteDataSourceImpl
       );
 
       final userData = await _auth.signInWithCredential(credential);
-      final userAccount = models.UserAccount(
+      final userAccount = UserAccount(
         uid: userData.user!.uid,
         email: userData.user!.email!,
         username: userData.user?.displayName,
@@ -136,4 +136,13 @@ class AuthenticationRemoteDataSourceImpl
           message: e.toString());
     }
   }
+
+  @override
+  Stream<UserAccount> get userAuthStatusStream =>
+      _auth.authStateChanges().map((user) => UserAccount(
+            uid: user!.uid,
+            email: user.email!,
+            username: user.displayName,
+            photoURL: user.photoURL,
+          ));
 }

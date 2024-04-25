@@ -1,5 +1,5 @@
-import 'package:e_store/core/bindings/dependency_inject.dart';
-import 'package:e_store/core/common/widgets/dialogs/loading_dialogs.dart';
+import 'package:e_store/core/di/dependency_inject.dart';
+import 'package:e_store/core/shared/widgets/dialogs/loading_dialogs.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/authentication/view/blocs/google_auth_cubit/google_auth_cubit.dart';
@@ -18,7 +18,7 @@ class GoogleFaceBookButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<GoogleAuthCubit>(
-      create: (context) => sl(),
+      create: (context) => sl<GoogleAuthCubit>(),
       child: Builder(
         builder: (context) {
           return Row(

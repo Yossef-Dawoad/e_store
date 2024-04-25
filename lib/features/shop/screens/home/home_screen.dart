@@ -1,4 +1,4 @@
-import 'package:e_store/core/common/widgets/carousel_slider.dart';
+import 'package:e_store/core/shared/widgets/carousel_slider.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/features/shop/screens/home/widgets/header/header_title.dart';

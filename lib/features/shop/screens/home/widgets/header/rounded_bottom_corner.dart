@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:e_store/core/common/widgets/curved_edges/reverse_bottom_sheet_edge.dart';
+import 'package:e_store/core/shared/widgets/curved_edges/reverse_bottom_sheet_edge.dart';
 import 'package:e_store/core/constants/colors.dart';
 
 class RoundedBottomCornerContainer extends StatelessWidget {
