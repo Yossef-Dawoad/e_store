@@ -1,6 +1,7 @@
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/shared/logic/services/storage_utility.dart';
+import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -104,13 +105,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       return;
     }
 
+    // Update page index to 1 aka splash seen Already
     final storage = LocalStorageManager.instance;
-    await storage.saveData('initial_route', 1).then(
-          (value) => Navigator.of(context).pushNamedAndRemoveUntil(
-            exitRouteName,
-            (Route<dynamic> route) => route.isFirst,
-          ),
-        );
+    await storage
+        .saveData('initial_route', 1)
+        .then((value) => context.pushNamedRouteAndRemoveUntil(exitRouteName));
     if (kDebugMode) {
       debugPrint('initial_route saved with value ${Routes.initialRoute}');
     }

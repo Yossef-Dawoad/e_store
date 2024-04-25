@@ -18,6 +18,10 @@ class ManageFirstRoute extends StatelessWidget {
           state.maybeWhen(
             loggedIn: () =>
                 context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu),
+            splashNotSeen: () =>
+                context.pushNamedRouteAndRemoveUntil(Routes.onBoarding),
+            splashSeen: () =>
+                context.pushNamedRouteAndRemoveUntil(Routes.signIn),
             loading: () => animatedDialogScreenLoader(
               context,
               'Processing Your request...',

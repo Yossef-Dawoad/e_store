@@ -1,3 +1,4 @@
+import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:e_store/core/shared/widgets/dialogs/loading_dialogs.dart';
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/image_strings.dart';
@@ -46,10 +47,10 @@ class LoginScreen extends StatelessWidget {
                       'Processing Your request...',
                       AppImages.docerLoaderAnimation,
                     ),
-                  LogInSuccess() =>
-                    context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu),
+                  LogInSuccess() => saveSuccesfullLoginAndRoute(context),
                   SendResetEmailSuccess() => {
-                      print('should be routed to reset password screen'),
+                      // TODO make use of the logger
+                      print('[ROUTING] heading to reset passwordSuccessScreen'),
                       context.pushNamedRoute(Routes.resetPasswordSuccess),
                     },
                   _ => {
@@ -65,5 +66,12 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void saveSuccesfullLoginAndRoute(BuildContext context) async {
+    // Update page index to 2 aka is Succesfuly LoggedIn Already
+    final storage = LocalStorageManager.instance;
+    await storage.saveData('initial_route', 2).then(
+        (value) => context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu));
   }
 }

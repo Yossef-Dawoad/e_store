@@ -92,12 +92,18 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
+class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   const _$StartedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'RedirectRouteEvent.started()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'RedirectRouteEvent.started'));
   }
 
   @override
@@ -194,12 +200,19 @@ class __$$RouteEnteredImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RouteEnteredImpl implements RouteEntered {
+class _$RouteEnteredImpl with DiagnosticableTreeMixin implements RouteEntered {
   const _$RouteEnteredImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'RedirectRouteEvent.routeEntered()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'RedirectRouteEvent.routeEntered'));
   }
 
   @override
@@ -284,9 +297,9 @@ mixin _$RedirectRouteState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() splashNotSeen,
     required TResult Function() splashSeen,
     required TResult Function() loggedIn,
-    required TResult Function() notLoggedIn,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -294,9 +307,9 @@ mixin _$RedirectRouteState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? splashNotSeen,
     TResult? Function()? splashSeen,
     TResult? Function()? loggedIn,
-    TResult? Function()? notLoggedIn,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -304,9 +317,9 @@ mixin _$RedirectRouteState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? splashNotSeen,
     TResult Function()? splashSeen,
     TResult Function()? loggedIn,
-    TResult Function()? notLoggedIn,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -315,9 +328,9 @@ mixin _$RedirectRouteState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_SplashNotSeen value) splashNotSeen,
     required TResult Function(_SplashSeen value) splashSeen,
     required TResult Function(LoggedInRouteEntered value) loggedIn,
-    required TResult Function(_NotLoggedIn value) notLoggedIn,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -325,9 +338,9 @@ mixin _$RedirectRouteState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashNotSeen value)? splashNotSeen,
     TResult? Function(_SplashSeen value)? splashSeen,
     TResult? Function(LoggedInRouteEntered value)? loggedIn,
-    TResult? Function(_NotLoggedIn value)? notLoggedIn,
     TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -335,9 +348,9 @@ mixin _$RedirectRouteState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_SplashNotSeen value)? splashNotSeen,
     TResult Function(_SplashSeen value)? splashSeen,
     TResult Function(LoggedInRouteEntered value)? loggedIn,
-    TResult Function(_NotLoggedIn value)? notLoggedIn,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -380,12 +393,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'RedirectRouteState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'RedirectRouteState.initial'));
   }
 
   @override
@@ -402,9 +421,9 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() splashNotSeen,
     required TResult Function() splashSeen,
     required TResult Function() loggedIn,
-    required TResult Function() notLoggedIn,
     required TResult Function() error,
   }) {
     return initial();
@@ -415,9 +434,9 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? splashNotSeen,
     TResult? Function()? splashSeen,
     TResult? Function()? loggedIn,
-    TResult? Function()? notLoggedIn,
     TResult? Function()? error,
   }) {
     return initial?.call();
@@ -428,9 +447,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? splashNotSeen,
     TResult Function()? splashSeen,
     TResult Function()? loggedIn,
-    TResult Function()? notLoggedIn,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -445,9 +464,9 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_SplashNotSeen value) splashNotSeen,
     required TResult Function(_SplashSeen value) splashSeen,
     required TResult Function(LoggedInRouteEntered value) loggedIn,
-    required TResult Function(_NotLoggedIn value) notLoggedIn,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -458,9 +477,9 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashNotSeen value)? splashNotSeen,
     TResult? Function(_SplashSeen value)? splashSeen,
     TResult? Function(LoggedInRouteEntered value)? loggedIn,
-    TResult? Function(_NotLoggedIn value)? notLoggedIn,
     TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -471,9 +490,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_SplashNotSeen value)? splashNotSeen,
     TResult Function(_SplashSeen value)? splashSeen,
     TResult Function(LoggedInRouteEntered value)? loggedIn,
-    TResult Function(_NotLoggedIn value)? notLoggedIn,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -506,12 +525,18 @@ class __$$LoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingImpl implements _Loading {
+class _$LoadingImpl with DiagnosticableTreeMixin implements _Loading {
   const _$LoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'RedirectRouteState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'RedirectRouteState.loading'));
   }
 
   @override
@@ -528,9 +553,9 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() splashNotSeen,
     required TResult Function() splashSeen,
     required TResult Function() loggedIn,
-    required TResult Function() notLoggedIn,
     required TResult Function() error,
   }) {
     return loading();
@@ -541,9 +566,9 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? splashNotSeen,
     TResult? Function()? splashSeen,
     TResult? Function()? loggedIn,
-    TResult? Function()? notLoggedIn,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -554,9 +579,9 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? splashNotSeen,
     TResult Function()? splashSeen,
     TResult Function()? loggedIn,
-    TResult Function()? notLoggedIn,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -571,9 +596,9 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_SplashNotSeen value) splashNotSeen,
     required TResult Function(_SplashSeen value) splashSeen,
     required TResult Function(LoggedInRouteEntered value) loggedIn,
-    required TResult Function(_NotLoggedIn value) notLoggedIn,
     required TResult Function(_Error value) error,
   }) {
     return loading(this);
@@ -584,9 +609,9 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashNotSeen value)? splashNotSeen,
     TResult? Function(_SplashSeen value)? splashSeen,
     TResult? Function(LoggedInRouteEntered value)? loggedIn,
-    TResult? Function(_NotLoggedIn value)? notLoggedIn,
     TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
@@ -597,9 +622,9 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_SplashNotSeen value)? splashNotSeen,
     TResult Function(_SplashSeen value)? splashSeen,
     TResult Function(LoggedInRouteEntered value)? loggedIn,
-    TResult Function(_NotLoggedIn value)? notLoggedIn,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -612,6 +637,141 @@ class _$LoadingImpl implements _Loading {
 
 abstract class _Loading implements RedirectRouteState {
   const factory _Loading() = _$LoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$SplashNotSeenImplCopyWith<$Res> {
+  factory _$$SplashNotSeenImplCopyWith(
+          _$SplashNotSeenImpl value, $Res Function(_$SplashNotSeenImpl) then) =
+      __$$SplashNotSeenImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SplashNotSeenImplCopyWithImpl<$Res>
+    extends _$RedirectRouteStateCopyWithImpl<$Res, _$SplashNotSeenImpl>
+    implements _$$SplashNotSeenImplCopyWith<$Res> {
+  __$$SplashNotSeenImplCopyWithImpl(
+      _$SplashNotSeenImpl _value, $Res Function(_$SplashNotSeenImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SplashNotSeenImpl
+    with DiagnosticableTreeMixin
+    implements _SplashNotSeen {
+  const _$SplashNotSeenImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'RedirectRouteState.splashNotSeen()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'RedirectRouteState.splashNotSeen'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SplashNotSeenImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() splashNotSeen,
+    required TResult Function() splashSeen,
+    required TResult Function() loggedIn,
+    required TResult Function() error,
+  }) {
+    return splashNotSeen();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? splashNotSeen,
+    TResult? Function()? splashSeen,
+    TResult? Function()? loggedIn,
+    TResult? Function()? error,
+  }) {
+    return splashNotSeen?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? splashNotSeen,
+    TResult Function()? splashSeen,
+    TResult Function()? loggedIn,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (splashNotSeen != null) {
+      return splashNotSeen();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_SplashNotSeen value) splashNotSeen,
+    required TResult Function(_SplashSeen value) splashSeen,
+    required TResult Function(LoggedInRouteEntered value) loggedIn,
+    required TResult Function(_Error value) error,
+  }) {
+    return splashNotSeen(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashNotSeen value)? splashNotSeen,
+    TResult? Function(_SplashSeen value)? splashSeen,
+    TResult? Function(LoggedInRouteEntered value)? loggedIn,
+    TResult? Function(_Error value)? error,
+  }) {
+    return splashNotSeen?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_SplashNotSeen value)? splashNotSeen,
+    TResult Function(_SplashSeen value)? splashSeen,
+    TResult Function(LoggedInRouteEntered value)? loggedIn,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (splashNotSeen != null) {
+      return splashNotSeen(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SplashNotSeen implements RedirectRouteState {
+  const factory _SplashNotSeen() = _$SplashNotSeenImpl;
 }
 
 /// @nodoc
@@ -632,12 +792,19 @@ class __$$SplashSeenImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SplashSeenImpl implements _SplashSeen {
+class _$SplashSeenImpl with DiagnosticableTreeMixin implements _SplashSeen {
   const _$SplashSeenImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'RedirectRouteState.splashSeen()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'RedirectRouteState.splashSeen'));
   }
 
   @override
@@ -654,9 +821,9 @@ class _$SplashSeenImpl implements _SplashSeen {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() splashNotSeen,
     required TResult Function() splashSeen,
     required TResult Function() loggedIn,
-    required TResult Function() notLoggedIn,
     required TResult Function() error,
   }) {
     return splashSeen();
@@ -667,9 +834,9 @@ class _$SplashSeenImpl implements _SplashSeen {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? splashNotSeen,
     TResult? Function()? splashSeen,
     TResult? Function()? loggedIn,
-    TResult? Function()? notLoggedIn,
     TResult? Function()? error,
   }) {
     return splashSeen?.call();
@@ -680,9 +847,9 @@ class _$SplashSeenImpl implements _SplashSeen {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? splashNotSeen,
     TResult Function()? splashSeen,
     TResult Function()? loggedIn,
-    TResult Function()? notLoggedIn,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -697,9 +864,9 @@ class _$SplashSeenImpl implements _SplashSeen {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_SplashNotSeen value) splashNotSeen,
     required TResult Function(_SplashSeen value) splashSeen,
     required TResult Function(LoggedInRouteEntered value) loggedIn,
-    required TResult Function(_NotLoggedIn value) notLoggedIn,
     required TResult Function(_Error value) error,
   }) {
     return splashSeen(this);
@@ -710,9 +877,9 @@ class _$SplashSeenImpl implements _SplashSeen {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashNotSeen value)? splashNotSeen,
     TResult? Function(_SplashSeen value)? splashSeen,
     TResult? Function(LoggedInRouteEntered value)? loggedIn,
-    TResult? Function(_NotLoggedIn value)? notLoggedIn,
     TResult? Function(_Error value)? error,
   }) {
     return splashSeen?.call(this);
@@ -723,9 +890,9 @@ class _$SplashSeenImpl implements _SplashSeen {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_SplashNotSeen value)? splashNotSeen,
     TResult Function(_SplashSeen value)? splashSeen,
     TResult Function(LoggedInRouteEntered value)? loggedIn,
-    TResult Function(_NotLoggedIn value)? notLoggedIn,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -758,12 +925,20 @@ class __$$LoggedInRouteEnteredImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoggedInRouteEnteredImpl implements LoggedInRouteEntered {
+class _$LoggedInRouteEnteredImpl
+    with DiagnosticableTreeMixin
+    implements LoggedInRouteEntered {
   const _$LoggedInRouteEnteredImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'RedirectRouteState.loggedIn()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'RedirectRouteState.loggedIn'));
   }
 
   @override
@@ -781,9 +956,9 @@ class _$LoggedInRouteEnteredImpl implements LoggedInRouteEntered {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() splashNotSeen,
     required TResult Function() splashSeen,
     required TResult Function() loggedIn,
-    required TResult Function() notLoggedIn,
     required TResult Function() error,
   }) {
     return loggedIn();
@@ -794,9 +969,9 @@ class _$LoggedInRouteEnteredImpl implements LoggedInRouteEntered {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? splashNotSeen,
     TResult? Function()? splashSeen,
     TResult? Function()? loggedIn,
-    TResult? Function()? notLoggedIn,
     TResult? Function()? error,
   }) {
     return loggedIn?.call();
@@ -807,9 +982,9 @@ class _$LoggedInRouteEnteredImpl implements LoggedInRouteEntered {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? splashNotSeen,
     TResult Function()? splashSeen,
     TResult Function()? loggedIn,
-    TResult Function()? notLoggedIn,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -824,9 +999,9 @@ class _$LoggedInRouteEnteredImpl implements LoggedInRouteEntered {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_SplashNotSeen value) splashNotSeen,
     required TResult Function(_SplashSeen value) splashSeen,
     required TResult Function(LoggedInRouteEntered value) loggedIn,
-    required TResult Function(_NotLoggedIn value) notLoggedIn,
     required TResult Function(_Error value) error,
   }) {
     return loggedIn(this);
@@ -837,9 +1012,9 @@ class _$LoggedInRouteEnteredImpl implements LoggedInRouteEntered {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashNotSeen value)? splashNotSeen,
     TResult? Function(_SplashSeen value)? splashSeen,
     TResult? Function(LoggedInRouteEntered value)? loggedIn,
-    TResult? Function(_NotLoggedIn value)? notLoggedIn,
     TResult? Function(_Error value)? error,
   }) {
     return loggedIn?.call(this);
@@ -850,9 +1025,9 @@ class _$LoggedInRouteEnteredImpl implements LoggedInRouteEntered {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_SplashNotSeen value)? splashNotSeen,
     TResult Function(_SplashSeen value)? splashSeen,
     TResult Function(LoggedInRouteEntered value)? loggedIn,
-    TResult Function(_NotLoggedIn value)? notLoggedIn,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -865,132 +1040,6 @@ class _$LoggedInRouteEnteredImpl implements LoggedInRouteEntered {
 
 abstract class LoggedInRouteEntered implements RedirectRouteState {
   const factory LoggedInRouteEntered() = _$LoggedInRouteEnteredImpl;
-}
-
-/// @nodoc
-abstract class _$$NotLoggedInImplCopyWith<$Res> {
-  factory _$$NotLoggedInImplCopyWith(
-          _$NotLoggedInImpl value, $Res Function(_$NotLoggedInImpl) then) =
-      __$$NotLoggedInImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NotLoggedInImplCopyWithImpl<$Res>
-    extends _$RedirectRouteStateCopyWithImpl<$Res, _$NotLoggedInImpl>
-    implements _$$NotLoggedInImplCopyWith<$Res> {
-  __$$NotLoggedInImplCopyWithImpl(
-      _$NotLoggedInImpl _value, $Res Function(_$NotLoggedInImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NotLoggedInImpl implements _NotLoggedIn {
-  const _$NotLoggedInImpl();
-
-  @override
-  String toString() {
-    return 'RedirectRouteState.notLoggedIn()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NotLoggedInImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() splashSeen,
-    required TResult Function() loggedIn,
-    required TResult Function() notLoggedIn,
-    required TResult Function() error,
-  }) {
-    return notLoggedIn();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? splashSeen,
-    TResult? Function()? loggedIn,
-    TResult? Function()? notLoggedIn,
-    TResult? Function()? error,
-  }) {
-    return notLoggedIn?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? splashSeen,
-    TResult Function()? loggedIn,
-    TResult Function()? notLoggedIn,
-    TResult Function()? error,
-    required TResult orElse(),
-  }) {
-    if (notLoggedIn != null) {
-      return notLoggedIn();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_SplashSeen value) splashSeen,
-    required TResult Function(LoggedInRouteEntered value) loggedIn,
-    required TResult Function(_NotLoggedIn value) notLoggedIn,
-    required TResult Function(_Error value) error,
-  }) {
-    return notLoggedIn(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_SplashSeen value)? splashSeen,
-    TResult? Function(LoggedInRouteEntered value)? loggedIn,
-    TResult? Function(_NotLoggedIn value)? notLoggedIn,
-    TResult? Function(_Error value)? error,
-  }) {
-    return notLoggedIn?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_SplashSeen value)? splashSeen,
-    TResult Function(LoggedInRouteEntered value)? loggedIn,
-    TResult Function(_NotLoggedIn value)? notLoggedIn,
-    TResult Function(_Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (notLoggedIn != null) {
-      return notLoggedIn(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _NotLoggedIn implements RedirectRouteState {
-  const factory _NotLoggedIn() = _$NotLoggedInImpl;
 }
 
 /// @nodoc
@@ -1011,12 +1060,18 @@ class __$$ErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorImpl implements _Error {
+class _$ErrorImpl with DiagnosticableTreeMixin implements _Error {
   const _$ErrorImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'RedirectRouteState.error()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'RedirectRouteState.error'));
   }
 
   @override
@@ -1033,9 +1088,9 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() splashNotSeen,
     required TResult Function() splashSeen,
     required TResult Function() loggedIn,
-    required TResult Function() notLoggedIn,
     required TResult Function() error,
   }) {
     return error();
@@ -1046,9 +1101,9 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function()? splashNotSeen,
     TResult? Function()? splashSeen,
     TResult? Function()? loggedIn,
-    TResult? Function()? notLoggedIn,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -1059,9 +1114,9 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? splashNotSeen,
     TResult Function()? splashSeen,
     TResult Function()? loggedIn,
-    TResult Function()? notLoggedIn,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -1076,9 +1131,9 @@ class _$ErrorImpl implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_SplashNotSeen value) splashNotSeen,
     required TResult Function(_SplashSeen value) splashSeen,
     required TResult Function(LoggedInRouteEntered value) loggedIn,
-    required TResult Function(_NotLoggedIn value) notLoggedIn,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -1089,9 +1144,9 @@ class _$ErrorImpl implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_SplashNotSeen value)? splashNotSeen,
     TResult? Function(_SplashSeen value)? splashSeen,
     TResult? Function(LoggedInRouteEntered value)? loggedIn,
-    TResult? Function(_NotLoggedIn value)? notLoggedIn,
     TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -1102,9 +1157,9 @@ class _$ErrorImpl implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_SplashNotSeen value)? splashNotSeen,
     TResult Function(_SplashSeen value)? splashSeen,
     TResult Function(LoggedInRouteEntered value)? loggedIn,
-    TResult Function(_NotLoggedIn value)? notLoggedIn,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {

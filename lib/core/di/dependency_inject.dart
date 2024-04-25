@@ -1,4 +1,5 @@
 import 'package:e_store/core/shared/logic/services/network_manager.dart';
+import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication_impl.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/user_cloud/user_cloud.dart';
@@ -22,14 +23,16 @@ final sl = GetIt.instance;
 
 Future<void> initializeDependence() async {
   /// Register services
-  sl.registerLazySingleton(() => GetStorage());
+  await GetStorage.init();
+
+  sl.registerLazySingleton<LocalStorageManager>(
+      () => LocalStorageManager.instance);
   sl.registerLazySingleton<NetworkManager>(() => NetworkManager.instance);
   sl.registerLazySingleton<UserCloudService>(() => UserCloudServiceImpl());
 
   /// Register dataSources
   sl.registerLazySingleton<AuthenticationRemoteDataSource>(
     () => AuthenticationRemoteDataSourceImpl(
-      localStorage: sl(),
       userCloudService: sl(),
     ),
   );

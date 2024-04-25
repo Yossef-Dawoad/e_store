@@ -1,5 +1,4 @@
 import 'package:e_store/core/constants/sizes.dart';
-import 'package:e_store/core/shared/logic/services/helper_functions.dart';
 import 'package:e_store/features/shop/screens/product_details/widgets/ratingcount_star.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -13,7 +12,6 @@ class ProductDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = HelperFunctions.isDarkMode(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

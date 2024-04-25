@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import 'package:e_store/core/utils/errors/server_errors.dart';
@@ -11,12 +10,10 @@ import 'firebase_authentication.dart';
 
 class AuthenticationRemoteDataSourceImpl
     implements AuthenticationRemoteDataSource {
-  final GetStorage localStorage;
   final UserCloudService userCloudService;
 
   AuthenticationRemoteDataSourceImpl({
     required this.userCloudService,
-    required this.localStorage,
   });
 
   final _auth = FirebaseAuth.instance;
