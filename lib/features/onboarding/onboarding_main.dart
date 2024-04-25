@@ -46,7 +46,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             },
           ),
 
-          /// skip Button
+          /// top skip Button
           Positioned(
             top: kToolbarHeight,
             right: 24,
@@ -56,7 +56,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
           ),
 
-          /// Dot Navigation
+          /// bottom Dot Navigation
           Positioned(
             bottom: kBottomNavigationBarHeight + 20.0,
             left: 24,
@@ -67,19 +67,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
           ),
 
-          /// Circluar Navigation Button
+          /// Circluar Navigation continue Button
           Positioned(
             right: 24,
             bottom: kBottomNavigationBarHeight + 10.0,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
+                shape: const StadiumBorder(),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 18.0, vertical: 12),
-                shape: const StadiumBorder(),
               ),
-              onPressed: () => _navigateToNextPage(
-                exitsRouteName: Routes.signIn,
-              ),
+              onPressed: () =>
+                  _navigateToNextPage(exitsRouteName: Routes.signIn),
               child: (_currentPageIndex == onBoardingPages.length - 1)
                   ? const Text("continue")
                   : const Icon(
@@ -93,8 +92,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     );
   }
 
-  void _updatePageIndicator(int index) {
-    setState(() => _currentPageIndex = index);
+  void _updatePageIndicator(int idx) {
+    setState(() => _currentPageIndex = idx);
   }
 
   void _skiptoLastPage({String exitRouteName = '/'}) async {

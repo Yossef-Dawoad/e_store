@@ -17,8 +17,7 @@ class RedirectRouteBloc extends Bloc<RedirectRouteEvent, RedirectRouteState> {
 
       final initialRoute = _storage.readData('initial_route');
 
-      await Future.delayed(const Duration(milliseconds: 1300), () async {
-        if (kDebugMode) print(initialRoute);
+      await Future.delayed(const Duration(milliseconds: 800), () async {
         if (initialRoute == null || initialRoute == 0) {
           emit(const RedirectRouteState.splashNotSeen());
         } else if (initialRoute == 1) {
