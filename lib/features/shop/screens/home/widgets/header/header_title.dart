@@ -20,6 +20,7 @@ class TitleHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkMode = HelperFunctions.isDarkMode(context);
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           title,

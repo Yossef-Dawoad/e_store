@@ -1,4 +1,7 @@
+import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/sizes.dart';
+import 'package:e_store/features/shop/screens/home/widgets/header/header_title.dart';
+import 'package:e_store/features/shop/screens/product_details/widgets/add_to_card.dart';
 import 'package:e_store/features/shop/screens/product_details/widgets/ratingcount_star.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -6,6 +9,7 @@ import 'package:iconsax/iconsax.dart';
 import 'widgets/product_attribute.dart';
 import 'widgets/product_images_slider.dart';
 import 'widgets/product_metadata.dart';
+import 'package:readmore/readmore.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({super.key});
@@ -45,12 +49,43 @@ class ProductDetailsScreen extends StatelessWidget {
                   const SizedBox(height: AppSizes.spaceBtwItems),
                   // -- product attributes
                   const ProductAttributes(),
+                  // -- Checkout Button
+                  const SizedBox(height: AppSizes.spaceBtwSections),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        onPressed: () {}, child: Text('Checkout')),
+                  ),
+
+                  const SizedBox(height: AppSizes.spaceBtwSections),
+
+                  ReadMoreText(
+                    'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.',
+                    trimMode: TrimMode.Line,
+                    trimLines: 2,
+                    colorClickableText: ColorPalette.primary,
+                    trimCollapsedText: 'Show more',
+                    trimExpandedText: 'Show less',
+                    moreStyle:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+
+                  // -- Reviews
+                  Divider(),
+                  SizedBox(height: AppSizes.spaceBtwItems),
+                  TitleHeader(
+                    title: 'Reviews(199)',
+                    btntitle: 'view all',
+                    onPressed: () {},
+                  ),
+                  SizedBox(height: AppSizes.spaceBtwSections)
                 ],
               ),
             )
           ],
         ),
       ),
+      bottomNavigationBar: AddTocard(),
     );
   }
 }

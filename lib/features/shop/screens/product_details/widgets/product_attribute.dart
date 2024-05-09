@@ -19,30 +19,36 @@ class ProductAttributes extends StatelessWidget {
             color: isDarkMode ? ColorPalette.darkGrey : ColorPalette.grey,
             borderRadius: BorderRadius.circular(20),
           ),
-          child: const Column(
+          child: Column(
             children: [
               Row(
                 children: [
-                  TitleHeader(title: 'Variation'),
-                  SizedBox(width: AppSizes.spaceBtwItems),
+                  const TitleHeader(title: 'Variation'),
+                  const SizedBox(width: AppSizes.spaceBtwItems),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
-                          Text('price: '),
-                          ProductPrice(
+                          Text(
+                            'price: ',
+                            style: context.textTheme.labelMedium,
+                          ),
+                          const ProductPrice(
                               price: '25',
                               currency: '\$',
                               lineThroughPrice: true),
-                          SizedBox(width: AppSizes.spaceBtwItems),
-                          ProductPrice(price: '20', currency: '\$')
+                          const SizedBox(width: AppSizes.sm),
+                          const ProductPrice(price: '20', currency: '\$')
                         ],
                       ),
                       Row(
                         children: [
-                          Text('Stock: '),
                           Text(
+                            'Stock: ',
+                            style: context.textTheme.labelMedium,
+                          ),
+                          const Text(
                             'In Stock',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
@@ -52,7 +58,8 @@ class ProductAttributes extends StatelessWidget {
                   )
                 ],
               ),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'This is the discription of the product and it can go 4 max-lines',
                 style: TextStyle(
                   fontSize: 12,
@@ -65,20 +72,98 @@ class ProductAttributes extends StatelessWidget {
         const SizedBox(height: AppSizes.defaultSpace),
         // -- Attributes --
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TitleHeader(title: 'Color'),
-            const SizedBox(
-              height: AppSizes.spaceBtwItems / 2,
+            const SizedBox(height: AppSizes.spaceBtwItems / 2),
+            Wrap(
+              children: [
+                AppChoiceChip(
+                  // text: 'blue',
+                  selectedColor: Colors.blue,
+                  isSelected: true,
+                  onSelected: (val) {},
+                ),
+                AppChoiceChip(
+                  // text: 'green',
+                  selectedColor: Colors.green,
+                  isSelected: false,
+                  onSelected: (val) {},
+                ),
+                AppChoiceChip(
+                  // text: 'red',
+                  selectedColor: Colors.red,
+                  isSelected: false,
+                  onSelected: (val) {},
+                )
+              ],
             ),
-            ChoiceChip(
-              label: const Text('Green'),
-              selected: false,
-              shape: const StadiumBorder(),
-              onSelected: (value) {},
-            )
+          ],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const TitleHeader(title: 'Sizes'),
+            const SizedBox(height: AppSizes.spaceBtwItems / 2),
+            Wrap(
+              spacing: 8,
+              children: [
+                AppChoiceChip(
+                  text: 'EU 38',
+                  // selectedColor: Colors.blue,
+                  isSelected: true,
+                  onSelected: (val) {},
+                ),
+                AppChoiceChip(
+                  text: 'EU 34',
+                  // selectedColor: Colors.green,
+                  isSelected: false,
+                  onSelected: (val) {},
+                ),
+                AppChoiceChip(
+                  text: 'EU 30',
+                  // selectedColor: Colors.red,
+                  isSelected: false,
+                  onSelected: (val) {},
+                )
+              ],
+            ),
           ],
         )
       ],
+    );
+  }
+}
+
+class AppChoiceChip extends StatelessWidget {
+  const AppChoiceChip({
+    super.key,
+    this.text = "",
+    this.isSelected = false,
+    this.selectedColor = ColorPalette.primary,
+    required this.onSelected,
+  });
+  final String text;
+  final Color selectedColor;
+  final bool isSelected;
+  final ValueChanged<bool> onSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return ChoiceChip(
+      label: Text(text),
+      selected: isSelected,
+      shape: text.isEmpty ? const CircleBorder() : const StadiumBorder(),
+      selectedColor: selectedColor,
+      onSelected: onSelected,
+      // backgroundColor: selectedColor,
+      labelPadding: text.isEmpty ? const EdgeInsets.all(0) : null,
+      padding: text.isEmpty ? const EdgeInsets.all(0) : null,
+      avatar: CircleAvatar(
+        backgroundColor: Colors.black,
+        radius: 32,
+        child: CircleAvatar(backgroundColor: selectedColor, radius: 20),
+      ),
     );
   }
 }

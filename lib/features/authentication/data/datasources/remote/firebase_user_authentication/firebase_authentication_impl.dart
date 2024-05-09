@@ -137,9 +137,8 @@ class AuthenticationRemoteDataSourceImpl
   @override
   Stream<UserAccount> get userAuthStatusStream =>
       _auth.authStateChanges().map((user) => UserAccount(
-            uid: user!.uid,
-            email: user.email!,
-            username: user.displayName,
-            photoURL: user.photoURL,
-          ));
+          uid: user!.uid,
+          email: user.email!,
+          username: user.displayName,
+          photoURL: user.photoURL));
 }

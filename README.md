@@ -13,6 +13,7 @@ This an e_store with Flutter that represents a lot of concepts and practices tha
 - [X] Animated OnBoarding Screen (no-dependency)
 - [X] Login Screen & SignUp Screen UI  
 - [X] Full authentication feature with clean architecture (firebase)
+- [X] Ability route users to splash, login, or home screen in the app launch
 - [X] Home Screen
 - [ ] Store Screen
 - [ ] profile Screen
@@ -23,4 +24,4 @@ This an e_store with Flutter that represents a lot of concepts and practices tha
 - [X] theming configured with (dark & light)
 
 
-This is a very beta version and highly customized to follow best practices as much as possible and will go through a lot of changes, refactors, and updates.
+> This is a very beta version and highly customized to follow best practices as much as possible and will go through a lot of changes, refactors, and updates.

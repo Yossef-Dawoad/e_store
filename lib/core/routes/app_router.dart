@@ -1,4 +1,6 @@
 import 'package:e_store/core/di/dependency_inject.dart';
+import 'package:e_store/core/shared/widgets/error/error_screens.dart';
+import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_cubit.dart';
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
@@ -7,7 +9,7 @@ import 'package:e_store/features/authentication/view/screens/login/login_screen.
 import 'package:e_store/features/authentication/view/screens/login/reset_password_screen.dart';
 import 'package:e_store/features/authentication/view/screens/signup/signup_screen.dart';
 import 'package:e_store/features/authentication/view/screens/signup/verify_email.dart';
-import 'package:e_store/core/shared/logic/blocs/redirect_route/redirect_route_bloc.dart';
+import 'package:e_store/core/shared/logic/blocs/redirect_first_route/redirect_route_bloc.dart';
 import 'package:e_store/features/first_route_page.dart';
 import 'package:e_store/features/onboarding/onboarding_main.dart';
 import 'package:e_store/features/personalization/view/profile/profile.dart';
@@ -23,36 +25,31 @@ class AppRouter {
     return switch (settings.name) {
       Routes.initialRoute => MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => sl<RedirectRouteBloc>()
-              ..add(const RedirectRouteEvent.routeEntered()),
-            child: const ManageFirstRoute(),
-          ),
+              create: (context) => sl<RedirectFirstRouteBloc>()
+                ..add(const RedirectRouteEvent.routeEntered()),
+              child: const ManageFirstRoute()),
         ),
       Routes.onBoarding =>
         MaterialPageRoute(builder: (_) => const OnBoardingScreen()),
       Routes.signIn => MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => sl<LoginCubit>(),
-            child: const LoginScreen(),
-          ),
+              create: (context) => sl<LoginCubit>(),
+              child: const LoginScreen()),
         ),
       Routes.signUp => MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => sl<SignUpCubit>(),
-            child: const SignUpScreen(),
-          ),
+              create: (context) => sl<SignUpCubit>(),
+              child: const SignUpScreen()),
         ),
       Routes.verifyEmail => MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => sl<VerifyEmailCubit>(),
-            child: const VerifyEmailScreen(),
-          ),
+              create: (context) => sl<VerifyEmailCubit>(),
+              child: const VerifyEmailScreen()),
         ),
       Routes.forgetPassword => MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => sl<LoginCubit>(),
-            child: const ForgetPasswordScreen(),
-          ),
+              create: (context) => sl<LoginCubit>(),
+              child: const ForgetPasswordScreen()),
         ),
       Routes.resetPasswordSuccess => MaterialPageRoute(
           builder: (context) => const ResetPasswordScreen(),
@@ -69,9 +66,14 @@ class AppRouter {
 
   static Route<dynamic> _errorRoute(String? pageName) {
     return MaterialPageRoute(
-      builder: (_) => const Scaffold(
+      builder: (ctx) => Scaffold(
         body: Center(
-          child: Text('404 not Found', style: TextStyle(fontSize: 32.0)),
+          child: CommonErrorPage(
+            description: '404 Not Found \nThis Page Should Not Exist..!!!',
+            icon: Icons.code_off,
+            onRetryText: 'Go Back',
+            onRetry: () => ctx.popRoute(),
+          ),
         ),
       ),
     );
