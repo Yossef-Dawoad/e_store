@@ -15,6 +15,7 @@ import 'package:e_store/features/onboarding/onboarding_main.dart';
 import 'package:e_store/features/personalization/view/profile/profile.dart';
 import 'package:e_store/features/shop/screens/navigation_menu.dart';
 import 'package:e_store/features/shop/screens/product_details/product_details.dart';
+import 'package:e_store/features/shop/screens/product_reviews/product_review.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -58,6 +59,8 @@ class AppRouter {
         MaterialPageRoute(builder: (_) => const ProfileScreen()),
       Routes.productDetail =>
         MaterialPageRoute(builder: (_) => const ProductDetailsScreen()),
+      Routes.reviews =>
+        MaterialPageRoute(builder: (_) => const ProductReviewScreen()),
       Routes.navigationMenu =>
         MaterialPageRoute(builder: (_) => const NavigationMenu()),
       _ => _errorRoute(settings.name),

@@ -56,6 +56,9 @@ extension NavigatingExtensions on BuildContext {
   }
 
   bool get isDarkMode => theme.brightness == Brightness.dark;
+  Size get screenSize => MediaQuery.of(this).size;
+  double get screenWidth => MediaQuery.of(this).size.width;
+  double get screenHeight => MediaQuery.of(this).size.height;
 
   // show snackbar
   void showSnackBar(String message, Color backgroundColor) {

@@ -1,5 +1,7 @@
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/sizes.dart';
+import 'package:e_store/core/routes/routes.dart';
+import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/shop/screens/home/widgets/header/header_title.dart';
 import 'package:e_store/features/shop/screens/product_details/widgets/add_to_card.dart';
 import 'package:e_store/features/shop/screens/product_details/widgets/ratingcount_star.dart';
@@ -76,7 +78,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   TitleHeader(
                     title: 'Reviews(199)',
                     btntitle: 'view all',
-                    onPressed: () {},
+                    onPressed: () => context.pushNamedRoute(Routes.reviews),
                   ),
                   SizedBox(height: AppSizes.spaceBtwSections)
                 ],
