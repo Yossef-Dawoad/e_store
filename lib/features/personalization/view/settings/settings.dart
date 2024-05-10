@@ -56,10 +56,11 @@ class SettingsScreen extends StatelessWidget {
                 children: [
                   const TitleHeader(title: 'Account Settings'),
                   const SizedBox(height: AppSizes.spaceBtwSections),
-                  const MenuListTile(
+                  MenuListTile(
                     title: 'My Address',
                     subtitle: 'Set shopping delivery Address',
                     icon: Iconsax.safe_home,
+                    onTap: () => context.pushNamedRoute(Routes.address),
                   ),
                   const MenuListTile(
                     title: 'My Cart',

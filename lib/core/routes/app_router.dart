@@ -12,6 +12,7 @@ import 'package:e_store/features/authentication/view/screens/signup/verify_email
 import 'package:e_store/core/shared/logic/blocs/redirect_first_route/redirect_route_bloc.dart';
 import 'package:e_store/features/first_route_page.dart';
 import 'package:e_store/features/onboarding/onboarding_main.dart';
+import 'package:e_store/features/personalization/view/address/address_screen.dart';
 import 'package:e_store/features/personalization/view/profile/profile.dart';
 import 'package:e_store/features/shop/screens/navigation_menu.dart';
 import 'package:e_store/features/shop/screens/product_details/product_details.dart';
@@ -61,6 +62,8 @@ class AppRouter {
         MaterialPageRoute(builder: (_) => const ProductDetailsScreen()),
       Routes.reviews =>
         MaterialPageRoute(builder: (_) => const ProductReviewScreen()),
+      Routes.address =>
+        MaterialPageRoute(builder: (_) => const UserAddressScreen()),
       Routes.navigationMenu =>
         MaterialPageRoute(builder: (_) => const NavigationMenu()),
       _ => _errorRoute(settings.name),
