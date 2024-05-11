@@ -27,15 +27,13 @@ class AddTocard extends StatelessWidget {
           Row(
             children: [
               const CircleAvatar(
-                child: Icon(Iconsax.minus,
-                    color: ColorPalette.white, size: AppSizes.iconMd),
+                child: Icon(Iconsax.minus, color: ColorPalette.white, size: AppSizes.iconMd),
               ),
               const SizedBox(width: AppSizes.spaceBtwItems),
               Text('2', style: context.textTheme.titleSmall),
               const SizedBox(width: AppSizes.spaceBtwItems),
               const CircleAvatar(
-                child: Icon(Iconsax.add,
-                    color: ColorPalette.white, size: AppSizes.iconMd),
+                child: Icon(Iconsax.add, color: ColorPalette.white, size: AppSizes.iconMd),
               ),
             ],
           ),

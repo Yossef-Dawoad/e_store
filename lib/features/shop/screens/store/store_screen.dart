@@ -1,3 +1,4 @@
+import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/shared/widgets/cusom_appbar/custom_tabbar.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:flutter/material.dart';
@@ -26,23 +27,19 @@ class StoreScreen extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             SliverPadding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 8.0,
-                vertical: 20,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
               sliver: SliverAppBar(
                 pinned: true,
                 // floating: true,
                 expandedHeight: 480,
                 toolbarHeight: AppSizes.appBarHeight,
-                backgroundColor:
-                    isDark ? ColorPalette.dark : ColorPalette.light,
+                backgroundColor: isDark ? ColorPalette.dark : ColorPalette.light,
                 title: Text('Store', style: context.textTheme.headlineMedium),
                 actions: [
                   CounterCartIcon(onPressed: () {}),
                 ],
-                flexibleSpace: ExpandedBrandShowCaseAppBar(
-                    screenWidth: screenWidth, isDark: isDark),
+                flexibleSpace:
+                    ExpandedBrandShowCaseAppBar(screenWidth: screenWidth, isDark: isDark),
                 bottom: const CustomTabApp(
                   tabs: [
                     Tab(text: 'Sports'),
@@ -102,8 +99,7 @@ class ExpandedBrandShowCaseAppBar extends StatelessWidget {
                   ),
                   const SizedBox(height: AppSizes.spaceBtwItems),
                   GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       mainAxisSpacing: AppSizes.gridViewSpacing,
                       crossAxisSpacing: AppSizes.gridViewSpacing,

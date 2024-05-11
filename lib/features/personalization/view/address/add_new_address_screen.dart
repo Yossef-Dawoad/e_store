@@ -9,44 +9,44 @@ class AddNewAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BasicAppBar(
+      appBar: const BasicAppBar(
         title: Text('Add new Addresses'),
         implyLeading: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(AppSizes.defaultSpace),
+          padding: const EdgeInsets.all(AppSizes.defaultSpace),
           child: Form(
             child: Column(
               children: [
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Address Name',
                       hintText: 'Work Space',
                       prefixIcon: Icon(Iconsax.map5)),
                 ),
-                SizedBox(height: AppSizes.spaceBtwInputFields),
+                const SizedBox(height: AppSizes.spaceBtwInputFields),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Phone Number',
                       hintText: '+20 1205 1251 21',
                       prefixIcon: Icon(Iconsax.mobile)),
                 ),
-                SizedBox(height: AppSizes.spaceBtwInputFields),
+                const SizedBox(height: AppSizes.spaceBtwInputFields),
                 Row(
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             labelText: 'City',
                             hintText: 'Cairo',
                             prefixIcon: Icon(Iconsax.buildings)),
                       ),
                     ),
-                    SizedBox(width: AppSizes.spaceBtwInputFields),
+                    const SizedBox(width: AppSizes.spaceBtwInputFields),
                     Expanded(
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             labelText: 'Zip code',
                             hintText: '11001',
                             prefixIcon: Icon(Iconsax.code)),
@@ -56,14 +56,14 @@ class AddNewAddressScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: AppSizes.spaceBtwInputFields),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Street Address',
                       hintText: '123 Street',
                       prefixIcon: Icon(Iconsax.building_3)),
                 ),
                 const SizedBox(height: AppSizes.spaceBtwInputFields),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Country',
                       hintText: 'Egypt',
                       prefixIcon: Icon(Iconsax.global)),
@@ -71,7 +71,8 @@ class AddNewAddressScreen extends StatelessWidget {
                 const SizedBox(height: AppSizes.defaultSpace),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton(child: Text('Save'), onPressed: () {}),
+                  child: ElevatedButton(
+                      child: const Text('Save'), onPressed: () {}),
                 )
               ],
             ),

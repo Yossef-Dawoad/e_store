@@ -1,3 +1,4 @@
+import 'package:e_store/core/routes/routes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:e_store/core/shared/widgets/cart_counter_icon.dart';
@@ -62,9 +63,7 @@ class CustomHomeAppBar extends StatelessWidget {
 
           // cargeories
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppSizes.defaultSpace,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: AppSizes.defaultSpace),
             child: Column(
               children: [
                 /// section title

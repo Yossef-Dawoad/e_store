@@ -15,6 +15,7 @@ class Routes {
   static const productDetail = '/product-detail';
   static const reviews = '/reviews';
   static const address = '/address';
+  static const cart = '/cart';
 
   /// Gets the initial route to display when the app starts based on
   /// previously saved state. Checks local storage for an initial route flag,

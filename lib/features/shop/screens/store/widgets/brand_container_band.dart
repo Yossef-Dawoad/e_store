@@ -23,9 +23,7 @@ class BrandContainerBand extends StatelessWidget {
           color: isDark ? ColorPalette.dark : ColorPalette.light,
           borderRadius: BorderRadius.circular(10),
           border: showBorder
-              ? Border.all(
-                  color: isDark ? Colors.grey[300]! : Colors.grey[800]!,
-                )
+              ? Border.all(color: isDark ? Colors.grey[300]! : Colors.grey[800]!)
               : null),
       child: Row(
         // crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,30 +39,37 @@ class BrandContainerBand extends StatelessWidget {
           const SizedBox(width: 10.0),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    'Nike',
-                    style: context.textTheme.titleSmall,
-                  ),
-                  const SizedBox(width: 6.0),
-                  const Icon(
-                    Iconsax.verify5,
-                    size: AppSizes.iconSm,
-                  ),
-                ],
-              ),
+              const BrandTitleWithVerifiedIcon(title: 'Nike'),
               Text(
                 '256 products',
-                style: context.textTheme.bodySmall?.copyWith(
-                  fontSize: 10.0,
-                ),
+                style: context.textTheme.bodySmall?.copyWith(fontSize: 10.0),
               ),
             ],
           ),
         ],
       ),
+    );
+  }
+}
+
+class BrandTitleWithVerifiedIcon extends StatelessWidget {
+  const BrandTitleWithVerifiedIcon({
+    super.key,
+    required this.title,
+  });
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(title, style: context.textTheme.bodyLarge),
+        const SizedBox(width: 6.0),
+        const Icon(Iconsax.verify5, size: AppSizes.iconSm),
+      ],
     );
   }
 }

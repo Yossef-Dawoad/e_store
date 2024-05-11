@@ -14,6 +14,7 @@ import 'package:e_store/features/first_route_page.dart';
 import 'package:e_store/features/onboarding/onboarding_main.dart';
 import 'package:e_store/features/personalization/view/address/address_screen.dart';
 import 'package:e_store/features/personalization/view/profile/profile.dart';
+import 'package:e_store/features/shop/screens/cart/cart_screen.dart';
 import 'package:e_store/features/shop/screens/navigation_menu.dart';
 import 'package:e_store/features/shop/screens/product_details/product_details.dart';
 import 'package:e_store/features/shop/screens/product_reviews/product_review.dart';
@@ -27,45 +28,35 @@ class AppRouter {
     return switch (settings.name) {
       Routes.initialRoute => MaterialPageRoute(
           builder: (_) => BlocProvider(
-              create: (context) => sl<RedirectFirstRouteBloc>()
-                ..add(const RedirectRouteEvent.routeEntered()),
+              create: (context) =>
+                  sl<RedirectFirstRouteBloc>()..add(const RedirectRouteEvent.routeEntered()),
               child: const ManageFirstRoute()),
         ),
-      Routes.onBoarding =>
-        MaterialPageRoute(builder: (_) => const OnBoardingScreen()),
+      Routes.onBoarding => MaterialPageRoute(builder: (_) => const OnBoardingScreen()),
       Routes.signIn => MaterialPageRoute(
-          builder: (_) => BlocProvider(
-              create: (context) => sl<LoginCubit>(),
-              child: const LoginScreen()),
+          builder: (_) =>
+              BlocProvider(create: (context) => sl<LoginCubit>(), child: const LoginScreen()),
         ),
       Routes.signUp => MaterialPageRoute(
-          builder: (_) => BlocProvider(
-              create: (context) => sl<SignUpCubit>(),
-              child: const SignUpScreen()),
+          builder: (_) =>
+              BlocProvider(create: (context) => sl<SignUpCubit>(), child: const SignUpScreen()),
         ),
       Routes.verifyEmail => MaterialPageRoute(
           builder: (_) => BlocProvider(
-              create: (context) => sl<VerifyEmailCubit>(),
-              child: const VerifyEmailScreen()),
+              create: (context) => sl<VerifyEmailCubit>(), child: const VerifyEmailScreen()),
         ),
       Routes.forgetPassword => MaterialPageRoute(
           builder: (_) => BlocProvider(
-              create: (context) => sl<LoginCubit>(),
-              child: const ForgetPasswordScreen()),
+              create: (context) => sl<LoginCubit>(), child: const ForgetPasswordScreen()),
         ),
-      Routes.resetPasswordSuccess => MaterialPageRoute(
-          builder: (context) => const ResetPasswordScreen(),
-        ),
-      Routes.profile =>
-        MaterialPageRoute(builder: (_) => const ProfileScreen()),
-      Routes.productDetail =>
-        MaterialPageRoute(builder: (_) => const ProductDetailsScreen()),
-      Routes.reviews =>
-        MaterialPageRoute(builder: (_) => const ProductReviewScreen()),
-      Routes.address =>
-        MaterialPageRoute(builder: (_) => const UserAddressScreen()),
-      Routes.navigationMenu =>
-        MaterialPageRoute(builder: (_) => const NavigationMenu()),
+      Routes.resetPasswordSuccess =>
+        MaterialPageRoute(builder: (context) => const ResetPasswordScreen()),
+      Routes.profile => MaterialPageRoute(builder: (_) => const ProfileScreen()),
+      Routes.productDetail => MaterialPageRoute(builder: (_) => const ProductDetailsScreen()),
+      Routes.reviews => MaterialPageRoute(builder: (_) => const ProductReviewScreen()),
+      Routes.address => MaterialPageRoute(builder: (_) => const UserAddressScreen()),
+      Routes.cart => MaterialPageRoute(builder: (_) => const CartScreen()),
+      Routes.navigationMenu => MaterialPageRoute(builder: (_) => const NavigationMenu()),
       _ => _errorRoute(settings.name),
     };
   }
