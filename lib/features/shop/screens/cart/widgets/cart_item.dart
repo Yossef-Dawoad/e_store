@@ -4,7 +4,6 @@ import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/shop/screens/store/widgets/brand_container_band.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({super.key});
@@ -45,9 +44,8 @@ class CartItem extends StatelessWidget {
                 TextSpan(text: 'UK 08', style: context.textTheme.bodyLarge),
               ]),
             ),
-            // price
+            // price Row
             // Row(
-            //   mainAxisSize: MainAxisSize.min,
             //   children: [
             //     Text('\$200', style: context.textTheme.titleLarge),
             //     const Spacer(),
