@@ -13,11 +13,11 @@ class UserAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: BasicAppBar(
+      appBar: const BasicAppBar(
         title: Text('Addresses'),
         implyLeading: true,
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(AppSizes.defaultSpace),
           child: Column(
@@ -32,9 +32,9 @@ class UserAddressScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.pushRoute(AddNewAddressScreen()),
+        onPressed: () => context.pushRoute(const AddNewAddressScreen()),
         backgroundColor: ColorPalette.primary,
-        child: Icon(Icons.add, color: ColorPalette.white),
+        child: const Icon(Icons.add, color: ColorPalette.white),
       ),
     );
   }
@@ -50,7 +50,7 @@ class AddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // height: 100,
-      padding: EdgeInsets.all(AppSizes.md),
+      padding: const EdgeInsets.all(AppSizes.md),
       width: double.infinity,
       decoration: BoxDecoration(
         color: isSelected
@@ -79,7 +79,7 @@ class AddressCard extends StatelessWidget {
                 'Work',
                 style: context.textTheme.titleLarge,
               ),
-              SizedBox(height: AppSizes.sm / 2),
+              const SizedBox(height: AppSizes.sm / 2),
               Text(
                 '18 ST, NEW YORK, USA',
                 style: context.textTheme.titleSmall,
@@ -87,8 +87,8 @@ class AddressCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
               ),
-              SizedBox(height: AppSizes.sm / 2),
-              Text(
+              const SizedBox(height: AppSizes.sm / 2),
+              const Text(
                 '(+20) 11411 9334',
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,

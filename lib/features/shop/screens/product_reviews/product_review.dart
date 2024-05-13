@@ -26,13 +26,13 @@ class ProductReviewScreen extends StatelessWidget {
 
               // -- Overall Ratings
               const OverAllRatingStars(),
-              AppRatingBar(ratings: 4.7),
+              const AppRatingBar(ratings: 4.7),
               Text("12,345 ratings", style: context.textTheme.bodySmall),
-              SizedBox(height: AppSizes.spaceBtwSections),
+              const SizedBox(height: AppSizes.spaceBtwSections),
 
               // User Review list
-              UserReviewCard(),
-              UserReviewCard(),
+              const UserReviewCard(),
+              const UserReviewCard(),
             ],
           ),
         ),

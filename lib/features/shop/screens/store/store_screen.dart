@@ -1,4 +1,3 @@
-import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/shared/widgets/cusom_appbar/custom_tabbar.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:flutter/material.dart';

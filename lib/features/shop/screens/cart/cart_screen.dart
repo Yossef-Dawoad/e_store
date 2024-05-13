@@ -26,7 +26,7 @@ class CartScreen extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(AppSizes.defaultSpace),
         child: ElevatedButton(
-          onPressed: () => context.pushRoute(CheckoutScreen()),
+          onPressed: () => context.pushRoute(const CheckoutScreen()),
           child: const Text('Checkout \$250'),
         ),
       ),

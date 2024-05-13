@@ -47,7 +47,7 @@ class AddTocard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(AppSizes.cardRadiusLg),
               ),
             ),
-            child: Text('Add to cart'),
+            child: const Text('Add to cart'),
           ),
         ],
       ),

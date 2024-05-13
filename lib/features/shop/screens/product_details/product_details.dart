@@ -56,12 +56,12 @@ class ProductDetailsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                        onPressed: () {}, child: Text('Checkout')),
+                        onPressed: () {}, child: const Text('Checkout')),
                   ),
 
                   const SizedBox(height: AppSizes.spaceBtwSections),
 
-                  ReadMoreText(
+                  const ReadMoreText(
                     'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.',
                     trimMode: TrimMode.Line,
                     trimLines: 2,
@@ -73,21 +73,21 @@ class ProductDetailsScreen extends StatelessWidget {
                   ),
 
                   // -- Reviews
-                  Divider(),
-                  SizedBox(height: AppSizes.spaceBtwItems),
+                  const Divider(),
+                  const SizedBox(height: AppSizes.spaceBtwItems),
                   TitleHeader(
                     title: 'Reviews(199)',
                     btntitle: 'view all',
                     onPressed: () => context.pushNamedRoute(Routes.reviews),
                   ),
-                  SizedBox(height: AppSizes.spaceBtwSections)
+                  const SizedBox(height: AppSizes.spaceBtwSections)
                 ],
               ),
             )
           ],
         ),
       ),
-      bottomNavigationBar: AddTocard(),
+      bottomNavigationBar: const AddTocard(),
     );
   }
 }
