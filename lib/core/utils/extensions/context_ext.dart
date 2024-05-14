@@ -6,7 +6,7 @@ extension ContextThemingExtension on BuildContext {
   Color get primaryColor => theme.primaryColor;
   Color get primaryColorDark => theme.primaryColorDark;
   Color get primaryColorLight => theme.primaryColorLight;
-  Color get backgroundColor => theme.colorScheme.background;
+  Color get backgroundColor => theme.colorScheme.surface;
   Color get scaffoldBackgroundColor => theme.scaffoldBackgroundColor;
   Color get cardColor => theme.cardColor;
   Color get dividerColor => theme.dividerColor;

@@ -5,7 +5,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.3.3 <4.0.0"
+  sdk: ">=3.4.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -18,11 +18,11 @@ dependencies:
   ## Utility Packages
   http: ^1.2.1
   intl: ^0.19.0
-  logger: ^2.2.0
+  logger: ^2.3.0
   url_launcher: ^6.2.6
   connectivity_plus: ^6.0.3
   get_storage: ^2.1.1
-  lottie: ^3.1.0
+  lottie: ^3.1.1
 
   ## State management
 
@@ -49,7 +49,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.2
+  flutter_lints: ^4.0.0
   build_runner: ^2.4.9
   freezed: ^2.5.2
   json_serializable: ^6.8.0

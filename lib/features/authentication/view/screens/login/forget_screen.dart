@@ -56,7 +56,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   emailController.text.trim(),
                 ),
                 style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
-                      padding: MaterialStateProperty.all(
+                      padding: WidgetStateProperty.all(
                         const EdgeInsets.all(15.0),
                       ),
                     ),
