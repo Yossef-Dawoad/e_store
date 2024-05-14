@@ -1,5 +1,6 @@
 import 'package:e_store/core/shared/logic/services/network_manager.dart';
 import 'package:e_store/core/shared/logic/services/storage_utility.dart';
+import 'package:e_store/core/utils/logging/logger.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication_impl.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/user_cloud/user_cloud.dart';
@@ -32,6 +33,7 @@ Future<void> initializeDependence() async {
   sl.registerLazySingleton<LocalStorageManager>(() => LocalStorageManager(sl()));
   sl.registerLazySingleton<NetworkManager>(() => NetworkManager.instance);
   sl.registerLazySingleton<UserCloudService>(() => UserCloudServiceImpl());
+  sl.registerLazySingleton<LoggerHelper>(() => LoggerHelper());
 
   /// Register dataSources
   sl.registerLazySingleton<AuthenticationRemoteDataSource>(

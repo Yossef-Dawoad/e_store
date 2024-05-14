@@ -4,6 +4,7 @@ import 'package:e_store/core/shared/widgets/dialogs/loading_dialogs.dart';
 import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/routes/routes.dart';
+import 'package:e_store/core/utils/logging/logger.dart';
 import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 
@@ -47,11 +48,7 @@ class LoginScreen extends StatelessWidget {
                       AppImages.docerLoaderAnimation,
                     ),
                   LogInSuccess() => saveSuccesfullLoginAndRoute(context),
-                  SendResetEmailSuccess() => {
-                      // TODO make use of the logger
-                      print('[ROUTING] heading to reset passwordSuccessScreen'),
-                      context.pushNamedRoute(Routes.resetPasswordSuccess),
-                    },
+                  SendResetEmailSuccess() => routeToSuccessScreen(context),
                   _ => {
                       closeLoaderDialogScreen(context),
                       context.showSnackBar('Somthing went Worng', ColorPalette.error)
@@ -67,10 +64,22 @@ class LoginScreen extends StatelessWidget {
   }
 
   void saveSuccesfullLoginAndRoute(BuildContext context) async {
-    // Update page index to 2 aka is Succesfuly LoggedIn Already
+    final logger = sl<LoggerHelper>();
+    logger.debug('[LocalStorage] Saving initial route with value 2 to local storage');
+
     final storage = sl<LocalStorageManager>();
     await storage
         .saveData('initial_route', 2)
         .then((value) => context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu));
+
+    logger.debug(
+      '[LocalStorage] Successful Save for initial route with value ${storage.readData('initial_route')}',
+    );
+  }
+
+  void routeToSuccessScreen(BuildContext context) {
+    final logger = sl<LoggerHelper>();
+    logger.debug('[ROUTING] heading to reset passwordSuccessScreen');
+    context.pushNamedRoute(Routes.resetPasswordSuccess);
   }
 }

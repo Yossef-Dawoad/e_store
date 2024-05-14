@@ -31,10 +31,7 @@ class GoogleFaceBookButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: IconButton(
-                  onPressed: () {
-                    context.read<GoogleAuthCubit>().logInWithGoogle();
-                    // context.pushReplacementNamedRoute(Routes.navigationMenu);
-                  },
+                  onPressed: () => context.read<GoogleAuthCubit>().logInWithGoogle(),
                   icon: const Image(
                     width: AppSizes.iconMd,
                     height: AppSizes.iconMd,

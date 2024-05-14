@@ -7,8 +7,7 @@ part 'redirect_route_event.dart';
 part 'redirect_route_state.dart';
 part 'redirect_route_bloc.freezed.dart';
 
-class RedirectFirstRouteBloc
-    extends Bloc<RedirectRouteEvent, RedirectRouteState> {
+class RedirectFirstRouteBloc extends Bloc<RedirectRouteEvent, RedirectRouteState> {
   final LocalStorageManager _storage;
 
   RedirectFirstRouteBloc(this._storage) : super(const _Initial()) {

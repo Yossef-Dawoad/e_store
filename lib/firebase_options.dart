@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -66,19 +63,29 @@ class DefaultFirebaseOptions {
     messagingSenderId: '658290314842',
     projectId: 'el-lstore',
     storageBucket: 'el-lstore.appspot.com',
-    androidClientId: '658290314842-uqccprij6hijhkor5gj5pkg4jsp8gh61.apps.googleusercontent.com',
+    androidClientId: '658290314842-b40vbjjtl4kku4hsrm6kb5tss1jmln5v.apps.googleusercontent.com',
     iosClientId: '658290314842-bt5p0ssaet6k7ag83lgj1prjktv9ncte.apps.googleusercontent.com',
     iosBundleId: 'com.example.eStore',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyC4lSNcUlZCSlwjv6QabO2UTnWQfi6u-F4',
-    appId: '1:658290314842:ios:3a3432514c534156ac9263',
+    appId: '1:658290314842:ios:84047b7d08583475ac9263',
     messagingSenderId: '658290314842',
     projectId: 'el-lstore',
     storageBucket: 'el-lstore.appspot.com',
-    androidClientId: '658290314842-uqccprij6hijhkor5gj5pkg4jsp8gh61.apps.googleusercontent.com',
-    iosClientId: '658290314842-p6lgjea04djc48ps431i4u16knbesdeo.apps.googleusercontent.com',
-    iosBundleId: 'com.example.eStore.RunnerTests',
+    androidClientId: '658290314842-b40vbjjtl4kku4hsrm6kb5tss1jmln5v.apps.googleusercontent.com',
+    iosClientId: '658290314842-bt5p0ssaet6k7ag83lgj1prjktv9ncte.apps.googleusercontent.com',
+    iosBundleId: 'com.example.eStore',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyA7WAjtBhQE8cuLalJURUWrIaLaOsN7wT0',
+    appId: '1:658290314842:web:9176aa1d7302ebc6ac9263',
+    messagingSenderId: '658290314842',
+    projectId: 'el-lstore',
+    authDomain: 'el-lstore.firebaseapp.com',
+    storageBucket: 'el-lstore.appspot.com',
+  );
+
 }
