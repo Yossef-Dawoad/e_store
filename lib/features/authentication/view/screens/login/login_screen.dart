@@ -1,3 +1,4 @@
+import 'package:e_store/core/di/dependency_inject.dart';
 import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:e_store/core/shared/widgets/dialogs/loading_dialogs.dart';
 import 'package:e_store/core/constants/colors.dart';
@@ -40,9 +41,7 @@ class LoginScreen extends StatelessWidget {
               const LoginForm(),
               BlocListener<LoginCubit, LoginState>(
                 listener: (context, state) => switch (state) {
-                  LogInLoading() ||
-                  SendResetEmailLoading() =>
-                    animatedDialogScreenLoader(
+                  LogInLoading() || SendResetEmailLoading() => animatedDialogScreenLoader(
                       context,
                       'Processing Your request...',
                       AppImages.docerLoaderAnimation,
@@ -55,8 +54,7 @@ class LoginScreen extends StatelessWidget {
                     },
                   _ => {
                       closeLoaderDialogScreen(context),
-                      context.showSnackBar(
-                          'Somthing went Worng', ColorPalette.error)
+                      context.showSnackBar('Somthing went Worng', ColorPalette.error)
                     },
                 },
                 child: Container(),
@@ -70,8 +68,9 @@ class LoginScreen extends StatelessWidget {
 
   void saveSuccesfullLoginAndRoute(BuildContext context) async {
     // Update page index to 2 aka is Succesfuly LoggedIn Already
-    final storage = LocalStorageManager.instance;
-    await storage.saveData('initial_route', 2).then(
-        (value) => context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu));
+    final storage = sl<LocalStorageManager>();
+    await storage
+        .saveData('initial_route', 2)
+        .then((value) => context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu));
   }
 }

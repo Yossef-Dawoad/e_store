@@ -1,4 +1,5 @@
-import 'package:get_storage/get_storage.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// Example of using GetStorage
 ///
@@ -8,52 +9,28 @@ import 'package:get_storage/get_storage.dart';
 /// // Save data
 /// localStorage.saveData('username', 'JohnDoe');
 /// // Read data
-/// String? username = localStorage.readData<String>('username');
+/// String? username = localStorage.readData('username');
 /// print('Username: $username'); // Output: Username: JohnDoe
 /// // Remove data
 /// localStorage.removeData('username');
-/// // Clear all data
-/// localStorage.clearAll();
 /// ```
 class LocalStorageManager {
-  LocalStorageManager._();
-  static LocalStorageManager get instance => LocalStorageManager._();
-
-  final _storage = GetStorage();
+  final SharedPreferences _storage;
+  LocalStorageManager(this._storage);
 
   /// Generic method to save data
-  Future<void> saveData<T>(String key, T value) async =>
-      await _storage.write(key, value);
-
-  /// Generic method to save data
-  Future<void> saveDataIfNull<T>(String key, T value) async =>
-      await _storage.writeIfNull(key, value);
+  Future<bool> saveData<T>(String key, T value) async => switch (value) {
+        String() => await _storage.setString(key, value),
+        int() => await _storage.setInt(key, value),
+        double() => await _storage.setDouble(key, value),
+        bool() => await _storage.setBool(key, value),
+        List<String>() => await _storage.setStringList(key, value),
+        _ => throw Exception('Unsupported type')
+      };
 
   /// Generic method to read data
-  T? readData<T>(String key) => _storage.read<T>(key);
+  Object? readData(String key) => _storage.get(key);
 
   /// Generic method to remove data
-  Future<void> removeData(String key) async {
-    await _storage.remove(key);
-  }
-
-  /// Clear all data in storage
-  Future<void> clearAll() async => await _storage.erase();
+  Future<bool> removeData(String key) async => await _storage.remove(key);
 }
-
-/// *** *** *** *** *** Example *** *** *** *** *** ///
-
-// LocalStorage localStorage = LocalStorage();
-//
-// // Save data
-// localStorage.saveData('username', 'JohnDoe');
-//
-// // Read data
-// String? username = localStorage.readData<String>('username');
-// print('Username: $username'); // Output: Username: JohnDoe
-//
-// // Remove data
-// localStorage.removeData('username');
-//
-// // Clear all data
-// localStorage.clearAll();

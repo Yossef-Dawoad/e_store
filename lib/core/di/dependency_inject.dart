@@ -17,16 +17,19 @@ import 'package:e_store/features/authentication/view/blocs/signup_cubit/signup_c
 import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
 import 'package:e_store/core/shared/logic/blocs/redirect_first_route/redirect_route_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final sl = GetIt.instance;
 
 Future<void> initializeDependence() async {
   /// Register services
-  await GetStorage.init();
 
-  sl.registerLazySingleton<LocalStorageManager>(
-      () => LocalStorageManager.instance);
+  sl.registerLazySingletonAsync<SharedPreferences>(
+    () => SharedPreferences.getInstance(),
+  );
+  await GetIt.instance.isReady<SharedPreferences>();
+
+  sl.registerLazySingleton<LocalStorageManager>(() => LocalStorageManager(sl()));
   sl.registerLazySingleton<NetworkManager>(() => NetworkManager.instance);
   sl.registerLazySingleton<UserCloudService>(() => UserCloudServiceImpl());
 
@@ -59,6 +62,5 @@ Future<void> initializeDependence() async {
   sl.registerFactory<GoogleAuthCubit>(() => GoogleAuthCubit(sl()));
   sl.registerFactory<SignUpCubit>(() => SignUpCubit(sl()));
   sl.registerFactory<VerifyEmailCubit>(() => VerifyEmailCubit(sl()));
-  sl.registerFactory<RedirectFirstRouteBloc>(
-      () => RedirectFirstRouteBloc(sl()));
+  sl.registerFactory<RedirectFirstRouteBloc>(() => RedirectFirstRouteBloc(sl()));
 }

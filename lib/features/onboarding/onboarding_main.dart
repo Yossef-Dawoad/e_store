@@ -1,4 +1,5 @@
 import 'package:e_store/core/constants/colors.dart';
+import 'package:e_store/core/di/dependency_inject.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
@@ -74,11 +75,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 shape: const StadiumBorder(),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 18.0, vertical: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 12),
               ),
-              onPressed: () =>
-                  _navigateToNextPage(exitsRouteName: Routes.signIn),
+              onPressed: () => _navigateToNextPage(exitsRouteName: Routes.signIn),
               child: (_currentPageIndex == onBoardingPages.length - 1)
                   ? const Text("continue")
                   : const Icon(
@@ -105,7 +104,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     }
 
     // Update page index to 1 aka splash seen Already
-    final storage = LocalStorageManager.instance;
+    final storage = sl<LocalStorageManager>();
     await storage
         .saveData('initial_route', 1)
         .then((value) => context.pushNamedRouteAndRemoveUntil(exitRouteName));

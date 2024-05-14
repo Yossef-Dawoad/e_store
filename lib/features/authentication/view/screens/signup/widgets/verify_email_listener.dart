@@ -1,3 +1,4 @@
+import 'package:e_store/core/di/dependency_inject.dart';
 import 'package:e_store/core/shared/widgets/dialogs/dialog_base.dart';
 import 'package:e_store/core/shared/widgets/success_screen.dart';
 import 'package:e_store/core/constants/colors.dart';
@@ -17,9 +18,7 @@ class VerifyEmailCubitListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<VerifyEmailCubit, VerifyEmailCubitState>(
       listenWhen: (prev, curr) =>
-          curr is VerifyEmailLoading ||
-          curr is VerifyEmailSuccess ||
-          curr is VerifyEmailFailure,
+          curr is VerifyEmailLoading || curr is VerifyEmailSuccess || curr is VerifyEmailFailure,
       listener: (context, state) => state.whenOrNull(
         loading: () => showDialog(
           context: context,
@@ -43,7 +42,7 @@ class VerifyEmailCubitListener extends StatelessWidget {
   }
 
   void userScreenRedirect(BuildContext context, bool isSignedIn) async {
-    final storage = LocalStorageManager.instance;
+    final storage = sl<LocalStorageManager>();
     if (isSignedIn) {
       await storage.saveData('initial_route', 2).then(
             (value) => context.pushRoute(
@@ -51,8 +50,7 @@ class VerifyEmailCubitListener extends StatelessWidget {
                 image: AppImages.staticSuccessIllustration,
                 title: AppTexts.yourAccountCreatedTitle,
                 subTitle: AppTexts.yourAccountCreatedSubTitle,
-                onPressed: () =>
-                    context.pushReplacementNamedRoute(Routes.navigationMenu),
+                onPressed: () => context.pushReplacementNamedRoute(Routes.navigationMenu),
               ),
             ),
           );

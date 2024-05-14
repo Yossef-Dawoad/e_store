@@ -1,5 +1,6 @@
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
+import 'package:e_store/core/di/dependency_inject.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/shared/logic/services/helper_functions.dart';
@@ -70,9 +71,7 @@ class _LoginFormState extends State<LoginForm> {
               children: [
                 Row(
                   children: [
-                    Checkbox(
-                        value: rememberMe,
-                        onChanged: (_) => rememberMe = !rememberMe),
+                    Checkbox(value: rememberMe, onChanged: (_) => rememberMe = !rememberMe),
                     TextButton(
                       onPressed: () {},
                       child: const Text(AppTexts.rememberMe),
@@ -81,8 +80,7 @@ class _LoginFormState extends State<LoginForm> {
                 ),
                 // Forget Password
                 TextButton(
-                  onPressed: () =>
-                      context.pushNamedRoute(Routes.forgetPassword),
+                  onPressed: () => context.pushNamedRoute(Routes.forgetPassword),
                   child: const Text(AppTexts.forgetPassword),
                 ),
               ],
@@ -110,8 +108,7 @@ class _LoginFormState extends State<LoginForm> {
                 ),
                 child: Text(
                   AppTexts.createAccount,
-                  style: TextStyle(
-                      color: isDarkMode ? Colors.white : Colors.black87),
+                  style: TextStyle(color: isDarkMode ? Colors.white : Colors.black87),
                 ),
               ),
             ),
@@ -143,13 +140,11 @@ class _LoginFormState extends State<LoginForm> {
       );
       // save user credintials to local storage
       if (!rememberMe) context.pushReplacementNamedRoute(Routes.navigationMenu);
-      final storage = LocalStorageManager.instance;
+      final storage = sl<LocalStorageManager>();
 
       await storage.saveData('initial_route', 2).then(
-            (value) => Navigator.of(context).pushNamedAndRemoveUntil(
-              '/',
-              (Route<dynamic> route) => route.isFirst,
-            ),
+            (value) => Navigator.of(context)
+                .pushNamedAndRemoveUntil('/', (Route<dynamic> route) => route.isFirst),
           );
     }
     // should display snackbar if validation fails??
