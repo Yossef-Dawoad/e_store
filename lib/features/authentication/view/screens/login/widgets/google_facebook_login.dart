@@ -1,4 +1,5 @@
 import 'package:e_store/core/di/dependency_inject.dart';
+import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:e_store/core/shared/widgets/dialogs/loading_dialogs.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
@@ -58,20 +59,14 @@ class GoogleFaceBookButton extends StatelessWidget {
               ),
               BlocListener<GoogleAuthCubit, GoogleAuthState>(
                 listener: (context, state) => switch (state) {
-                  GoogleAuthSuccess() =>
-                    context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu),
-                  GoogleAuthFailure() => context.showSnackBar(
-                      state.message,
-                      ColorPalette.error,
-                    ),
-                  //TDOO an animated loading screen
+                  GoogleAuthSuccess() => saveSuccesfullGoogleLoginAndRoute(context),
+                  GoogleAuthFailure() => context.showSnackBar(state.message, ColorPalette.error),
                   GoogleAuthLoading() => animatedDialogScreenLoader(
                       context,
                       'Processing Your request...',
                       AppImages.docerLoaderAnimation,
                     ),
-                  _ => context.showSnackBar(
-                      'Something went Worng', ColorPalette.error),
+                  _ => context.showSnackBar('Something went Worng', ColorPalette.error),
                 },
                 child: const SizedBox.shrink(),
               )
@@ -80,5 +75,13 @@ class GoogleFaceBookButton extends StatelessWidget {
         },
       ),
     );
+  }
+
+  void saveSuccesfullGoogleLoginAndRoute(BuildContext context) async {
+    // Update page index to 2 aka is Succesfuly LoggedIn Already
+    final storage = sl<LocalStorageManager>();
+    await storage
+        .saveData('initial_route', 2)
+        .then((value) => context.pushNamedRouteAndRemoveUntil(Routes.navigationMenu));
   }
 }

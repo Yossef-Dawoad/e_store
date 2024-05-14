@@ -108,6 +108,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     await storage
         .saveData('initial_route', 1)
         .then((value) => context.pushNamedRouteAndRemoveUntil(exitRouteName));
+
     if (kDebugMode) {
       debugPrint('initial_route saved with value ${Routes.initialRoute}');
     }
