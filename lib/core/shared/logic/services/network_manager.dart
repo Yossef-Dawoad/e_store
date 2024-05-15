@@ -31,7 +31,7 @@ class NetworkManager {
 
   /// Check the internet connection status.
   /// Returns `true` if connected, `false` otherwise.
-  Future<bool> checkInternetConnection() async {
+  Future<bool> hasInternetConnection() async {
     try {
       final result = await _connectivity.checkConnectivity();
       // If the connection is none or bluetooth, then there is no internet connection.
@@ -46,6 +46,5 @@ class NetworkManager {
   }
 
   /// Exposes connectivity update events from the platform.
-  Stream<List<ConnectivityResult>> get onConnectivityChanged =>
-      _connectivity.onConnectivityChanged;
+  Stream<List<ConnectivityResult>> get onConnectivityChanged => _connectivity.onConnectivityChanged;
 }

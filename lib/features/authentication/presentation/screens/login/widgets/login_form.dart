@@ -6,8 +6,8 @@ import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/shared/logic/services/helper_functions.dart';
 import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:e_store/core/utils/validators/validation.dart';
-import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
-import 'package:e_store/features/authentication/view/screens/signup/widgets/password_input_field.dart';
+import 'package:e_store/features/authentication/presentation/blocs/login_cubit/login_cubit.dart';
+import 'package:e_store/features/authentication/presentation/screens/signup/widgets/password_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';
@@ -50,7 +50,7 @@ class _LoginFormState extends State<LoginForm> {
             // Email
             TextFormField(
               controller: _emailController,
-              validator: (val) => FieldValidator.validateEmail(val),
+              validator: (val) => Validators.validEmail(val),
               decoration: InputDecoration(
                 prefixIcon: const Icon(Iconsax.direct_right),
                 labelText: AppTexts.email,
@@ -61,7 +61,7 @@ class _LoginFormState extends State<LoginForm> {
             // Password
             PassWordInputField(
               controller: _passwordController,
-              validator: (val) => FieldValidator.validatePassword(val),
+              validator: (val) => Validators.validPassword(val),
             ),
             const SizedBox(height: AppSizes.spaceBtwInputFields / 2.0),
 

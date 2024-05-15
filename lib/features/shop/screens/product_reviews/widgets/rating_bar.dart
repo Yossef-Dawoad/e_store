@@ -15,8 +15,7 @@ class RatingLinearProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-            flex: 1, child: Text(title, style: context.textTheme.bodyMedium)),
+        Expanded(flex: 1, child: Text(title, style: context.textTheme.bodyMedium)),
         Expanded(
           flex: 11,
           child: SizedBox(
@@ -27,7 +26,7 @@ class RatingLinearProgressBar extends StatelessWidget {
               backgroundColor: Colors.grey,
               borderRadius: BorderRadius.circular(10),
               valueColor: const AlwaysStoppedAnimation<Color>(
-                ColorPalette.primary,
+                Palette.primary,
               ),
             ),
           ),

@@ -20,7 +20,7 @@ class RoundedBottomCornerContainer extends StatelessWidget {
     return ClipPath(
       clipper: ReserseBottomSheetEdge(),
       child: Container(
-        color: ColorPalette.primary,
+        color: Palette.primary,
         padding: const EdgeInsets.only(top: 10),
         child: Stack(
           children: [
@@ -32,7 +32,7 @@ class RoundedBottomCornerContainer extends StatelessWidget {
               child: Container(
                 height: 200,
                 decoration: BoxDecoration(
-                  color: ColorPalette.textWhite.withOpacity(0.1),
+                  color: Palette.textWhite.withOpacity(0.1),
                   shape: BoxShape.circle,
                 ),
               ),
@@ -44,7 +44,7 @@ class RoundedBottomCornerContainer extends StatelessWidget {
               child: Container(
                 height: 400,
                 decoration: BoxDecoration(
-                  color: ColorPalette.textWhite.withOpacity(0.1),
+                  color: Palette.textWhite.withOpacity(0.1),
                   shape: BoxShape.circle,
                 ),
               ),

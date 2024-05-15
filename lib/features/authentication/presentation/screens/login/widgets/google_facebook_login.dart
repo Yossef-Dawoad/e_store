@@ -3,7 +3,7 @@ import 'package:e_store/core/shared/logic/services/storage_utility.dart';
 import 'package:e_store/core/shared/widgets/dialogs/loading_dialogs.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/features/authentication/view/blocs/google_auth_cubit/google_auth_cubit.dart';
+import 'package:e_store/features/authentication/presentation/blocs/google_auth_cubit/google_auth_cubit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:e_store/core/constants/colors.dart';
@@ -27,7 +27,7 @@ class GoogleFaceBookButton extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: ColorPalette.grey),
+                  border: Border.all(color: Palette.grey),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: IconButton(
@@ -42,7 +42,7 @@ class GoogleFaceBookButton extends StatelessWidget {
               const SizedBox(width: AppSizes.spaceBtwItems),
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: ColorPalette.grey),
+                  border: Border.all(color: Palette.grey),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: IconButton(
@@ -57,13 +57,13 @@ class GoogleFaceBookButton extends StatelessWidget {
               BlocListener<GoogleAuthCubit, GoogleAuthState>(
                 listener: (context, state) => switch (state) {
                   GoogleAuthSuccess() => saveSuccesfullGoogleLoginAndRoute(context),
-                  GoogleAuthFailure() => context.showSnackBar(state.message, ColorPalette.error),
+                  GoogleAuthFailure() => context.showSnackBar(state.message, Palette.error),
                   GoogleAuthLoading() => animatedDialogScreenLoader(
                       context,
                       'Processing Your request...',
                       AppImages.docerLoaderAnimation,
                     ),
-                  _ => context.showSnackBar('Something went Worng', ColorPalette.error),
+                  _ => context.showSnackBar('Something went Worng', Palette.error),
                 },
                 child: const SizedBox.shrink(),
               )

@@ -33,8 +33,8 @@ class UserAddressScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => context.pushRoute(const AddNewAddressScreen()),
-        backgroundColor: ColorPalette.primary,
-        child: const Icon(Icons.add, color: ColorPalette.white),
+        backgroundColor: Palette.primary,
+        child: const Icon(Icons.add, color: Palette.white),
       ),
     );
   }
@@ -53,12 +53,10 @@ class AddressCard extends StatelessWidget {
       padding: const EdgeInsets.all(AppSizes.md),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: isSelected
-            ? ColorPalette.primary.withOpacity(0.2)
-            : Colors.transparent,
+        color: isSelected ? Palette.primary.withOpacity(0.2) : Colors.transparent,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isSelected ? ColorPalette.primary : ColorPalette.darkerGrey,
+          color: isSelected ? Palette.primary : Palette.darkerGrey,
           width: 2,
         ),
       ),
@@ -68,8 +66,7 @@ class AddressCard extends StatelessWidget {
             right: 5,
             child: Icon(
               isSelected ? Iconsax.tick_circle : null,
-              color:
-                  isSelected ? ColorPalette.primary : ColorPalette.darkerGrey,
+              color: isSelected ? Palette.primary : Palette.darkerGrey,
             ),
           ),
           Column(

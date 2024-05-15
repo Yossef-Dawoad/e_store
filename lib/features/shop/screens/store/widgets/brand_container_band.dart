@@ -20,7 +20,7 @@ class BrandContainerBand extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       decoration: BoxDecoration(
-          color: isDark ? ColorPalette.dark : ColorPalette.light,
+          color: isDark ? Palette.dark : Palette.light,
           borderRadius: BorderRadius.circular(10),
           border: showBorder
               ? Border.all(color: isDark ? Colors.grey[300]! : Colors.grey[800]!)

@@ -55,8 +55,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   const SizedBox(height: AppSizes.spaceBtwSections),
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(
-                        onPressed: () {}, child: const Text('Checkout')),
+                    child: ElevatedButton(onPressed: () {}, child: const Text('Checkout')),
                   ),
 
                   const SizedBox(height: AppSizes.spaceBtwSections),
@@ -65,11 +64,10 @@ class ProductDetailsScreen extends StatelessWidget {
                     'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.',
                     trimMode: TrimMode.Line,
                     trimLines: 2,
-                    colorClickableText: ColorPalette.primary,
+                    colorClickableText: Palette.primary,
                     trimCollapsedText: 'Show more',
                     trimExpandedText: 'Show less',
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
 
                   // -- Reviews

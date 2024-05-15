@@ -5,14 +5,14 @@ import 'package:e_store/core/constants/colors.dart';
 import 'package:e_store/core/constants/image_strings.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/logging/logger.dart';
-import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
+import 'package:e_store/features/authentication/presentation/blocs/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:e_store/core/shared/styles/spacing_styles.dart';
 import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/features/authentication/view/screens/login/widgets/login_form.dart';
+import 'package:e_store/features/authentication/presentation/screens/login/widgets/login_form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -51,7 +51,7 @@ class LoginScreen extends StatelessWidget {
                   SendResetEmailSuccess() => routeToSuccessScreen(context),
                   _ => {
                       closeLoaderDialogScreen(context),
-                      context.showSnackBar('Somthing went Worng', ColorPalette.error)
+                      context.showSnackBar('Somthing went Worng', Palette.error)
                     },
                 },
                 child: Container(),

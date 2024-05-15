@@ -2,7 +2,7 @@ import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 // import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
-import 'package:e_store/features/authentication/view/blocs/login_cubit/login_cubit.dart';
+import 'package:e_store/features/authentication/presentation/blocs/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax/iconsax.dart';

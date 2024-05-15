@@ -5,12 +5,13 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:e_store/core/utils/errors/server_errors.dart' as _i6;
+import 'package:e_store/core/utils/errors/server_errors.dart' as _i7;
 import 'package:e_store/core/utils/types/result_type.dart' as _i2;
 import 'package:e_store/features/authentication/domain/entities/user_entity.dart'
-    as _i5;
+    as _i6;
 import 'package:e_store/features/authentication/domain/repositories/auth_repo.dart'
     as _i3;
+import 'package:firebase_auth/firebase_auth.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -52,14 +53,13 @@ class MockAuthenticationRepository extends _i1.Mock
       ) as _i4.Future<bool>);
 
   @override
-  _i4.Stream<_i5.UserAccountEntity> get userAuthStatusStream =>
-      (super.noSuchMethod(
+  _i4.Stream<_i5.User?> get userAuthStatusStream => (super.noSuchMethod(
         Invocation.getter(#userAuthStatusStream),
-        returnValue: _i4.Stream<_i5.UserAccountEntity>.empty(),
-      ) as _i4.Stream<_i5.UserAccountEntity>);
+        returnValue: _i4.Stream<_i5.User?>.empty(),
+      ) as _i4.Stream<_i5.User?>);
 
   @override
-  _i4.Future<_i2.Result<_i5.UserAccountEntity, _i6.BaseException>>
+  _i4.Future<_i2.Result<_i6.UserAccountEntity, _i7.BaseException>>
       signInWithEmailPassword(
     String? email,
     String? password,
@@ -73,8 +73,8 @@ class MockAuthenticationRepository extends _i1.Mock
               ],
             ),
             returnValue: _i4.Future<
-                    _i2.Result<_i5.UserAccountEntity, _i6.BaseException>>.value(
-                _FakeResult_0<_i5.UserAccountEntity, _i6.BaseException>(
+                    _i2.Result<_i6.UserAccountEntity, _i7.BaseException>>.value(
+                _FakeResult_0<_i6.UserAccountEntity, _i7.BaseException>(
               this,
               Invocation.method(
                 #signInWithEmailPassword,
@@ -85,12 +85,12 @@ class MockAuthenticationRepository extends _i1.Mock
               ),
             )),
           ) as _i4
-              .Future<_i2.Result<_i5.UserAccountEntity, _i6.BaseException>>);
+              .Future<_i2.Result<_i6.UserAccountEntity, _i7.BaseException>>);
 
   @override
   _i4.Future<
       _i2
-      .Result<_i5.UserAccountEntity, _i6.BaseException>> signUpEmailAndPassword(
+      .Result<_i6.UserAccountEntity, _i7.BaseException>> signUpEmailAndPassword(
     String? email,
     String? password,
   ) =>
@@ -103,8 +103,8 @@ class MockAuthenticationRepository extends _i1.Mock
           ],
         ),
         returnValue: _i4
-            .Future<_i2.Result<_i5.UserAccountEntity, _i6.BaseException>>.value(
-            _FakeResult_0<_i5.UserAccountEntity, _i6.BaseException>(
+            .Future<_i2.Result<_i6.UserAccountEntity, _i7.BaseException>>.value(
+            _FakeResult_0<_i6.UserAccountEntity, _i7.BaseException>(
           this,
           Invocation.method(
             #signUpEmailAndPassword,
@@ -114,18 +114,18 @@ class MockAuthenticationRepository extends _i1.Mock
             ],
           ),
         )),
-      ) as _i4.Future<_i2.Result<_i5.UserAccountEntity, _i6.BaseException>>);
+      ) as _i4.Future<_i2.Result<_i6.UserAccountEntity, _i7.BaseException>>);
 
   @override
-  _i4.Future<_i2.Result<_i5.UserAccountEntity, _i6.BaseException>>
+  _i4.Future<_i2.Result<_i6.UserAccountEntity, _i7.BaseException>>
       signInWithGoogle() => (super.noSuchMethod(
             Invocation.method(
               #signInWithGoogle,
               [],
             ),
             returnValue: _i4.Future<
-                    _i2.Result<_i5.UserAccountEntity, _i6.BaseException>>.value(
-                _FakeResult_0<_i5.UserAccountEntity, _i6.BaseException>(
+                    _i2.Result<_i6.UserAccountEntity, _i7.BaseException>>.value(
+                _FakeResult_0<_i6.UserAccountEntity, _i7.BaseException>(
               this,
               Invocation.method(
                 #signInWithGoogle,
@@ -133,57 +133,57 @@ class MockAuthenticationRepository extends _i1.Mock
               ),
             )),
           ) as _i4
-              .Future<_i2.Result<_i5.UserAccountEntity, _i6.BaseException>>);
+              .Future<_i2.Result<_i6.UserAccountEntity, _i7.BaseException>>);
 
   @override
-  _i4.Future<_i2.Result<void, _i6.BaseException>> signOut() =>
+  _i4.Future<_i2.Result<void, _i7.BaseException>> signOut() =>
       (super.noSuchMethod(
         Invocation.method(
           #signOut,
           [],
         ),
-        returnValue: _i4.Future<_i2.Result<void, _i6.BaseException>>.value(
-            _FakeResult_0<void, _i6.BaseException>(
+        returnValue: _i4.Future<_i2.Result<void, _i7.BaseException>>.value(
+            _FakeResult_0<void, _i7.BaseException>(
           this,
           Invocation.method(
             #signOut,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.Result<void, _i6.BaseException>>);
+      ) as _i4.Future<_i2.Result<void, _i7.BaseException>>);
 
   @override
-  _i4.Future<_i2.Result<void, _i6.BaseException>> sendResetPasswordEmail(
+  _i4.Future<_i2.Result<void, _i7.BaseException>> sendResetPasswordEmail(
           String? email) =>
       (super.noSuchMethod(
         Invocation.method(
           #sendResetPasswordEmail,
           [email],
         ),
-        returnValue: _i4.Future<_i2.Result<void, _i6.BaseException>>.value(
-            _FakeResult_0<void, _i6.BaseException>(
+        returnValue: _i4.Future<_i2.Result<void, _i7.BaseException>>.value(
+            _FakeResult_0<void, _i7.BaseException>(
           this,
           Invocation.method(
             #sendResetPasswordEmail,
             [email],
           ),
         )),
-      ) as _i4.Future<_i2.Result<void, _i6.BaseException>>);
+      ) as _i4.Future<_i2.Result<void, _i7.BaseException>>);
 
   @override
-  _i4.Future<_i2.Result<bool, _i6.BaseException>> verifyEmail() =>
+  _i4.Future<_i2.Result<void, _i7.BaseException>> sendVerifyEmail() =>
       (super.noSuchMethod(
         Invocation.method(
-          #verifyEmail,
+          #sendVerifyEmail,
           [],
         ),
-        returnValue: _i4.Future<_i2.Result<bool, _i6.BaseException>>.value(
-            _FakeResult_0<bool, _i6.BaseException>(
+        returnValue: _i4.Future<_i2.Result<void, _i7.BaseException>>.value(
+            _FakeResult_0<void, _i7.BaseException>(
           this,
           Invocation.method(
-            #verifyEmail,
+            #sendVerifyEmail,
             [],
           ),
         )),
-      ) as _i4.Future<_i2.Result<bool, _i6.BaseException>>);
+      ) as _i4.Future<_i2.Result<void, _i7.BaseException>>);
 }

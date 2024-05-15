@@ -19,7 +19,7 @@ class ProducCardVertical extends StatelessWidget {
         width: 180,
         padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
-          color: isDark ? ColorPalette.darkerGrey : ColorPalette.white,
+          color: isDark ? Palette.darkerGrey : Palette.white,
           borderRadius: BorderRadius.circular(AppSizes.productImageRadius),
           boxShadow: [ShadowStyles.verticalProductCardShadow],
         ),
@@ -29,7 +29,7 @@ class ProducCardVertical extends StatelessWidget {
               height: 170,
               padding: const EdgeInsets.all(AppSizes.sm),
               decoration: BoxDecoration(
-                color: isDark ? ColorPalette.dark : ColorPalette.light,
+                color: isDark ? Palette.dark : Palette.light,
                 borderRadius: BorderRadius.circular(AppSizes.cardRadiusLg),
               ),
               child: Stack(
@@ -55,13 +55,12 @@ class ProducCardVertical extends StatelessWidget {
                         horizontal: AppSizes.sm,
                       ),
                       decoration: BoxDecoration(
-                        color: ColorPalette.secondary.withOpacity(0.8),
+                        color: Palette.secondary.withOpacity(0.8),
                         borderRadius: BorderRadius.circular(AppSizes.sm),
                       ),
                       child: Text(
                         '25%',
-                        style: context.textTheme.labelLarge
-                            ?.apply(color: ColorPalette.black),
+                        style: context.textTheme.labelLarge?.apply(color: Palette.black),
                       ),
                     ),
                   ),
@@ -106,7 +105,7 @@ class ProducCardVertical extends StatelessWidget {
                       const SizedBox(width: AppSizes.xs),
                       const Icon(
                         Iconsax.verify5,
-                        color: ColorPalette.primary,
+                        color: Palette.primary,
                         size: AppSizes.iconXs,
                       )
                     ],
@@ -136,13 +135,13 @@ class ProducCardVertical extends StatelessWidget {
                     width: AppSizes.iconLg * 1.3,
                     height: AppSizes.iconLg * 1.3,
                     decoration: BoxDecoration(
-                      color: isDark ? ColorPalette.dark : ColorPalette.light,
+                      color: isDark ? Palette.dark : Palette.light,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Icon(
                       Iconsax.add,
                       size: AppSizes.iconLg,
-                      color: isDark ? ColorPalette.light : ColorPalette.dark,
+                      color: isDark ? Palette.light : Palette.dark,
                     ),
                   ),
                 ),

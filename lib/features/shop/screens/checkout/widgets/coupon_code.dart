@@ -14,7 +14,7 @@ class CouponCodeWideget extends StatelessWidget {
       padding: const EdgeInsets.all(AppSizes.sm).copyWith(left: AppSizes.md),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: context.isDarkMode ? ColorPalette.darkerGrey : ColorPalette.light,
+        color: context.isDarkMode ? Palette.darkerGrey : Palette.light,
       ),
       child: Row(
         children: [

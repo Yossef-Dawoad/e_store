@@ -48,8 +48,7 @@ class IndicatorDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dotColor =
-        (index == currentPageIndex) ? ColorPalette.primary : ColorPalette.grey;
+    final dotColor = (index == currentPageIndex) ? Palette.primary : Palette.grey;
     final dotWidth = (index == currentPageIndex) ? 50.0 : 20.0;
     return InkWell(
       onTap: () => controller.animateToPage(

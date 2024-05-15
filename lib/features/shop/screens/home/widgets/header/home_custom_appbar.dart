@@ -36,13 +36,13 @@ class CustomHomeAppBar extends StatelessWidget {
                 Text(
                   AppTexts.homeAppbarTitle,
                   style: context.textTheme.labelMedium?.apply(
-                    color: ColorPalette.grey,
+                    color: Palette.grey,
                   ),
                 ),
                 Text(
                   AppTexts.homeAppbarSubTitle,
                   style: context.textTheme.labelMedium?.apply(
-                    color: ColorPalette.white,
+                    color: Palette.white,
                   ),
                 )
               ],
@@ -56,7 +56,7 @@ class CustomHomeAppBar extends StatelessWidget {
           /// searchbar
           CustomSearchBar(
             width: screenWidth,
-            backgroundColor: isDark ? ColorPalette.dark : ColorPalette.light,
+            backgroundColor: isDark ? Palette.dark : Palette.light,
           ),
           const SizedBox(height: AppSizes.spaceBtwSections),
 

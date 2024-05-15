@@ -3,7 +3,7 @@ import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/shared/logic/services/helper_functions.dart';
-import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
+import 'package:e_store/features/authentication/presentation/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +15,7 @@ class VerifyEmailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Retrieve the arguments from the route settings
     final email = ModalRoute.of(context)?.settings.arguments as String;
     return Scaffold(
       appBar: AppBar(

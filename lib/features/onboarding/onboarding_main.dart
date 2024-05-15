@@ -82,7 +82,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ? const Text("continue")
                   : const Icon(
                       Icons.arrow_forward_ios,
-                      color: ColorPalette.white,
+                      color: Palette.white,
                     ),
             ),
           )

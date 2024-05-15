@@ -11,63 +11,63 @@ class ECTextTheme {
     headlineLarge: const TextStyle().copyWith(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
     headlineMedium: const TextStyle().copyWith(
       fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
     headlineSmall: const TextStyle().copyWith(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
 
     /// Titles L, M, S
     titleLarge: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
     titleMedium: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
     titleSmall: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
 
     /// Body L, M, S
     bodyLarge: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
     bodyMedium: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
     bodySmall: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
-      color: ColorPalette.dark.withOpacity(0.5),
+      color: Palette.dark.withOpacity(0.5),
     ),
 
     /// Label L, M, S
     labelLarge: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: ColorPalette.dark,
+      color: Palette.dark,
     ),
     labelMedium: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: ColorPalette.dark.withOpacity(0.5),
+      color: Palette.dark.withOpacity(0.5),
     ),
   );
 
@@ -77,63 +77,63 @@ class ECTextTheme {
     headlineLarge: const TextStyle().copyWith(
       fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
     headlineMedium: const TextStyle().copyWith(
       fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
     headlineSmall: const TextStyle().copyWith(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
 
     /// Titles L, M, S
     titleLarge: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
     titleMedium: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
     titleSmall: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
 
     /// Body L, M, S
     bodyLarge: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
     bodyMedium: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
     bodySmall: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
-      color: ColorPalette.light.withOpacity(0.5),
+      color: Palette.light.withOpacity(0.5),
     ),
 
     /// Labels L, M, S
     labelLarge: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: ColorPalette.light,
+      color: Palette.light,
     ),
     labelMedium: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: ColorPalette.light.withOpacity(0.5),
+      color: Palette.light.withOpacity(0.5),
     ),
   );
 }

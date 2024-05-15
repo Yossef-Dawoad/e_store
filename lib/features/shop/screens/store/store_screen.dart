@@ -22,7 +22,7 @@ class StoreScreen extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: Scaffold(
-        backgroundColor: isDark ? ColorPalette.dark : ColorPalette.light,
+        backgroundColor: isDark ? Palette.dark : Palette.light,
         body: CustomScrollView(
           slivers: [
             SliverPadding(
@@ -32,7 +32,7 @@ class StoreScreen extends StatelessWidget {
                 // floating: true,
                 expandedHeight: 480,
                 toolbarHeight: AppSizes.appBarHeight,
-                backgroundColor: isDark ? ColorPalette.dark : ColorPalette.light,
+                backgroundColor: isDark ? Palette.dark : Palette.light,
                 title: Text('Store', style: context.textTheme.headlineMedium),
                 actions: [
                   CounterCartIcon(onPressed: () {}),
@@ -83,7 +83,7 @@ class ExpandedBrandShowCaseAppBar extends StatelessWidget {
             const SizedBox(height: AppSizes.spaceBtwItems),
             CustomSearchBar(
               width: screenWidth,
-              backgroundColor: isDark ? ColorPalette.dark : ColorPalette.light,
+              backgroundColor: isDark ? Palette.dark : Palette.light,
             ),
             const SizedBox(height: AppSizes.spaceBtwSections),
             //--- features brands
@@ -186,7 +186,7 @@ class BrandShowCaseCard extends StatelessWidget {
                       height: 120,
                       margin: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        color: ColorPalette.darkerGrey,
+                        color: Palette.darkerGrey,
                         borderRadius: BorderRadius.circular(
                           AppSizes.borderRadiusSm,
                         ),

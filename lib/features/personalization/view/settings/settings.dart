@@ -31,13 +31,13 @@ class SettingsScreen extends StatelessWidget {
                         Text(
                           'Settings',
                           style: context.textTheme.titleMedium?.apply(
-                            color: ColorPalette.grey,
+                            color: Palette.grey,
                           ),
                         ),
                         Text(
                           'Manage your account settings',
                           style: context.textTheme.titleLarge?.apply(
-                            color: ColorPalette.grey,
+                            color: Palette.grey,
                           ),
                         ),
                       ],

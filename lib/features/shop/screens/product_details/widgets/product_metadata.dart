@@ -24,7 +24,7 @@ class ProductMetaData extends StatelessWidget {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppSizes.sm),
-                color: ColorPalette.secondary.withOpacity(0.8),
+                color: Palette.secondary.withOpacity(0.8),
               ),
               child: Text(
                 '25%',

@@ -17,7 +17,7 @@ class CartItem extends StatelessWidget {
           height: 70,
           padding: const EdgeInsets.all(3.0),
           decoration: BoxDecoration(
-            color: context.isDarkMode ? ColorPalette.darkerGrey : ColorPalette.light,
+            color: context.isDarkMode ? Palette.darkerGrey : Palette.light,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Image.asset(AppImages.productImage1),

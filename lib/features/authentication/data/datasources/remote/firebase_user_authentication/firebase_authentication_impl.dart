@@ -8,8 +8,7 @@ import 'package:e_store/features/authentication/data/models/user_account.dart';
 
 import 'firebase_authentication.dart';
 
-class AuthenticationRemoteDataSourceImpl
-    implements AuthenticationRemoteDataSource {
+class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSource {
   final UserCloudService userCloudService;
 
   AuthenticationRemoteDataSourceImpl({
@@ -23,7 +22,11 @@ class AuthenticationRemoteDataSourceImpl
   @override
   Future<bool> get isUserVerified async {
     await _auth.currentUser?.reload();
-    if (_auth.currentUser?.emailVerified ?? false) return true;
+    if (_auth.currentUser?.emailVerified ?? false) {
+      final user = await userCloudService.readUser(_auth.currentUser!.uid);
+      await userCloudService.writeUser(user.copyWith(isEmailVerified: true));
+      return true;
+    }
     return false;
   }
 
@@ -64,15 +67,19 @@ class AuthenticationRemoteDataSourceImpl
         email: email,
         username: userData.user?.displayName,
       );
+      await userCloudService.writeUser(userAccount);
       return userAccount;
     } on FirebaseAuthException catch (_) {
       rethrow;
+    } on FirebaseException catch (_) {
+      rethrow;
+    } catch (e) {
+      throw 'Something went wrong, Please try again later';
     }
   }
 
   @override
   Future<UserAccount> signInWithGoogle() async {
-    // TODO Add some error handling here.
     try {
       final googleUserAccount = await _googleSignIn.signIn();
       final googleAuth = await googleUserAccount!.authentication;
@@ -110,12 +117,10 @@ class AuthenticationRemoteDataSourceImpl
   ///
   /// Throws an [FirebaseAuthException] if sending the verification email fails.
   @override
-  Future<void> verifyEmail() async {
+  Future<void> sendVerifyEmail() async {
     try {
       await _auth.currentUser?.reload();
       await _auth.currentUser?.sendEmailVerification();
-      final user = await userCloudService.readUser(_auth.currentUser!.uid);
-      await userCloudService.writeUser(user.copyWith(isEmailVerified: true));
     } on FirebaseAuthException catch (e) {
       throw FirebaseAuthException(code: e.code, message: e.message);
     }
@@ -129,16 +134,10 @@ class AuthenticationRemoteDataSourceImpl
       throw FirebaseAuthException(code: e.code, message: e.message);
     } catch (e) {
       throw FirebaseAuthException(
-          code: "Somthing went Wrong, Please try again later",
-          message: e.toString());
+          code: "Somthing went Wrong, Please try again later", message: e.toString());
     }
   }
 
   @override
-  Stream<UserAccount> get userAuthStatusStream =>
-      _auth.authStateChanges().map((user) => UserAccount(
-          uid: user!.uid,
-          email: user.email!,
-          username: user.displayName,
-          photoURL: user.photoURL));
+  Stream<User?> get userAuthStatusStream => _auth.authStateChanges();
 }

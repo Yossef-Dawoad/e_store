@@ -11,30 +11,23 @@ class ECOutlinedButtonTheme {
   static final lightOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: 0,
-      foregroundColor: ColorPalette.dark,
-      side: const BorderSide(color: ColorPalette.borderPrimary),
-      textStyle: const TextStyle(
-          fontSize: 16, color: ColorPalette.black, fontWeight: FontWeight.w600),
-      padding: const EdgeInsets.symmetric(
-          vertical: AppSizes.buttonHeight, horizontal: 20),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
+      foregroundColor: Palette.dark,
+      side: const BorderSide(color: Palette.borderPrimary),
+      textStyle: const TextStyle(fontSize: 16, color: Palette.black, fontWeight: FontWeight.w600),
+      padding: const EdgeInsets.symmetric(vertical: AppSizes.buttonHeight, horizontal: 20),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
     ),
   );
 
   /* -- Dark Theme -- */
   static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      foregroundColor: ColorPalette.light,
-      side: const BorderSide(color: ColorPalette.borderPrimary),
-      textStyle: const TextStyle(
-          fontSize: 16,
-          color: ColorPalette.textWhite,
-          fontWeight: FontWeight.w600),
-      padding: const EdgeInsets.symmetric(
-          vertical: AppSizes.buttonHeight, horizontal: 20),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
+      foregroundColor: Palette.light,
+      side: const BorderSide(color: Palette.borderPrimary),
+      textStyle:
+          const TextStyle(fontSize: 16, color: Palette.textWhite, fontWeight: FontWeight.w600),
+      padding: const EdgeInsets.symmetric(vertical: AppSizes.buttonHeight, horizontal: 20),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
     ),
   );
 }

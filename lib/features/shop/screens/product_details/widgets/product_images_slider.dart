@@ -20,7 +20,7 @@ class ProductImagesSlider extends StatelessWidget {
     return RoundedBottomCornerContainer(
       width: double.infinity,
       child: Container(
-        color: isDarkMode ? ColorPalette.darkerGrey : ColorPalette.light,
+        color: isDarkMode ? Palette.darkerGrey : Palette.light,
         child: Stack(
           children: [
             SizedBox(
@@ -44,8 +44,7 @@ class ProductImagesSlider extends StatelessWidget {
                   physics: const AlwaysScrollableScrollPhysics(),
                   itemBuilder: (context, index) =>
                       ProductImageSmallShowCase(isDarkMode: isDarkMode),
-                  separatorBuilder: (_, __) =>
-                      const SizedBox(width: AppSizes.spaceBtwItems),
+                  separatorBuilder: (_, __) => const SizedBox(width: AppSizes.spaceBtwItems),
                 ),
               ),
             ),
@@ -55,8 +54,7 @@ class ProductImagesSlider extends StatelessWidget {
               actions: [
                 IconButton.filled(
                   style: IconButton.styleFrom(
-                    backgroundColor:
-                        isDarkMode ? ColorPalette.dark : Colors.white,
+                    backgroundColor: isDarkMode ? Palette.dark : Colors.white,
                   ),
                   onPressed: () {},
                   icon: const Icon(

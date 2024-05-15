@@ -18,7 +18,7 @@ class OrderAddressDetails extends StatelessWidget {
             Icon(
               Icons.phone,
               size: 18,
-              color: context.isDarkMode ? ColorPalette.lightGrey : ColorPalette.darkGrey,
+              color: context.isDarkMode ? Palette.lightGrey : Palette.darkGrey,
             ),
             const SizedBox(width: AppSizes.spaceBtwItems),
             Text('0123456789', style: context.textTheme.bodyMedium),
@@ -30,7 +30,7 @@ class OrderAddressDetails extends StatelessWidget {
             Icon(
               Icons.location_history,
               size: 18,
-              color: context.isDarkMode ? ColorPalette.lightGrey : ColorPalette.darkGrey,
+              color: context.isDarkMode ? Palette.lightGrey : Palette.darkGrey,
             ),
             const SizedBox(width: AppSizes.spaceBtwItems),
             Text('DownTown, Cairo, Egypt', style: context.textTheme.bodyMedium),

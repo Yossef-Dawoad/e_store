@@ -21,7 +21,7 @@ class TermsAndConditionCheckBox extends StatelessWidget {
             text: AppTexts.privacyPolicy,
             style: context.textTheme.bodyMedium?.apply(
               decoration: TextDecoration.underline,
-              color: isDark ? ColorPalette.white : ColorPalette.primary,
+              color: isDark ? Palette.white : Palette.primary,
             ),
           ),
           TextSpan(
@@ -32,7 +32,7 @@ class TermsAndConditionCheckBox extends StatelessWidget {
             text: AppTexts.termsOfUse,
             style: context.textTheme.bodyMedium?.apply(
               decoration: TextDecoration.underline,
-              color: isDark ? ColorPalette.white : ColorPalette.primary,
+              color: isDark ? Palette.white : Palette.primary,
             ),
           ),
         ],

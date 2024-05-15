@@ -27,8 +27,7 @@ class BrandTile extends StatelessWidget {
         const SizedBox(width: AppSizes.spaceBtwItems / 2.0),
         Text(name, style: context.textTheme.bodyLarge),
         const SizedBox(width: AppSizes.spaceBtwItems / 3.0),
-        if (isVerified)
-          const Icon(Iconsax.verify5, color: ColorPalette.primary),
+        if (isVerified) const Icon(Iconsax.verify5, color: Palette.primary),
       ],
     );
   }

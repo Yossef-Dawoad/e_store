@@ -7,7 +7,8 @@ import 'package:e_store/core/constants/text_strings.dart';
 import 'package:e_store/core/routes/routes.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/core/shared/logic/services/storage_utility.dart';
-import 'package:e_store/features/authentication/view/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
+import 'package:e_store/features/authentication/presentation/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,22 +19,23 @@ class VerifyEmailCubitListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<VerifyEmailCubit, VerifyEmailCubitState>(
       listenWhen: (prev, curr) =>
-          curr is VerifyEmailLoading || curr is VerifyEmailSuccess || curr is VerifyEmailFailure,
+          curr is VerifyEmailLoading ||
+          curr is VerifyEmailSent ||
+          curr is UserVerifiedsuccess ||
+          curr is VerifyEmailFailure,
       listener: (context, state) => state.whenOrNull(
         loading: () => showDialog(
           context: context,
           builder: (context) => const Center(
-            child: CircularProgressIndicator(color: ColorPalette.primary),
+            child: CircularProgressIndicator(color: Palette.primary),
           ),
         ),
-        success: (isSignedIn) => userScreenRedirect(context, isSignedIn),
+        emailSent: () =>
+            context.showSnackBar('Email Sent Successfully to You Inbox', Palette.success),
+        userVerifiedsuccess: (userData) => userScreenRedirect(context, userData),
         failure: (err, st) {
           context.popRoute();
-          customDialogPopUp(
-            context,
-            err.toString(),
-            DialogType.alert,
-          );
+          customDialogPopUp(context, err.toString(), DialogType.alert);
           return null;
         },
       ),
@@ -41,9 +43,9 @@ class VerifyEmailCubitListener extends StatelessWidget {
     );
   }
 
-  void userScreenRedirect(BuildContext context, bool isSignedIn) async {
+  void userScreenRedirect(BuildContext context, User? userData) async {
     final storage = sl<LocalStorageManager>();
-    if (isSignedIn) {
+    if (userData?.emailVerified ?? false) {
       await storage.saveData('initial_route', 2).then(
             (value) => context.pushRoute(
               SuccessScreen(

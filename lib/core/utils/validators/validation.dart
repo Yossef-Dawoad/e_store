@@ -1,5 +1,5 @@
-class FieldValidator {
-  static String? validateEmail(String? value) {
+class Validators {
+  static String? validEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email is required.';
     }
@@ -14,7 +14,7 @@ class FieldValidator {
     return null;
   }
 
-  static String? validatePassword(String? value) {
+  static String? validPassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password is required.';
     }
@@ -65,7 +65,7 @@ class FieldValidator {
 
 // Add more custom validators as needed for your specific requirements.
 
-  static String? validateEmptyField(String? value) {
+  static String? NotEmptyField(String? value) {
     if (value == null || value.isEmpty) return 'Field is required.';
     return null;
   }

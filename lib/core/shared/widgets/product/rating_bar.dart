@@ -17,7 +17,7 @@ class AppRatingBar extends StatelessWidget {
       itemSize: 20,
       itemBuilder: (context, index) => const Icon(
         Iconsax.star1,
-        color: ColorPalette.primary,
+        color: Palette.primary,
       ),
     );
   }

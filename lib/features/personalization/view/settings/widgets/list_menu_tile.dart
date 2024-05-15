@@ -20,7 +20,7 @@ class MenuListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon, size: 28, color: ColorPalette.primary),
+      leading: Icon(icon, size: 28, color: Palette.primary),
       title: Text(title, style: context.textTheme.titleMedium),
       subtitle: Text(subtitle, style: context.textTheme.labelMedium),
       trailing: trailing,

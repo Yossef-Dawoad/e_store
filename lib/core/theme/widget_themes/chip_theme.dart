@@ -5,18 +5,18 @@ class ECChipTheme {
   ECChipTheme._();
 
   static ChipThemeData lightChipTheme = ChipThemeData(
-    disabledColor: ColorPalette.grey.withOpacity(0.4),
-    labelStyle: const TextStyle(color: ColorPalette.black),
-    selectedColor: ColorPalette.primary,
+    disabledColor: Palette.grey.withOpacity(0.4),
+    labelStyle: const TextStyle(color: Palette.black),
+    selectedColor: Palette.primary,
     padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
-    checkmarkColor: ColorPalette.white,
+    checkmarkColor: Palette.white,
   );
 
   static ChipThemeData darkChipTheme = const ChipThemeData(
-    disabledColor: ColorPalette.darkerGrey,
-    labelStyle: TextStyle(color: ColorPalette.white),
-    selectedColor: ColorPalette.primary,
+    disabledColor: Palette.darkerGrey,
+    labelStyle: TextStyle(color: Palette.white),
+    selectedColor: Palette.primary,
     padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
-    checkmarkColor: ColorPalette.white,
+    checkmarkColor: Palette.white,
   );
 }

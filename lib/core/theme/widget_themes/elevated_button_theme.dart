@@ -10,19 +10,15 @@ class ECElevatedButtonTheme {
   static final lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: ColorPalette.light,
-      backgroundColor: ColorPalette.primary,
-      disabledForegroundColor: ColorPalette.darkGrey,
-      disabledBackgroundColor: ColorPalette.buttonDisabled,
-      side: const BorderSide(color: ColorPalette.primary),
-      padding: const EdgeInsets.symmetric(
-          vertical: AppSizes.buttonHeight, horizontal: 15.0),
-      textStyle: const TextStyle(
-          fontSize: 16,
-          color: ColorPalette.textWhite,
-          fontWeight: FontWeight.w600),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
+      foregroundColor: Palette.light,
+      backgroundColor: Palette.primary,
+      disabledForegroundColor: Palette.darkGrey,
+      disabledBackgroundColor: Palette.buttonDisabled,
+      side: const BorderSide(color: Palette.primary),
+      padding: const EdgeInsets.symmetric(vertical: AppSizes.buttonHeight, horizontal: 15.0),
+      textStyle:
+          const TextStyle(fontSize: 16, color: Palette.textWhite, fontWeight: FontWeight.w600),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
     ),
   );
 
@@ -30,18 +26,15 @@ class ECElevatedButtonTheme {
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: ColorPalette.light,
-      backgroundColor: ColorPalette.primary,
-      disabledForegroundColor: ColorPalette.darkGrey,
-      disabledBackgroundColor: ColorPalette.darkerGrey,
-      side: const BorderSide(color: ColorPalette.primary),
+      foregroundColor: Palette.light,
+      backgroundColor: Palette.primary,
+      disabledForegroundColor: Palette.darkGrey,
+      disabledBackgroundColor: Palette.darkerGrey,
+      side: const BorderSide(color: Palette.primary),
       padding: const EdgeInsets.symmetric(vertical: AppSizes.buttonHeight),
-      textStyle: const TextStyle(
-          fontSize: 16,
-          color: ColorPalette.textWhite,
-          fontWeight: FontWeight.w600),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
+      textStyle:
+          const TextStyle(fontSize: 16, color: Palette.textWhite, fontWeight: FontWeight.w600),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSizes.buttonRadius)),
     ),
   );
 }

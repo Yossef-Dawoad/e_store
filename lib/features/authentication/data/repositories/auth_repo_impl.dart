@@ -1,3 +1,4 @@
+import 'package:e_store/core/shared/logic/services/network_manager.dart';
 import 'package:e_store/core/utils/errors/server_errors.dart';
 
 import 'package:e_store/core/utils/types/result_type.dart';
@@ -10,10 +11,13 @@ import '../../domain/repositories/auth_repo.dart';
 
 class AuthenticationRepositoryImpl implements AuthenticationRepository {
   final AuthenticationRemoteDataSource _remoteDataSource;
+  final NetworkManager _networkManager;
 
   AuthenticationRepositoryImpl({
     required AuthenticationRemoteDataSource remoteDataSource,
-  }) : _remoteDataSource = remoteDataSource;
+    required NetworkManager networkManager,
+  })  : _remoteDataSource = remoteDataSource,
+        _networkManager = networkManager;
 
   @override
   FutureResult<UserAccountEntity, BaseException> signInWithEmailPassword(
@@ -21,8 +25,10 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     String password,
   ) async {
     try {
-      final userData =
-          await _remoteDataSource.signInWithEmailPassword(email, password);
+      if (!(await _networkManager.hasInternetConnection())) {
+        return Result.failure(NetworkException());
+      }
+      final userData = await _remoteDataSource.signInWithEmailPassword(email, password);
       return Result.success(userData.toEntity);
     } on FirebaseAuthException catch (err) {
       return Result.failure(BaseException(msg: err.toString()));
@@ -57,8 +63,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     String password,
   ) async {
     try {
-      final userData =
-          await _remoteDataSource.signUpEmailAndPassword(email, password);
+      final userData = await _remoteDataSource.signUpEmailAndPassword(email, password);
       return Result.success(userData.toEntity);
     } on FirebaseAuthException catch (err) {
       return Result.failure(BaseException(msg: err.toString()));
@@ -66,10 +71,10 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  FutureResult<bool, BaseException> verifyEmail() async {
+  FutureResult<void, BaseException> sendVerifyEmail() async {
     try {
-      await _remoteDataSource.verifyEmail();
-      return Result.success(await isVerifiedUser);
+      await _remoteDataSource.sendVerifyEmail();
+      return const Result.success(null);
     } catch (err, st) {
       return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
     }
@@ -89,6 +94,5 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Stream<UserAccountEntity> get userAuthStatusStream =>
-      _remoteDataSource.userAuthStatusStream.map((event) => event.toEntity);
+  Stream<User?> get userAuthStatusStream => _remoteDataSource.userAuthStatusStream;
 }

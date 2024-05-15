@@ -14,7 +14,7 @@ class OrderCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppSizes.md),
       decoration: BoxDecoration(
-        color: context.isDarkMode ? ColorPalette.darkerGrey : ColorPalette.light,
+        color: context.isDarkMode ? Palette.darkerGrey : Palette.light,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -34,7 +34,7 @@ class OrderCard extends StatelessWidget {
                     Text(
                       'Prossesing',
                       style: context.textTheme.bodyLarge
-                          ?.copyWith(color: ColorPalette.primary, fontWeight: FontWeight.bold),
+                          ?.copyWith(color: Palette.primary, fontWeight: FontWeight.bold),
                     ),
                     Text('12 Nov 2021', style: context.textTheme.headlineSmall),
                   ],

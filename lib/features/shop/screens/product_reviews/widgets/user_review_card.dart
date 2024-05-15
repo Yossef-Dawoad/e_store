@@ -47,8 +47,7 @@ class UserReviewCard extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color:
-                context.isDarkMode ? ColorPalette.darkGrey : ColorPalette.grey,
+            color: context.isDarkMode ? Palette.darkGrey : Palette.grey,
           ),
           child: Padding(
             padding: const EdgeInsets.all(AppSizes.md),
@@ -66,7 +65,7 @@ class UserReviewCard extends StatelessWidget {
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
                   trimLines: 2,
                   trimMode: TrimMode.Line,
-                  colorClickableText: ColorPalette.primary,
+                  colorClickableText: Palette.primary,
                 ),
               ],
             ),

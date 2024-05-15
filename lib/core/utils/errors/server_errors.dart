@@ -7,3 +7,10 @@ class BaseException implements Exception {
   @override
   String toString() => msg;
 }
+
+class NetworkException extends BaseException {
+  NetworkException({
+    super.msg = "unfortunately there seems to A Network Issue",
+    super.stackTrace,
+  });
+}

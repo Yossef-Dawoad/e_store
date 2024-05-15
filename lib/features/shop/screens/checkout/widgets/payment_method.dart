@@ -24,7 +24,7 @@ class PaymentMethodDetails extends StatelessWidget {
               width: 60,
               height: 35,
               decoration: BoxDecoration(
-                color: context.isDarkMode ? ColorPalette.darkerGrey : ColorPalette.light,
+                color: context.isDarkMode ? Palette.darkerGrey : Palette.light,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Image.asset(AppImages.paypal, fit: BoxFit.contain),

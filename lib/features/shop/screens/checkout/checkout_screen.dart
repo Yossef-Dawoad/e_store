@@ -41,7 +41,7 @@ class CheckoutScreen extends StatelessWidget {
               // -- Billing Payment Section
               Container(
                 decoration: BoxDecoration(
-                  color: context.isDarkMode ? ColorPalette.darkerGrey : ColorPalette.light,
+                  color: context.isDarkMode ? Palette.darkerGrey : Palette.light,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 padding: const EdgeInsets.all(AppSizes.md),

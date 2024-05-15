@@ -12,9 +12,7 @@ void loaderDialogScreen(BuildContext context, String message, String image) {
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        color: (context.theme.brightness == Brightness.dark)
-            ? ColorPalette.light
-            : ColorPalette.dark,
+        color: (context.theme.brightness == Brightness.dark) ? Palette.light : Palette.dark,
         child: Column(
           children: [
             const SizedBox(height: 250),
@@ -58,7 +56,7 @@ void animatedDialogScreenLoader(
       child: Container(
         width: double.infinity,
         height: double.infinity,
-        color: context.isDarkMode ? ColorPalette.dark : ColorPalette.light,
+        color: context.isDarkMode ? Palette.dark : Palette.light,
         child: Column(
           children: [
             const SizedBox(height: 250),

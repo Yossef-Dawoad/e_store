@@ -30,14 +30,14 @@ class CounterCartIcon extends StatelessWidget {
             width: 18,
             height: 18,
             decoration: BoxDecoration(
-              color: ColorPalette.black.withOpacity(0.3),
+              color: Palette.black.withOpacity(0.3),
               borderRadius: BorderRadius.circular(50),
             ),
             child: Center(
               child: Text(
                 '2',
                 style: context.textTheme.labelLarge?.apply(
-                  color: ColorPalette.white,
+                  color: Palette.white,
                   fontSizeFactor: 0.8,
                 ),
               ),

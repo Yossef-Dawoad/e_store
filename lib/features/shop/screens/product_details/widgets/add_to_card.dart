@@ -16,7 +16,7 @@ class AddTocard extends StatelessWidget {
         vertical: AppSizes.defaultSpace / 2,
       ),
       decoration: BoxDecoration(
-        color: isDarkMode ? ColorPalette.darkGrey : ColorPalette.light,
+        color: isDarkMode ? Palette.darkGrey : Palette.light,
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(AppSizes.cardRadiusLg),
           topRight: Radius.circular(AppSizes.cardRadiusLg),
@@ -27,13 +27,13 @@ class AddTocard extends StatelessWidget {
           Row(
             children: [
               const CircleAvatar(
-                child: Icon(Iconsax.minus, color: ColorPalette.white, size: AppSizes.iconMd),
+                child: Icon(Iconsax.minus, color: Palette.white, size: AppSizes.iconMd),
               ),
               const SizedBox(width: AppSizes.spaceBtwItems),
               Text('2', style: context.textTheme.titleSmall),
               const SizedBox(width: AppSizes.spaceBtwItems),
               const CircleAvatar(
-                child: Icon(Iconsax.add, color: ColorPalette.white, size: AppSizes.iconMd),
+                child: Icon(Iconsax.add, color: Palette.white, size: AppSizes.iconMd),
               ),
             ],
           ),

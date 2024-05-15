@@ -29,14 +29,14 @@ class CircluarCategoryItem extends StatelessWidget {
               height: 56,
               padding: const EdgeInsets.all(AppSizes.sm),
               decoration: BoxDecoration(
-                color: isDark ? ColorPalette.dark : ColorPalette.light,
+                color: isDark ? Palette.dark : Palette.light,
                 borderRadius: BorderRadius.circular(100),
               ),
               child: Center(
                 child: Image(
                   image: AssetImage(image),
                   fit: BoxFit.cover,
-                  color: isDark ? ColorPalette.light : ColorPalette.dark,
+                  color: isDark ? Palette.light : Palette.dark,
                 ),
               ),
             ),

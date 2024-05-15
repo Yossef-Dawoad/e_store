@@ -1,5 +1,6 @@
 import 'package:e_store/core/utils/errors/server_errors.dart';
 import 'package:e_store/core/utils/types/result_type.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../entities/user_entity.dart';
 
@@ -18,7 +19,7 @@ abstract class AuthenticationRepository {
 
   FutureResult<void, BaseException> signOut();
   FutureResult<void, BaseException> sendResetPasswordEmail(String email);
-  FutureResult<bool, BaseException> verifyEmail();
+  FutureResult<void, BaseException> sendVerifyEmail();
   Future<bool> get isVerifiedUser;
-  Stream<UserAccountEntity> get userAuthStatusStream;
+  Stream<User?> get userAuthStatusStream;
 }

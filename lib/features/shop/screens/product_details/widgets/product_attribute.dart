@@ -16,7 +16,7 @@ class ProductAttributes extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(AppSizes.md),
           decoration: BoxDecoration(
-            color: isDarkMode ? ColorPalette.darkGrey : ColorPalette.grey,
+            color: isDarkMode ? Palette.darkGrey : Palette.grey,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Column(
@@ -34,10 +34,7 @@ class ProductAttributes extends StatelessWidget {
                             'price: ',
                             style: context.textTheme.labelMedium,
                           ),
-                          const ProductPrice(
-                              price: '25',
-                              currency: '\$',
-                              lineThroughPrice: true),
+                          const ProductPrice(price: '25', currency: '\$', lineThroughPrice: true),
                           const SizedBox(width: AppSizes.sm),
                           const ProductPrice(price: '20', currency: '\$')
                         ],
@@ -140,7 +137,7 @@ class AppChoiceChip extends StatelessWidget {
     super.key,
     this.text = "",
     this.isSelected = false,
-    this.selectedColor = ColorPalette.primary,
+    this.selectedColor = Palette.primary,
     required this.onSelected,
   });
   final String text;

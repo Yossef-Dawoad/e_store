@@ -30,16 +30,16 @@ class CustomSearchBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: backgroundColor ?? Colors.white,
           borderRadius: BorderRadius.circular(AppSizes.cardRadiusLg),
-          border: boder ?? Border.all(color: ColorPalette.grey),
+          border: boder ?? Border.all(color: Palette.grey),
         ),
         child: Row(
           children: <Widget>[
-            const Icon(Iconsax.search_normal, color: ColorPalette.darkGrey),
+            const Icon(Iconsax.search_normal, color: Palette.darkGrey),
             const SizedBox(width: AppSizes.spaceBtwSections),
             Text(
               hintText,
               style: context.textTheme.bodySmall?.apply(
-                color: ColorPalette.grey,
+                color: Palette.grey,
               ),
             )
           ],

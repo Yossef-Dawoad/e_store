@@ -34,8 +34,7 @@ class CenterAnimationLoaderWidget extends StatelessWidget {
             SizedBox(
               width: 250,
               child: OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                    backgroundColor: ColorPalette.dark),
+                style: OutlinedButton.styleFrom(backgroundColor: Palette.dark),
                 onPressed: onSubmit,
                 child: const Text('Continue'),
               ),

@@ -20,8 +20,7 @@ extension ContextThemingExtension on BuildContext {
 
 extension NavigatingExtensions on BuildContext {
   Future<T?> pushRoute<T>(Widget page) {
-    return Navigator.of(this)
-        .push(MaterialPageRoute(builder: (context) => page));
+    return Navigator.of(this).push(MaterialPageRoute(builder: (context) => page));
   }
 
   Future<T?> pushNamedRoute<T>(String routeName, {Object? arguments}) {
@@ -41,14 +40,11 @@ extension NavigatingExtensions on BuildContext {
   }
 
   void pushReplacementRoute(Widget page) {
-    Navigator.of(this)
-        .pushReplacement(MaterialPageRoute(builder: (context) => page));
+    Navigator.of(this).pushReplacement(MaterialPageRoute(builder: (context) => page));
   }
 
-  Future<T?> pushReplacementNamedRoute<T>(String routeName,
-      {Object? arguments}) {
-    return Navigator.of(this)
-        .pushReplacementNamed(routeName, arguments: arguments);
+  Future<T?> pushReplacementNamedRoute<T>(String routeName, {Object? arguments}) {
+    return Navigator.of(this).pushReplacementNamed(routeName, arguments: arguments);
   }
 
   void popRoute<T>([T? result]) {
@@ -61,7 +57,7 @@ extension NavigatingExtensions on BuildContext {
   double get screenHeight => MediaQuery.of(this).size.height;
 
   // show snackbar
-  void showSnackBar(String message, Color backgroundColor) {
+  void showSnackBar(String message, [Color backgroundColor = Colors.grey]) {
     ScaffoldMessenger.of(this)
       ..removeCurrentSnackBar()
       ..showSnackBar(

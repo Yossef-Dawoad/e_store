@@ -17,9 +17,9 @@ class ProductImageSmallShowCase extends StatelessWidget {
       width: 80,
       padding: const EdgeInsets.all(AppSizes.sm),
       decoration: BoxDecoration(
-        border: Border.all(color: ColorPalette.primary),
+        border: Border.all(color: Palette.primary),
         borderRadius: BorderRadius.circular(10),
-        color: isDarkMode ? ColorPalette.grey : Colors.white,
+        color: isDarkMode ? Palette.grey : Colors.white,
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),

@@ -25,14 +25,12 @@ class TitleHeader extends StatelessWidget {
         Text(
           title,
           style: context.textTheme.headlineSmall?.apply(
-            color:
-                color ?? (isDarkMode ? ColorPalette.white : ColorPalette.dark),
+            color: color ?? (isDarkMode ? Palette.white : Palette.dark),
           ),
           overflow: TextOverflow.ellipsis,
           maxLines: 1,
         ),
-        if (btntitle != null)
-          TextButton(onPressed: onPressed, child: Text(btntitle!))
+        if (btntitle != null) TextButton(onPressed: onPressed, child: Text(btntitle!))
       ],
     );
   }

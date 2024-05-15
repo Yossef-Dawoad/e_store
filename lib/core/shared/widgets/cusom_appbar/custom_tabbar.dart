@@ -10,13 +10,13 @@ class CustomTabApp extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final isDarkMode = HelperFunctions.isDarkMode(context);
     return Material(
-      color: isDarkMode ? ColorPalette.dark : ColorPalette.light,
+      color: isDarkMode ? Palette.dark : Palette.light,
       child: TabBar(
         tabs: tabs,
         isScrollable: true,
-        indicatorColor: ColorPalette.primary,
+        indicatorColor: Palette.primary,
         labelColor: isDarkMode ? Colors.white : Colors.black,
-        unselectedLabelColor: ColorPalette.darkGrey,
+        unselectedLabelColor: Palette.darkGrey,
       ),
     );
   }
