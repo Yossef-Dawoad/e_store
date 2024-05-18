@@ -17,9 +17,10 @@ class SignUpCubit extends Cubit<SignupState> {
     final credentialsResult = await usecase(
       params: SignInParams(email: email, password: password),
     );
+    print(credentialsResult);
     credentialsResult.when(
-      success: (credentials) => SignupState.success(credentials),
-      failure: (err) => SignupState.failure(err.toString()),
+      right: (cred) => emit(SignupState.success(cred)),
+      left: (err) => emit(SignupState.failure(err.toString())),
     );
   }
 }

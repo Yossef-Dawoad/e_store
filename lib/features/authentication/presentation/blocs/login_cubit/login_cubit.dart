@@ -11,8 +11,7 @@ class LoginCubit extends Cubit<LoginState> {
   final SignInWithMailPasswordUseCase usecaseEmailPassword;
   final SendResetPasswordEmailUseCase usecaseSendResetEmail;
 
-  LoginCubit(this.usecaseEmailPassword, this.usecaseSendResetEmail)
-      : super(LogInInitial());
+  LoginCubit(this.usecaseEmailPassword, this.usecaseSendResetEmail) : super(LogInInitial());
 
   void logIn({required String email, required String password}) async {
     emit(LogInLoading());
@@ -21,8 +20,8 @@ class LoginCubit extends Cubit<LoginState> {
       params: SignInParams(email: email, password: password),
     );
     credentialsResult.when(
-      success: (credentials) => emit(LogInSuccess(data: credentials)),
-      failure: (failure) => emit(LogInFailure(message: failure.msg)),
+      right: (credentials) => emit(LogInSuccess(data: credentials)),
+      left: (failure) => emit(LogInFailure(message: failure.msg)),
     );
   }
 
@@ -34,8 +33,8 @@ class LoginCubit extends Cubit<LoginState> {
     );
 
     result.when(
-      success: (_) => emit(SendResetEmailSuccess()),
-      failure: (failure) => emit(SendResetEmailFailure(message: failure.msg)),
+      right: (_) => emit(SendResetEmailSuccess()),
+      left: (failure) => emit(SendResetEmailFailure(message: failure.msg)),
     );
   }
 }

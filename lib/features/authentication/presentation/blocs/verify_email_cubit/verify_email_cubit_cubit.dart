@@ -36,8 +36,8 @@ class VerifyEmailCubit extends Cubit<VerifyEmailCubitState> {
     final result = await verifyEmailUsecase(params: VoidParams());
 
     result.when(
-      success: (_) async => emit(const VerifyEmailCubitState.emailSent()),
-      failure: (err) => emit(VerifyEmailCubitState.failure(err.msg, err.stackTrace)),
+      right: (_) async => emit(const VerifyEmailCubitState.emailSent()),
+      left: (err) => emit(VerifyEmailCubitState.failure(err.msg, err.stackTrace)),
     );
   }
 

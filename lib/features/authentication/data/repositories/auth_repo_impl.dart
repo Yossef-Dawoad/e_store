@@ -26,14 +26,14 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   ) async {
     try {
       if (!(await _networkManager.hasInternetConnection())) {
-        return Result.failure(NetworkException());
+        return Result.left(NetworkException());
       }
       final userData = await _remoteDataSource.signInWithEmailPassword(email, password);
-      return Result.success(userData.toEntity);
+      return Result.right(userData.toEntity);
     } on FirebaseAuthException catch (err) {
-      return Result.failure(BaseException(msg: err.toString()));
+      return Result.left(BaseException(msg: err.toString()));
     } catch (err, st) {
-      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
+      return Result.left(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -41,11 +41,11 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   FutureResult<UserAccountEntity, BaseException> signInWithGoogle() async {
     try {
       final googleUser = await _remoteDataSource.signInWithGoogle();
-      return Result.success(googleUser.toEntity);
+      return Result.right(googleUser.toEntity);
     } on FirebaseAuthException catch (err) {
-      return Result.failure(BaseException(msg: err.toString()));
+      return Result.left(BaseException(msg: err.toString()));
     } catch (err, st) {
-      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
+      return Result.left(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -53,11 +53,11 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   Future<Result<void, BaseException>> signOut() async {
     try {
       _remoteDataSource.signOut();
-      return const Result.success(null);
+      return const Result.right(null);
     } on FirebaseAuthException catch (err) {
-      return Result.failure(BaseException(msg: err.toString()));
+      return Result.left(BaseException(msg: err.toString()));
     } catch (err, st) {
-      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
+      return Result.left(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -68,14 +68,17 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   ) async {
     try {
       if (!(await _networkManager.hasInternetConnection())) {
-        return Result.failure(NetworkException());
+        return Result.left(NetworkException());
       }
       final userData = await _remoteDataSource.signUpEmailAndPassword(email, password);
-      return Result.success(userData.toEntity);
+      print('+++++++++++++++');
+      print(userData);
+      return Result.right(userData.toEntity);
     } on FirebaseAuthException catch (err) {
-      return Result.failure(BaseException(msg: err.toString()));
+      print(err);
+      return Result.left(BaseException(msg: err.toString()));
     } catch (err, st) {
-      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
+      return Result.left(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -83,9 +86,9 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   FutureResult<void, BaseException> sendVerifyEmail() async {
     try {
       await _remoteDataSource.sendVerifyEmail();
-      return const Result.success(null);
+      return const Result.right(null);
     } catch (err, st) {
-      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
+      return Result.left(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -96,11 +99,11 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   FutureResult<void, BaseException> sendResetPasswordEmail(String email) async {
     try {
       await _remoteDataSource.sendResetPasswordEmail(email);
-      return const Result.success(null);
+      return const Result.right(null);
     } on FirebaseAuthException catch (err) {
-      return Result.failure(BaseException(msg: err.toString()));
+      return Result.left(BaseException(msg: err.toString()));
     } catch (err, st) {
-      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
+      return Result.left(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 

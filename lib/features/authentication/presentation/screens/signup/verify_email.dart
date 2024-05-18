@@ -11,12 +11,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'widgets/verify_email_listener.dart';
 
 class VerifyEmailScreen extends StatelessWidget {
-  const VerifyEmailScreen({super.key});
+  const VerifyEmailScreen({super.key, this.email = ''});
+  final String email;
 
   @override
   Widget build(BuildContext context) {
     // Retrieve the arguments from the route settings
-    final email = ModalRoute.of(context)?.settings.arguments as String;
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

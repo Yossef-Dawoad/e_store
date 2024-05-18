@@ -76,6 +76,7 @@ class _SignUpFormState extends State<SignUpForm> {
           TextFormField(
             expands: false,
             controller: _emailController,
+            keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               prefixIcon: const Icon(Iconsax.direct),
               labelText: AppTexts.email,

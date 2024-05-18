@@ -7,6 +7,7 @@ import 'package:e_store/features/authentication/data/datasources/remote/user_clo
 import 'package:e_store/features/authentication/data/datasources/remote/user_cloud/user_cloud_impl.dart';
 import 'package:e_store/features/authentication/data/repositories/auth_repo_impl.dart';
 import 'package:e_store/features/authentication/domain/repositories/auth_repo.dart';
+import 'package:e_store/features/authentication/domain/usecases/auth_status_changes.dart';
 import 'package:e_store/features/authentication/domain/usecases/is_user_verified.dart';
 import 'package:e_store/features/authentication/domain/usecases/send_reset_email.dart';
 import 'package:e_store/features/authentication/domain/usecases/signin_email_and_password.dart';
@@ -54,6 +55,7 @@ Future<void> initializeDependence() async {
   sl.registerLazySingleton(() => IsUserVerifiedUseCase(sl()));
   sl.registerLazySingleton(() => SignUpUseCase(sl()));
   sl.registerLazySingleton(() => VerifyEmailUseCase(sl()));
+  sl.registerLazySingleton(() => AuthChangesStateUseCase(sl()));
   sl.registerLazySingleton(() => SendResetPasswordEmailUseCase(sl()));
 
   /// Register Controllers (Cubits)

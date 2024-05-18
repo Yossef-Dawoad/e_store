@@ -16,8 +16,8 @@ class GoogleAuthCubit extends Cubit<GoogleAuthState> {
 
     final credentialsResult = await usecaseGoogle(params: VoidParams());
     credentialsResult.when(
-      success: (credentials) => emit(GoogleAuthState.success(credentials)),
-      failure: (failure) => emit(GoogleAuthState.failure(failure.msg)),
+      right: (credentials) => emit(GoogleAuthState.success(credentials)),
+      left: (failure) => emit(GoogleAuthState.failure(failure.msg)),
     );
   }
 }

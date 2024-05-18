@@ -3,12 +3,10 @@ import 'package:e_store/core/shared/widgets/error/error_screens.dart';
 import 'package:e_store/core/utils/extensions/context_ext.dart';
 import 'package:e_store/features/authentication/presentation/blocs/login_cubit/login_cubit.dart';
 import 'package:e_store/features/authentication/presentation/blocs/signup_cubit/signup_cubit.dart';
-import 'package:e_store/features/authentication/presentation/blocs/verify_email_cubit/verify_email_cubit_cubit.dart';
 import 'package:e_store/features/authentication/presentation/screens/login/forget_screen.dart';
 import 'package:e_store/features/authentication/presentation/screens/login/login_screen.dart';
 import 'package:e_store/features/authentication/presentation/screens/login/reset_password_screen.dart';
 import 'package:e_store/features/authentication/presentation/screens/signup/signup_screen.dart';
-import 'package:e_store/features/authentication/presentation/screens/signup/verify_email.dart';
 import 'package:e_store/core/shared/logic/blocs/redirect_first_route/redirect_route_bloc.dart';
 import 'package:e_store/features/first_route_page.dart';
 import 'package:e_store/features/onboarding/onboarding_main.dart';
@@ -40,10 +38,6 @@ class AppRouter {
       Routes.signUp => MaterialPageRoute(
           builder: (_) =>
               BlocProvider(create: (context) => sl<SignUpCubit>(), child: const SignUpScreen()),
-        ),
-      Routes.verifyEmail => MaterialPageRoute(
-          builder: (_) => BlocProvider(
-              create: (context) => sl<VerifyEmailCubit>(), child: const VerifyEmailScreen()),
         ),
       Routes.forgetPassword => MaterialPageRoute(
           builder: (_) => BlocProvider(

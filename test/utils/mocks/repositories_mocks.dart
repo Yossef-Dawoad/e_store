@@ -1,9 +1,6 @@
 import 'package:e_store/features/authentication/domain/repositories/auth_repo.dart';
-import 'package:mockito/annotations.dart';
+import 'package:mocktail/mocktail.dart';
 
-@GenerateMocks(
-  [
-    AuthenticationRepository,
-  ],
-)
+class MockAuthenticationRepository extends Mock implements AuthenticationRepository {}
+
 void main() {}

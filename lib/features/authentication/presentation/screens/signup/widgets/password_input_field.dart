@@ -24,6 +24,7 @@ class _PassWordInputFieldState extends State<PassWordInputField> {
     return TextFormField(
       expands: false,
       controller: widget.controller,
+      keyboardType: TextInputType.visiblePassword,
       decoration: InputDecoration(
         labelText: AppTexts.password,
         labelStyle: context.textTheme.labelLarge,

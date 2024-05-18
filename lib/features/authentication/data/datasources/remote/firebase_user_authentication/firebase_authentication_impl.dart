@@ -62,6 +62,8 @@ class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSour
         email: email,
         password: password,
       );
+      print('*********');
+      print(userData);
       final userAccount = UserAccount(
         uid: userData.user!.uid,
         email: email,
@@ -69,8 +71,14 @@ class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSour
       );
       await userCloudService.writeUser(userAccount);
       return userAccount;
-    } on FirebaseAuthException catch (_) {
-      rethrow;
+    } on FirebaseAuthException catch (e) {
+      late final String message;
+      if (e.code == 'weak-password') {
+        message = 'The password provided is too weak.';
+      } else if (e.code == 'email-already-in-use') {
+        message = 'The account already exists for that email.';
+      }
+      throw FirebaseAuthException(code: e.code, message: message);
     } on FirebaseException catch (_) {
       rethrow;
     } catch (e) {
