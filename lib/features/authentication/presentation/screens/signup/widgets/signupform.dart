@@ -52,7 +52,7 @@ class _SignUpFormState extends State<SignUpForm> {
                     labelText: AppTexts.firstName,
                     labelStyle: context.textTheme.labelLarge,
                   ),
-                  validator: (val) => Validators.NotEmptyField(val),
+                  validator: (val) => Validators.notEmptyField(val),
                 ),
               ),
               const SizedBox(width: AppSizes.spaceBtwInputFields),
@@ -66,7 +66,7 @@ class _SignUpFormState extends State<SignUpForm> {
                     labelText: AppTexts.lastName,
                     labelStyle: context.textTheme.labelLarge,
                   ),
-                  validator: (val) => Validators.NotEmptyField(val),
+                  validator: (val) => Validators.notEmptyField(val),
                 ),
               )
             ],

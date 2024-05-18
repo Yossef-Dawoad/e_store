@@ -65,7 +65,7 @@ class Validators {
 
 // Add more custom validators as needed for your specific requirements.
 
-  static String? NotEmptyField(String? value) {
+  static String? notEmptyField(String? value) {
     if (value == null || value.isEmpty) return 'Field is required.';
     return null;
   }

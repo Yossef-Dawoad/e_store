@@ -17,6 +17,6 @@ class IsSignedinCubit extends Cubit<IsSignedinState> {
       emit(const IsSignedinState.authentecatedUser(true));
       return;
     }
-    emit(IsSignedinState.notAuthentecatedUser('User not verified'));
+    emit(const IsSignedinState.notAuthentecatedUser('User not verified'));
   }
 }
