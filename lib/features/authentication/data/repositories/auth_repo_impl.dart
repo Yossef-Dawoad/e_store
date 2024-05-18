@@ -32,6 +32,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       return Result.success(userData.toEntity);
     } on FirebaseAuthException catch (err) {
       return Result.failure(BaseException(msg: err.toString()));
+    } catch (err, st) {
+      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -42,8 +44,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       return Result.success(googleUser.toEntity);
     } on FirebaseAuthException catch (err) {
       return Result.failure(BaseException(msg: err.toString()));
-    } catch (e) {
-      return Result.failure(BaseException(msg: e.toString()));
+    } catch (err, st) {
+      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -54,6 +56,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       return const Result.success(null);
     } on FirebaseAuthException catch (err) {
       return Result.failure(BaseException(msg: err.toString()));
+    } catch (err, st) {
+      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -63,10 +67,15 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     String password,
   ) async {
     try {
+      if (!(await _networkManager.hasInternetConnection())) {
+        return Result.failure(NetworkException());
+      }
       final userData = await _remoteDataSource.signUpEmailAndPassword(email, password);
       return Result.success(userData.toEntity);
     } on FirebaseAuthException catch (err) {
       return Result.failure(BaseException(msg: err.toString()));
+    } catch (err, st) {
+      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
@@ -90,6 +99,8 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       return const Result.success(null);
     } on FirebaseAuthException catch (err) {
       return Result.failure(BaseException(msg: err.toString()));
+    } catch (err, st) {
+      return Result.failure(BaseException(msg: err.toString(), stackTrace: st));
     }
   }
 
