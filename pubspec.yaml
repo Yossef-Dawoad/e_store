@@ -30,10 +30,10 @@ dependencies:
   get_it: ^7.7.0
 
   ## Firebase Packages
-  firebase_core: ^2.31.0
-  firebase_storage: ^11.7.5
-  firebase_auth: ^4.19.5
-  cloud_firestore: ^4.17.3
+  firebase_core: ^2.31.1
+  firebase_storage: ^11.7.6
+  firebase_auth: ^4.19.6
+  cloud_firestore: ^4.17.4
   google_sign_in: ^6.2.1
   # google_sign_in_web: ^0.12.4 //TODO web support
 
