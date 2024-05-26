@@ -20,14 +20,14 @@ class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSour
 
   /// return true if the user is logged in
   @override
-  Future<bool> get isUserVerified async {
+  Future<(bool, UserAccount?)> get isUserVerified async {
     await _auth.currentUser?.reload();
     if (_auth.currentUser?.emailVerified ?? false) {
       final user = await userCloudService.readUser(_auth.currentUser!.uid);
       await userCloudService.writeUser(user.copyWith(isEmailVerified: true));
-      return true;
+      return (true, user);
     }
-    return false;
+    return (false, null);
   }
 
   @override
@@ -147,5 +147,5 @@ class AuthenticationRemoteDataSourceImpl implements AuthenticationRemoteDataSour
   }
 
   @override
-  Stream<User?> get userAuthStatusStream => _auth.authStateChanges();
+  Stream<User?> get userAuthStatusStream => _auth.userChanges();
 }

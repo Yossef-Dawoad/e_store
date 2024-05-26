@@ -8,6 +8,6 @@ abstract class AuthenticationRemoteDataSource {
   Future<UserAccount> signInWithGoogle();
   Future<void> sendResetPasswordEmail(String email);
   void signOut();
-  Future<bool> get isUserVerified;
+  Future<(bool, UserAccount?)> get isUserVerified;
   Stream<User?> get userAuthStatusStream;
 }

@@ -12,7 +12,7 @@ class IsSignedinCubit extends Cubit<IsSignedinState> {
 
   void onSignedIn() async {
     emit(const IsSignedinState.authentecationPending());
-    final userIsVerified = await _isUserVerifiedUseCase(params: VoidParams());
+    final (userIsVerified, _) = await _isUserVerifiedUseCase(params: VoidParams());
     if (userIsVerified) {
       emit(const IsSignedinState.authentecatedUser(true));
       return;

@@ -3,6 +3,7 @@ import 'package:e_store/core/utils/errors/server_errors.dart';
 
 import 'package:e_store/core/utils/types/result_type.dart';
 import 'package:e_store/features/authentication/data/datasources/remote/firebase_user_authentication/firebase_authentication.dart';
+import 'package:e_store/features/authentication/data/models/user_account.dart';
 import 'package:e_store/features/authentication/domain/entities/user_entity.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -71,11 +72,9 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
         return Result.left(NetworkException());
       }
       final userData = await _remoteDataSource.signUpEmailAndPassword(email, password);
-      print('+++++++++++++++');
-      print(userData);
+
       return Result.right(userData.toEntity);
     } on FirebaseAuthException catch (err) {
-      print(err);
       return Result.left(BaseException(msg: err.toString()));
     } catch (err, st) {
       return Result.left(BaseException(msg: err.toString(), stackTrace: st));
@@ -93,7 +92,7 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   }
 
   @override
-  Future<bool> get isVerifiedUser => _remoteDataSource.isUserVerified;
+  Future<(bool, UserAccount?)> get isVerifiedUser => _remoteDataSource.isUserVerified;
 
   @override
   FutureResult<void, BaseException> sendResetPasswordEmail(String email) async {

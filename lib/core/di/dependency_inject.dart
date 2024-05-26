@@ -63,7 +63,7 @@ Future<void> initializeDependence() async {
   sl.registerFactory<GoogleAuthCubit>(() => GoogleAuthCubit(sl()));
   sl.registerFactory<SignUpCubit>(() => SignUpCubit(sl()));
   sl.registerFactory<VerifyEmailCubit>(() => VerifyEmailCubit(
-        isAuthChangesUsecase: sl(),
+        isUserVerified: sl(),
         verifyEmailUsecase: sl(),
       ));
   sl.registerFactory<RedirectFirstRouteBloc>(() => RedirectFirstRouteBloc(sl()));

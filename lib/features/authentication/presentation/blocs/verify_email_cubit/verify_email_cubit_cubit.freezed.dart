@@ -22,7 +22,7 @@ mixin _$VerifyEmailCubitState {
     required TResult Function() loading,
     required TResult Function() emailSent,
     required TResult Function() userNotVerified,
-    required TResult Function(User? user) userVerifiedsuccess,
+    required TResult Function(UserAccount? user) userVerifiedsuccess,
     required TResult Function(String message, StackTrace? stackTrace) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -32,7 +32,7 @@ mixin _$VerifyEmailCubitState {
     TResult? Function()? loading,
     TResult? Function()? emailSent,
     TResult? Function()? userNotVerified,
-    TResult? Function(User? user)? userVerifiedsuccess,
+    TResult? Function(UserAccount? user)? userVerifiedsuccess,
     TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ mixin _$VerifyEmailCubitState {
     TResult Function()? loading,
     TResult Function()? emailSent,
     TResult Function()? userNotVerified,
-    TResult Function(User? user)? userVerifiedsuccess,
+    TResult Function(UserAccount? user)? userVerifiedsuccess,
     TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) =>
@@ -141,7 +141,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function() emailSent,
     required TResult Function() userNotVerified,
-    required TResult Function(User? user) userVerifiedsuccess,
+    required TResult Function(UserAccount? user) userVerifiedsuccess,
     required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
     return initial();
@@ -154,7 +154,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function()? emailSent,
     TResult? Function()? userNotVerified,
-    TResult? Function(User? user)? userVerifiedsuccess,
+    TResult? Function(UserAccount? user)? userVerifiedsuccess,
     TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
     return initial?.call();
@@ -167,7 +167,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function()? emailSent,
     TResult Function()? userNotVerified,
-    TResult Function(User? user)? userVerifiedsuccess,
+    TResult Function(UserAccount? user)? userVerifiedsuccess,
     TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
@@ -267,7 +267,7 @@ class _$VerifyEmailLoadingImpl implements VerifyEmailLoading {
     required TResult Function() loading,
     required TResult Function() emailSent,
     required TResult Function() userNotVerified,
-    required TResult Function(User? user) userVerifiedsuccess,
+    required TResult Function(UserAccount? user) userVerifiedsuccess,
     required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
     return loading();
@@ -280,7 +280,7 @@ class _$VerifyEmailLoadingImpl implements VerifyEmailLoading {
     TResult? Function()? loading,
     TResult? Function()? emailSent,
     TResult? Function()? userNotVerified,
-    TResult? Function(User? user)? userVerifiedsuccess,
+    TResult? Function(UserAccount? user)? userVerifiedsuccess,
     TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
     return loading?.call();
@@ -293,7 +293,7 @@ class _$VerifyEmailLoadingImpl implements VerifyEmailLoading {
     TResult Function()? loading,
     TResult Function()? emailSent,
     TResult Function()? userNotVerified,
-    TResult Function(User? user)? userVerifiedsuccess,
+    TResult Function(UserAccount? user)? userVerifiedsuccess,
     TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
@@ -393,7 +393,7 @@ class _$VerifyEmailSentImpl implements VerifyEmailSent {
     required TResult Function() loading,
     required TResult Function() emailSent,
     required TResult Function() userNotVerified,
-    required TResult Function(User? user) userVerifiedsuccess,
+    required TResult Function(UserAccount? user) userVerifiedsuccess,
     required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
     return emailSent();
@@ -406,7 +406,7 @@ class _$VerifyEmailSentImpl implements VerifyEmailSent {
     TResult? Function()? loading,
     TResult? Function()? emailSent,
     TResult? Function()? userNotVerified,
-    TResult? Function(User? user)? userVerifiedsuccess,
+    TResult? Function(UserAccount? user)? userVerifiedsuccess,
     TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
     return emailSent?.call();
@@ -419,7 +419,7 @@ class _$VerifyEmailSentImpl implements VerifyEmailSent {
     TResult Function()? loading,
     TResult Function()? emailSent,
     TResult Function()? userNotVerified,
-    TResult Function(User? user)? userVerifiedsuccess,
+    TResult Function(UserAccount? user)? userVerifiedsuccess,
     TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
@@ -519,7 +519,7 @@ class _$UserNotVerifiedImpl implements UserNotVerified {
     required TResult Function() loading,
     required TResult Function() emailSent,
     required TResult Function() userNotVerified,
-    required TResult Function(User? user) userVerifiedsuccess,
+    required TResult Function(UserAccount? user) userVerifiedsuccess,
     required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
     return userNotVerified();
@@ -532,7 +532,7 @@ class _$UserNotVerifiedImpl implements UserNotVerified {
     TResult? Function()? loading,
     TResult? Function()? emailSent,
     TResult? Function()? userNotVerified,
-    TResult? Function(User? user)? userVerifiedsuccess,
+    TResult? Function(UserAccount? user)? userVerifiedsuccess,
     TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
     return userNotVerified?.call();
@@ -545,7 +545,7 @@ class _$UserNotVerifiedImpl implements UserNotVerified {
     TResult Function()? loading,
     TResult Function()? emailSent,
     TResult Function()? userNotVerified,
-    TResult Function(User? user)? userVerifiedsuccess,
+    TResult Function(UserAccount? user)? userVerifiedsuccess,
     TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
@@ -609,7 +609,7 @@ abstract class _$$UserVerifiedsuccessImplCopyWith<$Res> {
           $Res Function(_$UserVerifiedsuccessImpl) then) =
       __$$UserVerifiedsuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({User? user});
+  $Res call({UserAccount? user});
 }
 
 /// @nodoc
@@ -629,7 +629,7 @@ class __$$UserVerifiedsuccessImplCopyWithImpl<$Res>
       freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserAccount?,
     ));
   }
 }
@@ -640,7 +640,7 @@ class _$UserVerifiedsuccessImpl implements UserVerifiedsuccess {
   const _$UserVerifiedsuccessImpl(this.user);
 
   @override
-  final User? user;
+  final UserAccount? user;
 
   @override
   String toString() {
@@ -652,11 +652,12 @@ class _$UserVerifiedsuccessImpl implements UserVerifiedsuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserVerifiedsuccessImpl &&
-            (identical(other.user, user) || other.user == user));
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -672,7 +673,7 @@ class _$UserVerifiedsuccessImpl implements UserVerifiedsuccess {
     required TResult Function() loading,
     required TResult Function() emailSent,
     required TResult Function() userNotVerified,
-    required TResult Function(User? user) userVerifiedsuccess,
+    required TResult Function(UserAccount? user) userVerifiedsuccess,
     required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
     return userVerifiedsuccess(user);
@@ -685,7 +686,7 @@ class _$UserVerifiedsuccessImpl implements UserVerifiedsuccess {
     TResult? Function()? loading,
     TResult? Function()? emailSent,
     TResult? Function()? userNotVerified,
-    TResult? Function(User? user)? userVerifiedsuccess,
+    TResult? Function(UserAccount? user)? userVerifiedsuccess,
     TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
     return userVerifiedsuccess?.call(user);
@@ -698,7 +699,7 @@ class _$UserVerifiedsuccessImpl implements UserVerifiedsuccess {
     TResult Function()? loading,
     TResult Function()? emailSent,
     TResult Function()? userNotVerified,
-    TResult Function(User? user)? userVerifiedsuccess,
+    TResult Function(UserAccount? user)? userVerifiedsuccess,
     TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {
@@ -753,10 +754,10 @@ class _$UserVerifiedsuccessImpl implements UserVerifiedsuccess {
 }
 
 abstract class UserVerifiedsuccess implements VerifyEmailCubitState {
-  const factory UserVerifiedsuccess(final User? user) =
+  const factory UserVerifiedsuccess(final UserAccount? user) =
       _$UserVerifiedsuccessImpl;
 
-  User? get user;
+  UserAccount? get user;
   @JsonKey(ignore: true)
   _$$UserVerifiedsuccessImplCopyWith<_$UserVerifiedsuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -840,7 +841,7 @@ class _$VerifyEmailFailureImpl implements VerifyEmailFailure {
     required TResult Function() loading,
     required TResult Function() emailSent,
     required TResult Function() userNotVerified,
-    required TResult Function(User? user) userVerifiedsuccess,
+    required TResult Function(UserAccount? user) userVerifiedsuccess,
     required TResult Function(String message, StackTrace? stackTrace) failure,
   }) {
     return failure(message, stackTrace);
@@ -853,7 +854,7 @@ class _$VerifyEmailFailureImpl implements VerifyEmailFailure {
     TResult? Function()? loading,
     TResult? Function()? emailSent,
     TResult? Function()? userNotVerified,
-    TResult? Function(User? user)? userVerifiedsuccess,
+    TResult? Function(UserAccount? user)? userVerifiedsuccess,
     TResult? Function(String message, StackTrace? stackTrace)? failure,
   }) {
     return failure?.call(message, stackTrace);
@@ -866,7 +867,7 @@ class _$VerifyEmailFailureImpl implements VerifyEmailFailure {
     TResult Function()? loading,
     TResult Function()? emailSent,
     TResult Function()? userNotVerified,
-    TResult Function(User? user)? userVerifiedsuccess,
+    TResult Function(UserAccount? user)? userVerifiedsuccess,
     TResult Function(String message, StackTrace? stackTrace)? failure,
     required TResult orElse(),
   }) {

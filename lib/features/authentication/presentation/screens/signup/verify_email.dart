@@ -61,13 +61,40 @@ class VerifyEmailScreen extends StatelessWidget {
               const SizedBox(height: AppSizes.spaceBtwSections),
 
               ///Action verifyEmail Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () => _onVerifyEmail(context, email),
-                  child: const Text(AppTexts.tContinue),
-                ),
+              BlocBuilder<VerifyEmailCubit, VerifyEmailCubitState>(
+                buildWhen: (prev, curr) =>
+                    curr is VerifyEmailLoading ||
+                    curr is VerifyEmailSent ||
+                    curr is UserNotVerified,
+                builder: (context, state) {
+                  if (state is VerifyEmailLoading) {
+                    return const SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: null,
+                        child: CircularProgressIndicator(),
+                      ),
+                    );
+                  } else if (state is VerifyEmailSent) {
+                    return const SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: null,
+                        child: Text('Please check your email'),
+                      ),
+                    );
+                  }
+
+                  return SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () => _onVerifyEmail(context, email),
+                      child: const Text(AppTexts.tContinue),
+                    ),
+                  );
+                },
               ),
+
               const SizedBox(height: AppSizes.spaceBtwItems),
 
               /// Resend Email textButton

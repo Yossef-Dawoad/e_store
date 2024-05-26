@@ -1,3 +1,4 @@
+import 'package:e_store/core/shared/widgets/dialogs/dialog_base.dart';
 import 'package:flutter/material.dart';
 
 extension ContextThemingExtension on BuildContext {
@@ -55,8 +56,9 @@ extension NavigatingExtensions on BuildContext {
   Size get screenSize => MediaQuery.of(this).size;
   double get screenWidth => MediaQuery.of(this).size.width;
   double get screenHeight => MediaQuery.of(this).size.height;
+}
 
-  // show snackbar
+extension SnacksAndToasts on BuildContext {
   void showSnackBar(String message, [Color backgroundColor = Colors.grey]) {
     ScaffoldMessenger.of(this)
       ..removeCurrentSnackBar()
@@ -67,4 +69,11 @@ extension NavigatingExtensions on BuildContext {
         ),
       );
   }
+
+  void createDialogPopUp(
+    String message, [
+    DialogType dialogType = DialogType.info,
+    bool barrierDismissible = false,
+  ]) =>
+      customDialogPopUp(this, message, dialogType, barrierDismissible);
 }
