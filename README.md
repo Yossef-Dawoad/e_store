@@ -5,15 +5,18 @@ An Ecommerce Flutter project, +20 pages with 3 animated OnBorading screens, Full
 
 
 ## ScreenShots
-- OnBorading  
+- OnBorading
+  
 ![a](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/onboard_1.png)  |  ![b](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/onboard_2.png) |  ![c](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/onboard_3.png)
 :-------------------------:|:-------------------------:|:-------------------------:
 
-- Authentication  
+- Authentication
+
 ![a](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/signin.png)  |  ![b](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/signup.png) |  ![c](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/google_signin.png) | ![d](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/forget_pass.png) 
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 
-- Store  
+- Store
+  
 ![a](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/explore_1.png)  |  ![b](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/explore_2.png) |  ![c](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/store.png)
 :-------------------------:|:-------------------------:|:-------------------------:
 ![a](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/product_detail_1.png)  |  ![b](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/product_detail_2.png) |  ![c](https://github.com/Yossef-Dawoad/e_store/blob/dev/app_screens/producr_review.png)
