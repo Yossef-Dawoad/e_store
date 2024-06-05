@@ -25,29 +25,25 @@ class StoreScreen extends StatelessWidget {
         backgroundColor: isDark ? Palette.dark : Palette.light,
         body: CustomScrollView(
           slivers: [
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 20),
-              sliver: SliverAppBar(
-                pinned: true,
-                // floating: true,
-                expandedHeight: 480,
-                toolbarHeight: AppSizes.appBarHeight,
-                backgroundColor: isDark ? Palette.dark : Palette.light,
-                title: Text('Store', style: context.textTheme.headlineMedium),
-                actions: [
-                  CounterCartIcon(onPressed: () {}),
+            SliverAppBar(
+              pinned: true,
+              // floating: true,
+              expandedHeight: 480,
+              toolbarHeight: AppSizes.appBarHeight,
+              backgroundColor: isDark ? Palette.dark : Palette.light,
+              title: Text('Store', style: context.textTheme.headlineMedium),
+              actions: [
+                CounterCartIcon(onPressed: () {}),
+              ],
+              flexibleSpace: ExpandedBrandShowCaseAppBar(screenWidth: screenWidth, isDark: isDark),
+              bottom: const CustomTabApp(
+                tabs: [
+                  Tab(text: 'Sports'),
+                  Tab(text: 'Furniture'),
+                  Tab(text: 'Electronics'),
+                  Tab(text: 'Clothes'),
+                  Tab(text: 'Cosmetics'),
                 ],
-                flexibleSpace:
-                    ExpandedBrandShowCaseAppBar(screenWidth: screenWidth, isDark: isDark),
-                bottom: const CustomTabApp(
-                  tabs: [
-                    Tab(text: 'Sports'),
-                    Tab(text: 'Furniture'),
-                    Tab(text: 'Electronics'),
-                    Tab(text: 'Clothes'),
-                    Tab(text: 'Cosmetics'),
-                  ],
-                ),
               ),
             ),
             SliverFillRemaining(

@@ -1,4 +1,5 @@
 import 'package:e_store/core/constants/colors.dart';
+import 'package:e_store/core/constants/sizes.dart';
 import 'package:e_store/core/shared/logic/services/helper_functions.dart';
 import 'package:flutter/material.dart';
 
@@ -22,5 +23,5 @@ class CustomTabApp extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(AppSizes.appBarHeight);
 }
