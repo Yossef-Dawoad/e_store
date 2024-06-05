@@ -1,8 +1,9 @@
 # e_lstore
 
 An Ecommerce Flutter project, +20 pages with 3 animated OnBorading screens, Full Authentication work flow with google singIn, an Explore Page with animated banners and Product Listing, Product Details, Product Reviews, etc...  
-
-
+> [!IMPORTANT] 
+> | :memo:        | The ScreenShots Below have light Mode i choose not to include for obvoius resons to keep the redme readable |
+> |---------------|:------------------------|
 
 ## ScreenShots
 - OnBorading
